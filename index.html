@@ -10,9 +10,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
         <link href="https://fonts.cdnfonts.com/css/segoe-ui-4" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
-        <link rel="stylesheet" href="../CSS/main.css">
+        <link rel="stylesheet" href="CSS/main.css">
         <title>Home</title>
-        <link rel="stylesheet" href="../CSS/home.css">
+        <link rel="stylesheet" href="CSS/home.css">
     </head>
     <body>
 
@@ -24,19 +24,19 @@
              
                 
                     <div id="headerLogo" style="float: left; padding-top: 10px;">
-                        <a href="../"> 
-                            <img id="logo" src="../Images/Curve Logo.png" alt="Curve Genius Logo">  
+                        <a href=""> 
+                            <img id="logo" src="Images/Curve Logo.png" alt="Curve Genius Logo">  
                         </a>
                     </div>
 
                     <div class="dropdown">
                         <button onclick="dropDownMenu()" class="dropbtn">Menu</button>
                         <div style="float: right;" id="directory" class="dropdown-content">
-                            <li class="menuItem blackHover"><a href="../">Home</a></li>
-                            <li class="menuItem blackHover"><a href="../Calculator/">Calculator</a></li>
-                            <li class="menuItem blackHover"><a href="../Math/"> Math</a></li>
-                            <li class="menuItem blackHover"><a href="../About/">About Us</a></li>
-                            <li class="last menuItem blackHover"><a href="../Contact/">Contact</a></li>
+                            <li class="menuItem blackHover"><a href="">Home</a></li>
+                            <li class="menuItem blackHover"><a href="Calculator/">Calculator</a></li>
+                            <li class="menuItem blackHover"><a href="Math/"> Math</a></li>
+                            <li class="menuItem blackHover"><a href="About/">About Us</a></li>
+                            <li class="last menuItem blackHover"><a href="Contact/">Contact</a></li>
                         </div>
                     </div>
             </nav>
@@ -48,7 +48,7 @@
                 <div id="introBox">
                     <h1 id="websiteTitle">Curve Genius</h1>
                     <h3 id="websiteSubTitle">Equal, Accessible, and Understandable Grade Adjustment</h3>
-                    <a href="../Calculator/"><article id="getCurvingButton">Curve a Test</article></a>
+                    <a href="Calculator/"><article id="getCurvingButton">Curve a Test</article></a>
                 </div>
             </div>
             
@@ -57,7 +57,7 @@
         <main>
             <div id="infoBox">
 
-                <a href="../Math/" class="linkBox">
+                <a href="Math/" class="linkBox">
                     <article style="top: 0%; left: 0%;">
                         <h2>Explore Our Math</h2>
                         <p>
@@ -68,7 +68,7 @@
                     </article>
                 </a>
 
-                <a href="../About/" class="linkBox">
+                <a href="About/" class="linkBox">
                     <article style="top: calc(22.5% - 10px); right: 0%;">
                         <h2>Discover Our Mission</h2>
                         <p>Our goal has always been to make grading more fair for students and teachers. Learn more about about the 
@@ -76,7 +76,7 @@
                         </p>
                     </article>
                 </a>
-                <a href="../Contact/" class="linkBox">
+                <a href="Contact/" class="linkBox">
                     <article style="bottom: 0%; left: 0%">
                         <h2>Contact Us</h2>
                         <p>We're happy to receive any feedback you're willing to provide. Whether it's a question, recommendation, bug report, 
@@ -122,7 +122,7 @@
             updateScrollDisplay();
             fixedElem.style.transition = "background-color 0.4s ease;" 
        
-            fetch('../Footer/')
+            fetch('Footer/')
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('footer').innerHTML = data;
