@@ -1,0 +1,56 @@
+.main {
+    margin: 0 auto;
+}
+
+#gradBackdrop { 
+    height: 180px;
+    width: 100%;
+    max-width: 1750px;
+    background: linear-gradient(112deg, rgba(23,0,240,1) 0%, rgba(165,44,165,1) 50%, rgba(255,127,0,1) 100%);
+    z-index: -10;
+}
+
+#container {
+    padding: 0; 
+    display: block; 
+    height: 700px;
+}
+
+#pageTitle {
+    height: fit-content !important;
+    display: block; 
+    position: relative; 
+    padding: 0px 80px;
+    top: -100px; 
+    width: 100%; 
+    right: 0%; 
+}
+
+#pageTitle h1{
+    font-size: 90px !important;
+}
+
+@media screen and (max-width: 900px) {
+    #pageTitle h1{
+        font-size: 70px !important;
+    }
+
+    #pageTitle {
+        top: -80px !important;
+    }
+}
+
+@media screen and (max-width: 850px) {
+
+    #pageTitle {
+        position: relative !important;
+        top: -80px !important;
+        width: 100% !important;
+        left: 0px !important;
+        padding: 0px 50px;
+    }
+
+    #pageTitle h1 {
+        font-size: 65px !important;
+    }
+}

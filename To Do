@@ -1,0 +1,50 @@
+clean up file organizaiton
+
+make all linked videos
+
+add analytics
+
+
+
+
+CSS:
+
+resize everything to fit more on page
+
+element intersections with articles and shadows
+
+Rework CSS and add logo 
+
+shadows and merges between content boxes
+
+make scroll bars look better
+
+fix nav bar to it fits when zoomed out or in iphone mode, make nav bar be purple/orange boxes when hovered
+
+fix delete button on panels change the close button to have an img instead of "X" and replace in the description
+
+add shadow to boxes
+
+
+
+Do later;
+
+remove redundant style=tags
+
+clean up css
+ 
+clean up js
+
+fix html element names
+
+fix js variable names
+
+table footer
+
+delete student button
+
+loading page
+
+comming soon page
+
+add transitions

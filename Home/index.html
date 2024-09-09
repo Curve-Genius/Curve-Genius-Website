@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+        <link href="https://fonts.cdnfonts.com/css/segoe-ui-4" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
+        <link rel="stylesheet" href="../CSS/main.css">
+        <title>Home</title>
+        <link rel="stylesheet" href="../CSS/home.css">
+    </head>
+    <body>
+
+        <div class="tileBackground" id="backgroundLeft"></div>
+        <div class="tileBackground" id="backgroundRight"></div>
+
+        <header> 
+            <nav id="fixedElem">
+             
+                
+                    <div id="headerLogo" style="float: left; padding-top: 10px;">
+                        <a href="../Home/"> 
+                            <img id="logo" src="../Images/Curve Logo.png" alt="Curve Genius Logo">  
+                        </a>
+                    </div>
+
+                    <div class="dropdown">
+                        <button onclick="dropDownMenu()" class="dropbtn">Menu</button>
+                        <div style="float: right;" id="directory" class="dropdown-content">
+                            <li class="menuItem blackHover"><a href="../Home/">Home</a></li>
+                            <li class="menuItem blackHover"><a href="../Calculator/">Calculator</a></li>
+                            <li class="menuItem blackHover"><a href="../Math/"> Math</a></li>
+                            <li class="menuItem blackHover"><a href="../About/">About Us</a></li>
+                            <li class="last menuItem blackHover"><a href="../Contact/">Contact</a></li>
+                        </div>
+                    </div>
+            </nav>
+
+            <div id="gradBackdrop"></div>
+            <div id="backgroundBlack"></div>
+
+            <div id="introElem">
+                <div id="introBox">
+                    <h1 id="websiteTitle">Curve Genius</h1>
+                    <h3 id="websiteSubTitle">Equal, Accessible, and Understandable Grade Adjustment</h3>
+                    <a href="../Calculator/"><article id="getCurvingButton">Curve a Test</article></a>
+                </div>
+            </div>
+            
+        </header>
+        
+        <main>
+            <div id="infoBox">
+
+                <a href="../Math/" class="linkBox">
+                    <article style="top: 0%; left: 0%;">
+                        <h2>Explore Our Math</h2>
+                        <p>
+                            Visit our documentation of the math we employ to curve tests. We've explained each step at a conceptual, and mathematical 
+                            level, with examples, so that all users can use our website. 
+                            Review this page before using our test curving calculator for the best user experience.
+                        </p>
+                    </article>
+                </a>
+
+                <a href="../About/" class="linkBox">
+                    <article style="top: calc(22.5% - 10px); right: 0%;">
+                        <h2>Discover Our Mission</h2>
+                        <p>Our goal has always been to make grading more fair for students and teachers. Learn more about about the 
+                            problems we discovered, their implications, and how we address them, as well as our journey to our website today.  
+                        </p>
+                    </article>
+                </a>
+                <a href="../Contact/" class="linkBox">
+                    <article style="bottom: 0%; left: 0%">
+                        <h2>Contact Us</h2>
+                        <p>We're happy to receive any feedback you're willing to provide. Whether it's a question, recommendation, bug report, 
+                            or piece of encouragement (those are the best), we're here for it. If you've had a bad experience with our website, 
+                            please let us know how we can improve it.
+                        </p>
+                    </article>
+                </a>
+
+            </div>
+        </main>
+        <footer id="footer"> </footer>
+        <script>
+            let menuOpen = false;
+            const fixedElem = document.getElementById("fixedElem");
+            
+            window.addEventListener('scroll', function() {
+                updateScrollDisplay();
+            });
+
+            window.addEventListener('resize', function() {
+                updateScrollDisplay();
+            });
+            
+            function updateScrollDisplay() {
+                if (window.scrollY < 10 && (!menuOpen || window.innerWidth > 849) ) {
+                fixedElem.style.background = "none";
+                document.querySelectorAll(".menuItem").forEach( 
+                    element => {
+                        element.classList.add("clearHover");
+                        element.classList.remove("blackHover");
+                    });
+                } else {
+                    fixedElem.style.background = "#000000";
+                    document.querySelectorAll(".menuItem").forEach( 
+                        element => {
+                            element.classList.remove("clearHover");
+                            element.classList.add("blackHover");
+                        });
+                }
+            }
+
+            updateScrollDisplay();
+            fixedElem.style.transition = "background-color 0.4s ease;" 
+       
+            fetch('../Footer/')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                });
+
+            function dropDownMenu() {
+                document.getElementById("directory").classList.toggle("show");
+                menuOpen = !menuOpen;
+                updateScrollDisplay();
+            }
+            
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function(event) {
+                if (!event.target.matches('.dropbtn')) {
+                    menuOpen = false;
+                    var dropdown = document.getElementById("directory");
+                    if (dropdown.classList.contains('show')) {
+                        dropdown.classList.remove('show');
+                    }
+                    updateScrollDisplay();
+                }
+            }    
+        </script>
+    </body>
+</html>

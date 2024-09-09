@@ -1,0 +1,784 @@
+:root {
+    --selection-border-radius: 10px;
+    --display-input-padding: 4px;
+    --display-background-size: 0.75rem auto;
+    --display-height: 20px;
+    --display-width: 20px;
+}
+main{
+    padding: 0px 40px !important;
+    padding-top: 45px !important; 
+}
+
+main > div:not(#blurBackdrop):not(#panelsList) {
+    margin-bottom: 20px;
+}
+
+input[type="number"]::-webkit-inner-spin-button { /* Firefox */
+    appearance: none;
+    opacity: 0; /* Hides buttons and removes hover effect */
+}
+
+#pageTitle{
+    margin: 0px; 
+    display: inline-block;
+    font-size: 40px;
+    line-height: 0.9;
+}
+
+#titleBlock {
+    margin-top: 70px; 
+    margin-bottom: 10px; 
+    vertical-align: middle;
+}
+
+p.explanation {
+    font-size: 17px;
+}
+
+details {
+    margin-bottom: 0 !important;
+    color: black;
+}
+
+details > ul {
+    padding-left: 0px;
+    margin: 0px 30px 0px 30px;
+    padding: 0px 25px 25px 25px;
+    border-radius: 0px 0px 30px 30px;
+    border-style: solid;
+    border-top: none;
+    border-width: 2px;
+    border-color: rgba(0, 0, 0, 0.333);
+    font-size: small;
+    color:black
+}
+
+details > ul > li:not(.notItem) {
+    margin-inline-start: 40px;
+}
+
+.notItem {
+    padding-top: 10px;
+    list-style: none;
+}
+
+details input[type="text"].notFileInput, details input[type="number"].notFileInput  {
+    margin-inline-start: 5px !important;
+    padding: 3px !important;
+    text-align: center;
+    opacity: 1 !important;
+}
+
+details input[type=text], details input[type=number] {
+    height: 20px !important; 
+    margin: 0px !important; 
+    font-size: small !important; 
+    background-position: center right 0.20rem !important; 
+    background-size: 0.75rem !important;
+    color: black;  
+    padding: 4px !important; 
+}
+
+
+
+
+
+[role=button]:is(:focus, :active){
+    box-shadow: none !important;
+    --pico-background-color: var(--pico-primary-background) !important;
+}
+
+[role=button] {
+    transition: none !important;
+}
+
+
+summary {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    border-radius: 10px !important;
+    border-width: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+summary:hover {
+    background: linear-gradient(112deg, rgba(23,0,240,0.74) 0%, rgba(165,44,165,0.74) 50%, rgba(255,127,0,0.74) 100%);
+    color: white;
+} 
+
+summary[role=button]:not(.outline)::after {
+    filter: brightness(10) invert(1) !important;
+}
+
+summary[role=button]:not(.outline):hover::after {
+    filter: brightness(0) invert(1) !important;
+}
+
+
+
+#titleBlock * {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+
+/*Styles for Selection Panels*/
+#panelsList {
+	display: flex;
+    flex-wrap: nowrap;
+	overflow-x: auto;
+    white-space: nowrap;
+  	align-items: stretch;
+    margin-bottom: 20px;;
+    padding-left: 0px;
+    width: 100%
+}
+
+.panel {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 2px 2px rgba(169, 168, 168, 0.1), 0px 0px 4px 4px rgba(169, 168, 168, 0.080), 0px 0px 6px 6px rgba(169, 168, 168, 0.06), 0px 0px 8px 8px rgba(169, 168, 168, 0.04), 0px 0px 10px 10px rgba(169, 168, 168, 0.02);
+}
+
+.panelBar * {
+    display: inline-block;
+    font-size: small;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.panelBar {
+    width: 218px;
+    margin-bottom: 1.5%;
+}
+
+.panelBar > input[type="number"] {
+    font-size: small;
+    text-align: center;
+    height: 80%; 
+    width: 50px;
+    padding: 1%;
+    padding-left: 2%; 
+    margin: 0;
+    margin-inline-end: 7px;
+}
+
+.nameLine {
+    position: relative;
+}
+
+.nameInput {
+    position: absolute;
+    top: 0px;
+    width: 80% !important; 
+    height: 100% !important; 
+    padding: 2% !important; 
+    margin: 0 !important;
+    padding-inline-start: 3% !important;
+}
+
+.closeButton {
+    padding: 2% 5%; 
+    float: right; 
+    vertical-align: middle; 
+    border: none;
+    font-size: small;
+}
+
+.closeButton:hover {
+    background: var(--pico-primary-hover);
+}
+
+.curveTypeLine {
+    margin-bottom: 0; 
+    padding-top: 1.5%; 
+    width: 100%;
+    
+}
+
+.useRangeButton{
+    float: right;
+}
+
+.useRangeButton, .useMeanAndDeviationButton {
+    width: 100px; 
+    font-size: 9px;  
+    padding: 2%;
+}
+
+#addNew {
+    height: 250px !important; 
+    width: fit-content !important; 
+    padding: 0 30px !important;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: black !important;
+    position: static;
+    box-shadow: none;
+    border-width: 0px;
+}
+
+#addNew > img {
+    width: 150px;
+    height: auto;
+}
+
+#addNew:is(:active, :focus) {
+    --pico-background-color: var(--pico-primary-background);
+}
+
+#addNew:hover {
+    background: var(--pico-primary-hover);
+}
+
+/*Student Inputs*/
+
+
+table {
+    font-size: medium;
+    width: fit-content;
+    border-radius: 15px !important;
+    box-shadow: var(--pico-card-box-shadow);  
+    margin-bottom: 0px;
+    box-shadow: none;
+}
+
+thead th {
+    padding-inline-start: 30px; 
+}
+
+th input[type="text"], th input[type="number"], th input[type="text"]:where(input):not([type=checkbox],[type=range])[aria-invalid] {
+    height: 100%; 
+    padding: 2%; 
+    margin: 0;
+    padding-inline-start: 3% !important;
+    padding-inline-end: 3% !important;
+    font-size: medium;
+}
+
+th input[type="number"]{
+    width: 90px;
+    text-align: center;
+}
+
+th input[type="text"]{
+    min-width: 150px;
+}
+
+td {
+    white-space: nowrap;
+    text-align: center ;
+     
+}
+
+#addStudents td, #studentTable td {
+    font-family: 'RomanSerif', sans-serif;
+    text-align: center;
+}
+
+th input[type="number"]:where(input):not([type=checkbox],[type=range])[aria-invalid] {
+    padding-inline-end: 1rem !important;
+    padding-inline-start: 0 !important;
+
+    background-position: center right 0.4rem !important;
+}
+
+#scoresLabels th, #scoresLabels td {
+    background-color: var(--pico-primary-background);
+} 
+
+#scoresLabels th:first-child {
+    border-radius: 15px 0px 0px 0px;
+}
+
+#scoresLabels th:last-child {
+    border-radius: 0px 15px 0px 0px;
+}
+
+#scoresLabels td:last-child {
+    border-radius: 0px 15px 0px 0px;
+}
+
+
+
+#fileBlock input:not([type="file"]) {
+    width: 50px;
+    font-size: small;
+    height: 20px;
+}
+
+.column input[type="text"]:where(input):not([type=checkbox],[type=range])[aria-invalid], .row input[type="number"]:where(input):not([type=checkbox],[type=range])[aria-invalid] {
+    width: 60px !important;
+    padding-inline-start: 3% !important;
+    padding-right: 10% !important;
+    background-position: center right 0.3rem !important;
+}
+
+input.row, input.column{
+    padding-inline-start: 1% !important;
+    padding-inline-end: 1% !important;
+    text-align: center;
+    width: 35px !important;
+}
+
+.cornerInput {  
+    display: flex;
+    justify-content: left;
+}
+
+.cornerInput div {
+    display: flex;
+    align-items: center;
+}
+
+.cornerInput input {
+    margin: 5px;
+}
+
+.cornerInputRow{
+    margin-bottom: 10px;
+}
+
+.cornerLabel {
+    width: max-content;
+}
+
+.close:hover {
+    background-color: #ba6a66;
+}
+
+.close {
+    box-shadow: none;
+}
+
+.close > img {
+    display: flex;
+}
+
+#filesToRemove * {
+    list-style-type: none;
+}
+
+#filesToRemove {
+    background-color: var(--pico-background-color);
+    padding: 0px;
+}
+
+#filesToRemove input[type="checkbox"] {
+    display: none;
+}
+
+#filesToRemove li label {
+    width: 99%;
+}
+
+#filesToRemove li {
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+#filesToRemove li label{
+    margin: 0px 2px;
+    padding: 2px 5px;
+    border: 1px solid rgba(0,0,0,0);
+    border-radius: 2px;
+    margin-bottom: 1px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+
+
+#filesToRemove li input[type="checkbox"]:checked ~ label {
+    background-color: #CCE8FF;
+    border: 1px solid #000000;
+
+}
+
+#studentInputs {
+    height: 100%;
+    position: relative;
+    width: 100%;
+    display: flex;
+}
+
+#statsList {
+    
+    position: relative;
+    left: 10px;
+    padding: 15px 20px;
+    border-radius: 20px;
+    width: 245px;
+}
+
+#statsList div * {
+    margin-inline-start: 10px;
+    display: inline-block;
+}
+
+#statsList > div.sepLine {
+    border-radius: 3px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #000000c3;
+}
+
+#excelList {
+    position: relative;
+    left: 10px;
+}
+
+#excelList button {
+    width: 250px;
+    text-align: left;
+    background: black;
+    font-size: 19px;
+    color: white;
+    border-radius: 30px;
+    padding: 8px 15px;
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.5); 
+    border-color: black;
+    border-width: 2px;
+    margin-bottom: 10px;
+
+}
+
+#excelList button:hover {
+    background: white;
+    color: black;
+} 
+
+#infoBlock {
+    max-width: calc(100% - 315px);
+    margin-left: 30px;
+    flex-wrap: nowrap; 
+    overflow-x: auto;
+    white-space: nowrap; 
+    align-items: stretch;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    margin-bottom: 20px;
+}
+
+.excelInputBar {
+    margin-bottom: 8px;
+}
+
+#inputFile {
+    margin-bottom: 0; width: 80%
+}
+
+#blurBackdrop {
+    margin-inline-start: -40px;
+    max-width: 1750px;
+    display: none; 
+    position: fixed; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.6); 
+    z-index: 1;
+}
+
+#fileBlock {
+    overflow-y: auto; 
+    max-height: 90%; 
+    z-index: 2; 
+    display: none; 
+    max-width: 1300px;
+    width: 60%; 
+    position: fixed; 
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+#closeFileImportBlock {
+    margin-bottom: 0; 
+    vertical-align: baseline; 
+    padding: 1%; 
+    float: right;
+}
+
+#fileProcessBar {
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 0px;
+}
+
+#processExcelSheet {
+    box-shadow: none; border-width: 1.5px; padding: 1% 3%; margin-bottom: 0;
+}
+
+#errorMessage {
+    margin-inline-start: 15px; 
+    color: #c84e48d4; 
+    width: fit-content; 
+    font-size: 22px;
+}
+
+#excelImportList {
+    overflow-y: auto; 
+    height: 50%; 
+    width: 60%; 
+    padding: 0px; 
+    z-index: 2; 
+    display: none; 
+    position: fixed; 
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+#removeSheetHeader {
+    margin-bottom: 3px; 
+    position: absolute; 
+    top: 0px; 
+    display: flex; 
+    align-items: center; 
+    padding: 5px 5px 5px 10px; 
+    height: 47px; 
+    border-bottom: 3px solid #c1c5c6; 
+    background: var(--pico-primary-hover); 
+    border-radius: var(--pico-border-radius) var(--pico-border-radius) 0 0;
+}
+
+#fileCaption {
+    vertical-align: center; display: inline-block; white-space: nowrap;  width: 94%;
+}
+
+#closeRemoveSheetBox { 
+    width: 6%; 
+    margin-bottom: 0; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 1% 1.5%;
+}
+
+@media screen and (max-width: 850px) {
+
+    details > ul > li:not(.notItem) {
+        margin-inline-start: 30px;
+    }
+   
+    p.explanation {
+        font-size: 12px !important;
+    }
+
+    details ul li, details input[type=text], details input[type=number] {
+        font-size: 9px !important;
+        padding: 1px !important;
+    }
+
+    details summary {
+        font-size: 13px !important;  
+        padding: 8px 12px !important;
+    }
+
+    details summary::after {
+        height: 21px !important;
+    }
+
+    
+    #pageTitle{
+        font-size: 30px;
+    }
+
+    .switchBar button{
+        font-size: 11px !important;
+        border-width: 2px !important;
+    }
+
+    :root {
+        --selection-border-radius: 8px !important;
+        --display-input-padding: 2px;
+        --display-background-size: 0.5rem auto;
+        --display-height: 17px;
+        --display-width: 17px
+    }
+
+    details ul {
+        margin: 0px 15px;
+        padding: 0px 13px 13px 13px;
+    }
+
+    #fileBlock{
+        width: 80%;
+    }
+
+    #closeRemoveSheetBox {
+        width: 8%;
+    }
+
+    
+
+    
+}
+
+@media screen and (max-width: 500px) {
+
+    
+
+    details > ul > li:not(.notItem) {
+        margin-inline-start: 20px;
+    }
+
+    #titleBlock {
+        margin-top: 30px !important;
+        margin-bottom: 0px !important;
+    }
+
+    #pageTitle{
+        font-size: 25px;
+    }
+
+
+    .switchBar button{
+        font-size: 6px !important;
+        border-width: 1.5px !important;
+        padding: 5px 7px !important;
+    }
+
+    :root {
+        --selection-border-radius: 5px !important;
+        --display-background-size: 0.52rem auto;
+        --display-height: 11px;
+        --display-width: 12px;
+    }   
+
+    p.explanation {
+        font-size: 10px !important;
+        margin-bottom: 10px;
+    }
+
+    details ul li, details input[type=text], details input[type=number] {
+        font-size: 8px !important;
+    }
+
+    details summary {
+        font-size: 11px !important;  
+        padding: 7px 9px !important;
+    }
+
+    details summary::after {
+        height: 17px !important;
+    }
+
+    details ul {
+        margin: 0px 15px;
+        padding: 0px 13px 13px 13px;
+    }
+
+    .cornerLabel {
+        overflow-x: auto;
+        font-size: 19px;
+    }
+
+    #inputFile, #inputFile button {
+        font-size: 12px;
+    }
+
+    .panelBar {
+        width: 175px !important;
+    }
+
+    .panelBar * {
+        font-size: 10px !important;
+    }
+
+    .useMeanAndDeviationButton, .useRangeButton{
+        font-size: 8px !important;
+        padding: 2% !important;
+        width: 85px;
+    }
+
+    .panelBar > input[type="number"] {
+        width: 37px !important;
+
+    }
+
+    #addNew {
+        height: 215px !important;
+    }
+
+    #addNew > img {
+        width: 120px !important;
+    }
+
+    #addNew > h4 {
+        font-size: 25px !important;
+    }
+
+    main > div:not(#blurBackdrop):not(#panelsList) {
+        margin-bottom: 10px;
+    }
+
+    #statsList div * {
+        font-size: 11px;
+    }
+
+    #statsList {
+        padding: 8px 13px;
+        width: 140px;
+    }
+
+    #studentInputs {
+        margin-top: 20px;
+    }
+
+    #statsList > div.sepLine {
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
+    #excelList button {
+        width: 140px;
+        font-size: 10px;
+        margin-bottom: 5px;
+        border-radius: 20px;
+        padding: 4px 8px;
+    }
+
+    #infoBlock {
+        max-width: calc(100% - 150px);
+    }
+
+    table,  th input[type="text"], th input[type="number"] {
+        font-size: 10px;
+    }
+
+    th, td {
+        padding: 7px 10px;
+    }
+
+    #scoresLabels th {
+        padding-left: 15px;
+    }
+
+    th input[type="text"] {
+        min-width: 110px;
+    }
+
+    th input[type="number"] {
+        width: 40px;
+    }
+
+    #closeRemoveSheetBox {
+        width: 12%;
+    }
+
+    #excelImportList{
+        width: 80%;
+    }
+
+    #exportBlock {
+        width: 80% !important; 
+        padding: 10px;
+    }
+
+    #exportBlock * {
+        height: 40px !important;
+    }
+
+    #closeExportButton {
+        height: 20px !important;
+    }
+
+
+}
