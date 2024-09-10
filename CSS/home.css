@@ -2,21 +2,12 @@ a {
     text-decoration: none;
 }
 
-
-
-#gradBackdrop {
-    height: 100%;
-    max-height: 1350px;
-    width: 100%;
-    max-width: 1750px;
+main {
     background: linear-gradient(112deg, rgba(23,0,240,1) 0%, rgba(165,44,165,1) 50%, rgba(255,127,0,1) 100%);
-    position: fixed; 
-    z-index: 0;
-    border-bottom: 5px solid black;
 }
 
 #websiteTitle {
-    font-size: 600%; 
+    font-size: 500%; 
     margin-bottom: 0;
 }
 
@@ -35,10 +26,9 @@ a {
 #introBox {
     background: none; 
     border-radius: 20px;
-    position: absolute; 
-    left: 8%; 
-    right: 8%;
-    top: 30%; 
+    position: absolute;
+    padding: 0px 20px; 
+    top: 20%; 
 }
 
 #introBox * {
