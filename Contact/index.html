@@ -37,7 +37,69 @@
 
           <article id="contactForm" style="display: block; position: absolute; left: 45%; top: 90px; width: 50%;  border-radius: 15px;">
             <h3>Form Temporarily Disabled</h3>
-           
+              <form action="https://formsubmit.co/8dc3f635914f28c527dc002cbd32374c" method="POST">
+            
+              <input type="text" name="_honey" style="display: none">
+
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://curvegenius.com/Success/">
+                <label>
+                  <div>Name</div>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    autocomplete="given-name"
+                    required
+                  />
+                </label>
+
+                <div>Problem</div>
+                <ul style="padding: 0; margin-bottom: 10px;">
+                  <li class="binOpt">
+                    <input class="hidden" id="hasQuestion" type="checkbox">
+                    <label for="hasQuestion">Question</label>
+                  </li>
+                  <li class="binOpt">
+                    <input class="hidden" id="hasRecomendation" type="checkbox">
+                    <label for="hasRecomendation">Recomendation</label>
+                  </li>
+                  <li class="binOpt">
+                    <input class="hidden" id="hasIssue" type="checkbox">
+                    <label for="hasIssue">Issue</label>
+                  </li>
+                  <li class="binOpt">
+                    <input class="hidden" id="hasOther" type="checkbox">
+                    <label for="hasOther">Other</label>
+                  </li>
+                </ul>
+
+                <label>
+                  <div>Email</div>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    autocomplete="email"
+                    required
+                  />
+                </label>
+                <label>
+                  <div>Message</div>
+                  <textarea
+                    style="min-height: 150px; max-height: 250px; resize: vertical;"
+                    name="message"
+                    placeholder="All feedback is Welcome!"
+                    required
+                  ></textarea>
+                </label>
+            
+              <input
+                disabled
+                type="submit"
+                value="Submit"
+              />
+            </form>
           </article>
           
           
