@@ -207,7 +207,7 @@
 
         <div class="explanation">
             <details >
-                <summary role="button">How do I inport and export data with Excel?</summary>
+                <summary role="button">How do I import and export data with Excel?</summary>
                     <ul>
                         <li class="notItem">A video explanation is coming soon. Stay tuned!</li>
                         <li class="notItem">For text explanation:</li>
@@ -218,6 +218,7 @@
                         <li>Enter the left most name box of student highest on the Excel sheet followed by the box (in the same row) containing their score.</li>
                         <li>Then, enter the right most name box the student lowest on the Excel sheet followed by the box containing their score.</li>
                         <li>Select process to import the students into the score calculator.</li>
+                        <li>To export students, select "Export data with Excel," and enter your desired file name, then select "export".</li>
                         <li>To remove students, open the Undo Import tab, select an Excel sheet and press remove. This will remove all of the students that originated from that sheet.</li>
                     </ul>
             </details>
@@ -244,8 +245,8 @@
 
                 <div id="excelList">
                     <button onclick="clearAll()">Clear All</button><br>
-                    <button onclick="fileBlock.style.display = 'block'; blurBackdrop.style.display = 'block';">Import data with excel</button><br>
-                    <button onclick="exportBlock.style.display = 'block';blurBackdrop.style.display = 'block';">Export data with excel</button><br>
+                    <button onclick="fileBlock.style.display = 'block'; blurBackdrop.style.display = 'block';">Import data with Excel</button><br>
+                    <button onclick="exportBlock.style.display = 'block';blurBackdrop.style.display = 'block';">Export data with Excel</button><br>
                     <button id="excelListButton" onclick="excelList.style.display = 'block';blurBackdrop.style.display = 'block';" style="display: none">Undo Import</button>
                 </div>
             </div>
