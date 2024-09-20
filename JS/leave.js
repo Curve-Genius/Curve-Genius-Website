@@ -1,31 +1,12 @@
 window.addEventListener('beforeunload', () => {
-    localStorage.setItem('saveExcelSheets', JSON.stringify(saveFiles));
-    const manualStudents = [];
-    students.forEach( obj => {
-        if(obj.spreadsheetNum === -1){
-            manualStudents.push([obj.name,obj.score]);
-        }
-    })
-    localStorage.setItem('saveManualStudents', JSON.stringify(manualStudents));
-    const parallelCurveArray = [];
-    panels.forEach( obj => {
-        let smallCurve = [];
-        smallCurve.push(obj.name); //0
-        smallCurve.push(obj.normalize); //1
-        smallCurve.push(obj.curveType); //2
-        smallCurve.push(obj.inputMean); //3
-        smallCurve.push(obj.inputDeviation); //4
-        smallCurve.push(obj.limitRange); //5
-        smallCurve.push(obj.inputMin); //6
-        smallCurve.push(obj.inputMax); //7
-        smallCurve.push(obj.letScoresDrop); //8
-        parallelCurveArray.push(smallCurve) //9
-    })
-    localStorage.setItem('saveCurves', JSON.stringify(parallelCurveArray));
+    saveData();
 });
 
-window.addEventListener('load', () => {
+setInterval(function() {
+    saveData();
+}, 30000);
 
+window.addEventListener('load', () => {
     const loadedCurves = JSON.parse(localStorage.getItem('saveCurves'));
     if(loadedCurves.length > 0){
         loadedCurves.forEach(obj => {
@@ -58,6 +39,7 @@ window.addEventListener('load', () => {
             tempCurve.maxInputElem.value = obj[7];
             tempCurve.letScoresDrop = obj[8];
             tempCurve.letScoresDropButton.checked = obj[8];
+            tempCurve.centerRangeButton.checked = obj[9];
             tempCurve.updatePanel();
         })
     } else {
@@ -102,4 +84,32 @@ function clearAll() {
         localStorage.clear();
         panels.push( new CurvePanel(''));
     }     
+}
+
+function saveData() {
+    console.log("test");
+    localStorage.setItem('saveExcelSheets', JSON.stringify(saveFiles));
+    const manualStudents = [];
+    students.forEach( obj => {
+        if(obj.spreadsheetNum === -1){
+            manualStudents.push([obj.name,obj.score]);
+        }
+    })
+    localStorage.setItem('saveManualStudents', JSON.stringify(manualStudents));
+    const parallelCurveArray = [];
+    panels.forEach( obj => {
+        let smallCurve = [];
+        smallCurve.push(obj.name); //0
+        smallCurve.push(obj.normalize); //1
+        smallCurve.push(obj.curveType); //2
+        smallCurve.push(obj.inputMean); //3
+        smallCurve.push(obj.inputDeviation); //4
+        smallCurve.push(obj.limitRange); //5
+        smallCurve.push(obj.inputMin); //6
+        smallCurve.push(obj.inputMax); //7
+        smallCurve.push(obj.letScoresDrop); //8
+        smallCurve.push(obj.centerRangeButton.checked) //9
+        parallelCurveArray.push(smallCurve) 
+    })
+    localStorage.setItem('saveCurves', JSON.stringify(parallelCurveArray));
 }
