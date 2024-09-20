@@ -87,7 +87,6 @@ function clearAll() {
 }
 
 function saveData() {
-    console.log("test");
     localStorage.setItem('saveExcelSheets', JSON.stringify(saveFiles));
     const manualStudents = [];
     students.forEach( obj => {
