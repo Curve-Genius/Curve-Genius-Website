@@ -134,7 +134,7 @@ summary[role=button]:not(.outline):hover::after {
     margin-right: -40px;
 }
 
-#panelsList article:not(.hidden):nth-child(2), #panelsList button:nth-child(2){
+#panelsList article:not(.hidden):nth-child(2), #panelsList button[class="panel"]:nth-child(2){
     margin-left: 40px;
 }
 
