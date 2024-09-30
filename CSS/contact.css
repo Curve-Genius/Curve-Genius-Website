@@ -1,5 +1,7 @@
-.main {
+main {
     margin: 0 auto;
+    padding: 0 0 50px 0;
+    padding-top: 0px !important; 
 }
 
 #gradBackdrop { 
@@ -11,6 +13,7 @@
 }
 
 #container {
+    position: relative;
     padding: 0; 
     display: block; 
     height: 900px;
@@ -134,7 +137,7 @@
     }
 
     #pageTitle h1 {
-        font-size: 65px !important;
+        font-size: 60px !important;
     }
 
     #contactForm h3{
@@ -162,5 +165,9 @@
     
     .binOpt input[type="checkbox"]:checked + label::before {
         top: 0px;
+    }
+
+    main {
+        padding: 0px !important;
     }
 }
