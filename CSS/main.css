@@ -165,7 +165,7 @@ nav a {
     .dropdown {
         position: relative;
         float: right;
-        padding-inline-end: 30px;
+        padding-inline-end: 40px;
     }
       
     .dropdown-content {
@@ -183,7 +183,8 @@ nav a {
 
     #directory li {
         margin: 0;
-        height: 30px;
+        font-size: 19px;
+        height: 60px;
         background-color: black;
         border-radius: 0px;
         border-top: white 1px solid;
