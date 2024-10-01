@@ -1,5 +1,5 @@
 //debug functions
-function logAllStudents(){
+function logAllStudents(){ 
     if(debugOn){
 
         //group stats
