@@ -85,6 +85,8 @@ class Named{
         //updates data for the removal of the old name and the addition of the new name
         this.removeName();
         this.setName(newName, 0);
+
+        logAllStudents()
     }
 
     //updates the display name depending on if an index is required after
