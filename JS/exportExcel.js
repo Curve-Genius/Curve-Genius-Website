@@ -3,7 +3,7 @@ const exportBlock = document.getElementById("exportBlock");
 const blurBackdrop = document.getElementById('blurBackdrop');
 
 function exportExcel() {
-    console.log(exportFileName.value.trim());
+``
 
     if(exportFileName.value.trim() !== ""){
         const table = [];
