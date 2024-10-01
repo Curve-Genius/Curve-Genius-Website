@@ -20,6 +20,9 @@ window.addEventListener('load', () => {
             tempCurve.normalize = obj[1];
             tempCurve.normalizeButton.checked = obj[1];
             tempCurve.curveType = obj[2];
+            if(obj[1]){
+               existsNormal++;
+            }
             if(obj[2]){
                 tempCurve.useMeanAndDeviationButton.classList.remove("outline");
                 tempCurve.useRangeButton.classList.add("outline");
