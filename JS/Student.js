@@ -38,6 +38,7 @@ class Student extends Named{
         } else {
             this.zScore = (this.score - mean) / deviation;
         }
+
         updateZscores(deviation, mean);
         
         //updates on screen stats
@@ -147,11 +148,11 @@ class Student extends Named{
         deviation = Math.sqrt( Math.max(deviation ** 2 + ((this.score - oldScore) * (oldScore + this.score - newMean - mean))/count, 0));
         mean = newMean;
         this.zScore = (this.score - mean) / deviation;
-        updateZscores(deviation, mean);
-        updateAll();
         min = students[0].score;
         max = students[count-1].score;
-
+        updateZscores(deviation, mean);
+        updateAll();
+      
         //updates on screen stats
         updateDisplayStats();
     }
@@ -188,6 +189,10 @@ class Student extends Named{
         }
         
         //updates all variables for other elements that change update removing self
+        if(count > 0){
+            min = students[0].score;
+            max = students[count-1].score;
+        }
         updateZscores(deviation, mean);
         updateAllNormedZScores();
         updateAll();
@@ -197,5 +202,7 @@ class Student extends Named{
 
         //updates on screen stats
         updateDisplayStats();
+
+        logAllStudents()
     }
 }
