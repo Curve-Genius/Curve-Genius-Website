@@ -146,6 +146,7 @@ class CurvePanel extends Named{
 
     //updates all panel outputs given panel settings and statistics
     updatePanel(){
+
             if(this.curveType){
             
             //if the user is specifing the mean and deviation their is no calculation required for the mean and deviation of the linear transformation, lines that are displayed are updated
@@ -162,7 +163,6 @@ class CurvePanel extends Named{
                 this.limitRange = false;
             }
         } else {
-
             //the user is specifing a range to fit the data to
             this.centerRangeLine.classList.remove("hidden");
             this.limitRangeLine.classList.add("hidden"); 
@@ -186,7 +186,6 @@ class CurvePanel extends Named{
                     this.transMean = (this.inputMin + this.inputMax) / 2;
                     this.transDeviation = deviation * (this.inputMax - this.inputMin) / (2 * Math.max(Math.abs(mean - min),Math.abs(mean - max)));        
                 } else {
-
                     //not centering will fit the extreme inputs to the extremes of the range
                     this.transDeviation = deviation * (this.inputMax - this.inputMin) / (max - min);
                     this.transMean = this.inputMin + (this.transDeviation * (mean - min) / deviation);
@@ -235,6 +234,9 @@ class CurvePanel extends Named{
                 //transformed scores
                 newScore = roundFloat(this.transDeviation * (Zscore) + this.transMean);
             }
+            
+  
+
 
             //assigns new score, or highest of new and input score to screen depending on settings
             if(this.letScoresDrop){
