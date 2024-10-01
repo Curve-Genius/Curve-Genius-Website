@@ -51,9 +51,7 @@ function updateZscores(){
         deviation = 0;
     } else {
         students.forEach( obj =>{
-            console.log(obj.name)
             obj.zScore = (obj.score - mean) / deviation;
-            console.log(obj.zScore);
         });
     }
 }
@@ -69,7 +67,6 @@ function updateAll(){
 function updateAllNormedZScores() {
     
     if(existsNormal > 0) {
-        console.log("********test*******")
         students.forEach( obj => {
             obj.normZScore = adjInvErf( (2 * obj.order + 1)/count - 1);
         });;
