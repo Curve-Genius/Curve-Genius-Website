@@ -24,6 +24,12 @@ function logAllStudents(){
             console.log("normedZScore: " + obj.normZScore);
             console.log("");
         });
+
+        panels.forEach(obj => {
+            console.log("name: " + obj.name);
+            console.log("nameIndex: " + obj.nameIndex);
+            console.log("normalize: "+ obj.normalize);
+        })
     }
 }
 
@@ -32,12 +38,7 @@ function roundFloat(num){
     return parseFloat( num.toFixed(decimalAccuracy));
 }
 
-//updates curves for all panels
-function updateAll(){
-    panels.forEach( obj => {
-        obj.updatePanel();
-    })
-}
+
 
 //updates the Zscores for all students
 function updateZscores(){
@@ -50,14 +51,25 @@ function updateZscores(){
         deviation = 0;
     } else {
         students.forEach( obj =>{
+            console.log(obj.name)
             obj.zScore = (obj.score - mean) / deviation;
+            console.log(obj.zScore);
         });
     }
 }
 
+//updates curves for all panels
+function updateAll(){
+    panels.forEach( obj => {
+        obj.updatePanel();
+    })
+}
+
 //updates the normally distributed Zscores for all elements 
 function updateAllNormedZScores() {
+    
     if(existsNormal > 0) {
+        console.log("********test*******")
         students.forEach( obj => {
             obj.normZScore = adjInvErf( (2 * obj.order + 1)/count - 1);
         });;
