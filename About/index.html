@@ -1,171 +1,192 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
     <head>
-        <meta charset="UTF-8">
+        <!--page settings and style sheets-->
+        <meta charset="utf-8">
         <meta name="theme-color" content="#000000">
         <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-        <title>About Us</title>
-    </head>
-    <body>
-
-        <!--pattern backgrounds left and right-->
-        <div class="tileBackground" id="backgroundLeft"></div>
-        <div class="tileBackground" id="backgroundRight"></div>
-
-        <header id="header"> 
-            
-
-<nav id="fixedElem">
-    <span>
+        <meta name="color-scheme" content="light dark"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-        <link href="https://fonts.cdnfonts.com/css/roman-serif" rel="stylesheet">
         <link rel="stylesheet" href="../CSS/main.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
-    </span>
-    
-    <div id="headerLogo" style="float: left; padding-top: 10px;">
-        <a href="../"> 
-            <img id="logo" src="../Images/Curve Logo.png" alt="Curve Genius Logo">  
-        </a>
-    </div>
-
-    <div class="dropdown">
-        <button onclick="dropDownMenu()" class="dropbtn">Menu</button>
-        <div style="float: right;" id="directory" class="dropdown-content">
-            <li class="menuItem blackHover"><a href="../">Home</a></li>
-            <li class="menuItem blackHover"><a href="../Calculator/">Calculator</a></li>
-            <li class="menuItem blackHover"><a href="../Math/"> Math</a></li>
-            <li class="menuItem blackHover"><a href="../About/">About Us</a></li>
-            <li class="last menuItem blackHover"><a href="../Contact/">Contact</a></li>
-        </div>
-    </div>
-</nav>
-
-<div id="backgroundBlack">
-</div>
-
-<div class="tileBackground" id="backgroundLeft"></div>
-<div class="tileBackground" id="backgroundRight"></div>
-
-
-        </header>
         <link rel="stylesheet" href="../CSS/about.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
+        <title>About Us!</title>
+    </head>
+    <body>
+
+        <!--Excel interaction packages-->
+        <script src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></script>
+        <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+
+        <!--Page margins on zoom out-->
+        <div class="tileBackground" id="backgroundLeft"></div>
+        <div class="tileBackground" id="backgroundRight"></div>
+
+        <!--Nav bar-->
+        <header id="header">
+            <nav id="fixedElem">        
+                <div id="headerLogo" style="float: left; padding-top: 10px;">
+                    <a href="../"> 
+                        <img id="logo" src="../Images/Curve Logo.png" alt="Curve Genius Logo">  
+                    </a>
+                </div>
+                <div class="dropdown">
+                    <button onclick="dropDownMenu()" class="dropbtn">Menu</button>
+                    <div style="float: right;" id="directory" class="dropdown-content">
+                        <li class="menuItem blackHover"><a href="../">Home</a></li>
+                        <li class="menuItem blackHover"><a href="../Calculator/">Calculator</a></li>
+                        <li class="menuItem blackHover"><a href="../Math/"> Math</a></li>
+                        <li class="menuItem blackHover"><a href="../About/">About Us</a></li>
+                        <li class="last menuItem blackHover"><a href="../Contact/">Contact</a></li>
+                    </div>
+                </div>
+            </nav>
+
+            <!--screen black background-->
+            <div id="backgroundBlack"></div>
+        </header>
         
         <main>
-            <div style="position: relative;">
-                
-                <div class="bar">
-                    <div class="subject">
-                        <div class="connector">a</div>
-                        <div class="title">
-                            <h2>Our Mission</h2>
-                        </div>
-                        <div class="connector down">a</div>
-                    </div>
-        
-                    <div class="blurb" style="margin-left: auto"> 
-                        <p>Curve Genius is commited to helping teachers and students create fair and beneficial academic environments. 
-                            <a href="../Math/">Our models</a> use statistics that are mathematically sound and simple to understand. 
-                            We designed out curving calculator to be more than a magic box with inputs and outputs: it's important to us that 
-                            everyone can understand how the program works and find the configurations that work best for them. 
-                            We're happy to answer questions and are always looking for ways to improve our website. 
-                            Consider visiting our <a href="../Contact/">feedback page</a> to tell us about your experience.
-                        </p>
-                    </div>
+            <div id="titleBox">
+                <h2 id="pageTitle">About Us</h2>
+                <div id="sectionsBar">
+                <h4 class="sectionName">Our Mission</h4><span class="whiteCircle"></span><h4 class="sectionName">Our Challange</h4><span class="whiteCircle"></span><h4 class="sectionName">Our Story</h4>
                 </div>
-
-                <div class="vertBar" style="background: linear-gradient(90deg, rgba(71,15,215,1) 0%, rgba(165,44,165,1) 50%, rgba(224,99,56,1) 100%); border-radius: 0px 10px 0px 10px; height: 10px;"></div>
-
-                <div class="bar">
-                    <div class="blurb" style="margin-right: auto"> 
-                        <p>Our website was first imagined when our founder, <a href="https://www.linkedin.com/in/varun-rodrigues" onclick="return confirm('This link will take you to an external site (linkedin.com)');">Varun Rodrigues</a>, observed a common problem in classrooms. 
-                            He noticed that traditional grading curves punished hard working students when one student achieved a particularly impressive mark, 
-                            especially in college level courses where class averages may be very low. 
-                            Beyond that, he saw that high scoring students were often shamed for their achievements, outcast for "ruining the curve." 
-                            It was creating a negative feedback loop and a discouraging environment for all.
-                        </p>
-                    </div>
-
-                    <div class="subject">
-                        <div class="connector up">a</div>
-                        <div class="title">
-                            <h2>Our Challange</h2>
-                        </div>
-                        <div class="connector down">a</div>
-                    </div>
-                </div>
-
-                <div class="vertBar" style="background: linear-gradient(270deg, rgba(71,15,215,1) 0%, rgba(165,44,165,1) 50%, rgba(224,99,56,1) 100%); border-radius: 10px 0px 10px 0px;"></div>
-
-                <div class="bar">
-                    <div class="subject">
-                        <div class="connector up">a</div>
-                        <div class="title">
-                            <h2>Our Story</h2>
-                        </div>
-                        <div class="connector">a</div>
-                    </div>
-        
-                    <div class="blurb" style="margin-left: auto"> 
-                        <p>Convinced their was a better way, Varun saught to understand how teachers curve tests, and noticed that their methods were lacking mathematical motivation. 
-                            Through discourse with his dedicated teachers, Varun discovered that many teachers were aware of the issue, but didn't feel mathematically equipped to solve it.
-                            Varun began working on a website that could help teachers tackle the issue, while also helping spread knowledge of statistics.
-                        </p>
-                    </div>
-                </div>
-           
             </div>
+            <div id="colorStrip"></div>
+
+            <div id="mainContent">
+                <div id="boxOne">
+                    <div id="boxOneBottomRectangle">
+                        <div id="boxOneBottomRectangleWhiteTriangle"></div>
+                    </div>
+                    <div id="boxOneTopLeftSquare">
+                        <div id="boxOneTopLeftSquareWhiteCircle"></div>
+                    </div>
+                    <div id="boxOneTopRightCircle">
+                        <div id="boxOneTopRightCircleWhiteRectangle"></div>
+                    </div>
+                    <div id="boxOneContent" class="boxContent">
+                        <h3>Our Mission</h3>
+                        <p>
+                            Curve Genius helps teachers and students create fair academic environments. 
+                            Our curving calculator uses <a href="../Math/">statistics</a> that are easy to understand. 
+                            We're committed to helping you find the best configuration. 
+                            Please visit our <a href="../Contact/">feedback page</a> to share your experience.
+                         </p>
+                    </div>
+                </div>
+
+                <div id="boxTwo">
+                   
+                    <div id="boxTwoTopRectangle">
+                        <div id="boxTwoTopRectangleWhiteCircle"></div>
+                    </div>
+                    <div id="boxTwoLeftRectangle">
+                        <div id="boxTwoLeftRectangleWhiteTriangle"></div>
+                    </div>
+                    <div id="boxTwoRightTriangle">
+                        <div id="boxTwoRightTriangleWhiteRectangle"></div>
+                    </div>
+                    <div id="boxTwoContent" class="boxContent">
+                        <h3>Our Challenge</h3>  
+                        <p>Our founder, 
+                            <a href="https://www.linkedin.com/in/varun-rodrigues" onclick="return confirm('This link will take you to an external site (linkedin.com)');">Varun Rodrigues</a>, 
+                            created Curve Genius to fix the problem of traditional grading curves. 
+                            These curves unfairly punished hard-working students and often shamed high scoring students,
+                            creating a negative learning environment for all.
+                    </div>
+                </div>
+
+                <div id="boxThree">
+                    <div id="boxThreeRightCircle">
+                        <div id="boxThreeRightCircleWhiteTriangle"></div>
+                    </div>
+                    <div id="boxThreeLeftRectangle">
+                        <div id="boxThreeLeftRectangleWhiteRectangle"></div>
+                    </div>
+                    <div id="boxThreeTopTriangle">
+                        <div id="boxThreeTopTriangleWhiteCircle"></div>
+                    </div>
+                    <div id="boxThreeContent" class="boxContent">
+                        <h3>Our Story</h3>
+                        <p>Varun sought to understand traditional grading methods and found they lacked in mathematical motivation. He worked with teachers to create a website that could help them address grading issues and promote statistics education.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="decorationItems">
+                    <div id="topOrangeTriangle"></div>
+                    <div id="topBlueTriangle"></div>
+                    <div id="centerYellowTriangle"></div>
+                    <div id="bottomMagentaTriangle"></div>
+                    <div id="bottomPinkTriangle"></div>
+                    <div id="rightTriangle"></div>
+                    <div id="topCenterTriangle"></div>
+                    <div id="topPurpleSquare"></div>
+                    <div id="bottomOrangeSquare"></div>
+                    <div id="bottomPurpleSquare"></div>
+                    <div id="leftPurpleSquare"></div>
+                    <div id="leftOrangeSquare"></div> 
+                    <div id="leftMagentaSquare"></div>
+                    <div id="leftPurpleCircle"></div>
+                    <div id="topBlueCircle"></div>
+                    <div id="rightBlueCircle"></div>
+                    <div id="leftOrangeCircle"></div>
+                    <div id="centerCircle"></div>
+                </div>
+            </div>           
         </main>
 
-        <link rel="stylesheet" href="../CSS/footer.css">
-<script src="../JS/navbar.js"></script>
-<div id="footerBox">
-
-    <div id="logoBox">
-        <img  src="../Images/Curve Logo.png" alt="curvegneiuslogo">
-        <h4 id="copyrightText">Copyright © 2024 Curve Genius</h4>
-    </div>
-
-    <div class="line wide" style="left: 39%; "></div>
-    <div class="line wide" style="left: 70%; "></div>
-    <div class="line short" style="left: 72%; "></div>
-
-
-    <div class="menuBox wide" style="left: 43%;">
-        <ul>
-            <li><a href="../">Home</a></li>
-            <li><a href="../Math/">Math</a></li>
-            <li><a href="../Calculator/">Calculator</a></li>
-            <li><a href="../About/">About us</a></li>
-        </ul>
-    </div>
-
-    <div class="menuBox wide" style="left: 74%;">
-        <ul>
-            <li>
-                <a href="../Contact/">Contact Us</a>
-            </li>
-            <li>
-                <a href="../Privacy/">Privacy Policy</a>
-            </li>
-        </ul>
-    </div>
+        <footer id="footer"> 
+            <link rel="stylesheet" href="../CSS/footer.css">
+            <script src="../JS/navbar.js"></script>
+            <div id="footerBox">
     
-    <div class="menuBox short" style="left: 77%;">
-        <ul>
-            <li><a href="../Home/">Home</a></li>
-            <li><a href="../Math/">Math</a></li>
-            <li><a href="../Calculator/">Calculator</a></li>
-            <li><a href="../About/">About us</a></li>
-            <li><a href="../Contact/">Contact Us</a></li>
-            <li><a href="../Privacy/">Privacy Policy</a></li>
-        </ul>
-    </div>
-
-</div>
+                <div id="logoBox">
+                    <img  src="../Images/Curve Logo.png" alt="curvegneiuslogo">
+                    <h4 id="copyrightText">Copyright © 2024 Curve Genius</h4>
+                </div>
+    
+                <div class="line wide" style="left: 39%; "></div>
+                <div class="line wide" style="left: 70%; "></div>
+                <div class="line short" style="left: 72%; "></div>
+    
+    
+                <div class="menuBox wide" style="left: 43%;">
+                    <ul>
+                        <li><a href="../">Home</a></li>
+                        <li><a href="../Math/">Math</a></li>
+                        <li><a href="../Calculator/">Calculator</a></li>
+                        <li><a href="../About/">About us</a></li>
+                    </ul>
+                </div>
+    
+                <div class="menuBox wide" style="left: 74%;">
+                    <ul>
+                        <li>
+                            <a href="../Contact/">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="../Privacy/">Privacy Policy</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="menuBox short" style="left: 77%;">
+                    <ul>
+                        <li><a href="../Home/">Home</a></li>
+                        <li><a href="../Math/">Math</a></li>
+                        <li><a href="../Calculator/">Calculator</a></li>
+                        <li><a href="../About/">About us</a></li>
+                        <li><a href="../Contact/">Contact Us</a></li>
+                        <li><a href="../Privacy/">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>
