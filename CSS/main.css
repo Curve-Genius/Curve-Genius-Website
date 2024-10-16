@@ -131,6 +131,8 @@ nav a {
 
 .dropbtn {
     display: none;
+    position: relative;
+    right: -35px;
 }
 
 @media screen and (min-width: 850px) {
@@ -188,7 +190,6 @@ nav a {
         background-color: black;
         border-radius: 0px;
         border-top: white 1px solid;
-        width: 120px;
     }
 
     #directory li.last{
