@@ -41,12 +41,6 @@ main {
 }
 
 
-main {
-    padding-top: 70px !important;
-}
-
-
-
 
 body > *, nav {
     max-width: 1750px;
