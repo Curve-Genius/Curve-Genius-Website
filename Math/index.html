@@ -7,6 +7,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
@@ -62,7 +63,15 @@
           </header>
 
         <main class="roman">
-            <div class="topic">
+            <div id="titleBox">
+                <h2 id="pageTitle">Math</h2>
+                <div id="sectionsBar">
+                <h4 class="sectionName">Formulas</h4><span class="whiteCircle"></span><h4 class="sectionName">Explanations</h4><span class="whiteCircle"></span><h4 class="sectionName">Examples</h4>
+                </div>
+            </div>
+            <div id="colorStrip"></div>
+
+            <div id="first" class="topic">
                 <div style="padding-bottom: 1%;">
                     
                     <div>
@@ -76,7 +85,7 @@
                         </div>
                     </div>
 
-                    <p style="margin: var(--selection-border-radius) 0;">We pride ourselves on using statistical algorithms that are both fair and simple to understand. 
+                    <p>We pride ourselves on using statistical algorithms that are both fair and simple to understand. 
                         It's important to us that everyone using our service can understand how they operate, regardless of mathematical background. 
                         We offer explanations of our methods both for those who love math, and those who are willing to give it another shot! 
                         If you have any questions, or believe that our methods can be improved, don't hesitate to <a href="../Contact/">contact us</a>!
@@ -99,7 +108,7 @@
                         We will also assume the set is ordered from least to greatest.
                     </div>
                     <div class="example">
-                        Example: \(X=\{ 20,\ 44,\ 52 ,\ 76\}, \ N=4\). 
+                        Example: \(X=\{ 20 , \ \)\( 44 , \ \)\( 52  , \ \)\( 76\}, \ N=4\). 
                         Because the set is ordered, \(x_1 = 20\) is the lowest element of the set and \(x_N = 76\) is the 
                         highest element of the set. These two values are referred to as extrema (singular form extremum).</div>
                 </div>
@@ -115,8 +124,8 @@
                         $$x_i' = \frac{100}{x_N} x_i$$
                     </div>
                     <div class="example">
-                        Example: If \(X=\{ 20,\ 44,\ 52 ,\ 76\}, \ X_N = 76\). Then curving this traditionally will result in multiplying each value 
-                        by \(\frac{100}{76}\) yielding roughly \(\{26.31, \ 57.89, \  68.42, \ 100\}\).
+                        Example: If \(X=\{ 20, \ \)\( 44, \ \)\( 52 , \ \)\( 76\}, \ X_N = 76\). Then curving this traditionally will result in multiplying each value 
+                        by \(\frac{100}{76}\) yielding roughly \(\{26.31,  \ \)\( 57.89,  \ \)\(  68.42,  \ \)\( 100\}\).
                     </div>
                 </div>
 
@@ -130,7 +139,7 @@
                         and given by the function $$\mu = \frac{1}{ N }\sum_{i=1}^N x_i$$
                     </div>
                     <div class="example">
-                        Example: Given the set \( X=\{20, 44, 52, 76\}, \  N=4\), then \( \frac{1}{ N }\sum_{i=1}^N x_i = 
+                        Example: Given the set \( X=\{20 , \ \)\( 44 , \ \)\( 52 , \ \)\( 76\}, \  N=4\), then \( \frac{1}{ N }\sum_{i=1}^N x_i = 
                         \frac{20 \ + \ 44 \ +\ 52\ +\ 76}{4} = 48\), the mean.
                     </div>
                 </div>
@@ -147,8 +156,8 @@
                         averaged and finally, square-rooted.
                     </div>
                     <div class="example">
-                        Example: For the set \(X=\{80,\ 86,\ 88,\ 94\}, \ \mu=87\) and \(\sigma = 5\) because the elements are all close 
-                        to the mean. For the set \(X=\{20, \ 44, \ 52, \ 76\}, \ \mu=48\) and \(\sigma = 20\) because the elements are generally 
+                        Example: For the set \(X=\{80 , \ \)\( 86 , \ \)\( 88 , \ \)\( 94\}, \ \mu=87\) and \(\sigma = 5\) because the elements are all close 
+                        to the mean. For the set \(X=\{20 , \ \)\( 44 , \ \)\( 52 , \ \)\( 76\}, \ \mu=48\) and \(\sigma = 20\) because the elements are generally 
                         far from the mean.
                     </div>
                 </div>
@@ -166,8 +175,8 @@
                         $$Z_i = \frac{x_i - \mu}{\sigma}$$
                     </div>
                     <div class="example">
-                        Example: The Z-scores of the set \(X = \{80 ,\ 86,\ 88,\ 94 \}\) are \(\{ -1.4,\ -0.2,\ 0.2, \ 1.4\}\) 
-                        respectively. The Z-scores of the set \(X = \{20, 44, 52, 76 \}\) are equal to \(\{ -1.4, -0.2,\ 0.2, \ 1.4\}\) 
+                        Example: The Z-scores of the set \(X = \{80  , \ \)\( 86 , \ \)\( 88 , \ \)\( 94 \}\) are \(\{ -1.4 , \ \)\( -0.2 , \ \)\( 0.2 , \ \)\(  1.4\}\) 
+                        respectively. The Z-scores of the set \(X = \{20 , \ \)\( 44 , \ \)\(  52 , \ \)\(  76 \}\) are equal to \(\{ -1.4 , \ \)\(  -0.2 , \ \)\( 0.2 , \ \)\(  1.4\}\) 
                         aswell. Although the sets have very different distributions, their Z-scores are the same!
                     </div>
                 </div>
@@ -195,7 +204,7 @@
                     </div>
                     <div class="example">
                         Example, using \(\mu' = 80\) and \(\sigma' = 8\), and applying the curve function to the set 
-                        \(X = \{20, \ 44, \ 52, \ 76 \}\) the new respective scores are \(\{68.8, \ 78.4, \ 81.6, \ 91.2\}\). 
+                        \(X = \{20 , \ \)\( 44 , \ \)\(  52 , \ \)\( 76 \}\) the new respective scores are \(\{68.8 , \ \)\(  78.4 , \ \)\( 81.6 , \ \)\(  91.2\}\). 
                         Comparing this to the results of the tradiational curve, the difference is apparent.
                     </div>
                 </div>
@@ -226,7 +235,7 @@
                                 </div>
                                 <div class="example">
                                     Example: Setting our new intended range as \(\alpha = 60 \) and \( \omega = 100 \), and curving the set 
-                                    \( X= \{20,\ 44,\ 52,\ 76 \} \), we arrive at roughly \( \{60, \ 77.14, \ 82.86,\ 100 \} \).
+                                    \( X= \{20 , \ \)\( 44 , \ \)\( 52 , \ \)\( 76 \} \), we arrive at roughly \( \{60 , \ \)\(  77.14 , \ \)\(  82.86 , \ \)\( 100 \} \).
                                 </div> 
                             </li>
                             <li>
@@ -246,7 +255,7 @@
 
                                 <div class="example">
                                     Example: Setting our new intended range as \( \alpha = 60\) and \( \omega = 100\), and curving the set 
-                                    \(X=\{50,\ 68,\ 79,\ 98,\ 100\}, \ \mu=79\) we arrive at roughly \(\{60,\ 72.41,\ 80,\ 93.1,\ 94.48\}\). 
+                                    \(X=\{50 , \ \)\( 68 , \ \)\( 79 , \ \)\( 98 , \ \)\( 100\}, \ \mu=79\) we arrive at roughly \(\{60 , \ \)\( 72.41 , \ \)\( 80 , \ \)\( 93.1 , \ \)\( 94.48\}\). 
                                     Because \(79\) is the mean of the set, it curves to \(80\), the center of the range. Because \(50\) is further from \(79\) 
                                     than \(100\), \(50\) curves to \(60\), the edge of the new range. \(100\), the closer extremum of the set, is not curved to 
                                     \(100\), the maximum of the range. A set different from the previous sets was used here to highlight the 
@@ -261,7 +270,7 @@
                                 </div>
                                 <div class="example">
                                     Example: Setting our new intended range as \(\alpha = 60\) and \(\omega = 100\), and curving the set 
-                                    \(X=\{20,\ 44,\ 48,\ 52,\ 76\}, \ \mu=48  \), we arrive at roughly \(\{60, \ 77.14, \ 80, \  82.86, \ 100\}\). 
+                                    \(X=\{20 , \ \)\( 44 , \ \)\( 48 , \ \)\( 52 , \ \)\( 76\}, \ \mu=48  \), we arrive at roughly \(\{60 , \ \)\(  77.14 , \ \)\(  80 , \ \)\( 82.86 , \ \)\(  100\}\). 
                                     Here the mean, \(48\) is curved to the center of the new range, \(80\), and the extrema, \(20\), and \(76\) 
                                     are curved to the edges of the range \(60\) and \(100\).
                                 </div>
@@ -289,12 +298,16 @@
                             <br>
                             <img style="display: block; margin-left: auto; margin-right: auto; width: 50%;" 
                             src="../Images/Normal Curve.png" alt="Image of Normal Distribution">
+                        </div>
+                        <div class="math">
                             *Disclaimer:* the commonly excepted equation for a normal distribution is a scaled version of the equation 
                             above: \(\frac{1}{\sqrt{2 \pi}} e^{\frac{-x^2}{2}}\). <br>
                             <br>
+                        </div>
+                        <div class="explanation">   
                             If a distribution of scores does not seem normal (i.e, scores do not seem to be more common near the average), 
                             one might want to normalize it so that grades like Bs and Cs are more common than As and Ds. During the normalization process, large gaps in scores will be closed. This has pros and cons.
-                        </div>
+                        </div> 
                         <div class="example">
                             Example: If on a given test, all students score between \(45\%\) and \(60\%\) except one student who scores 
                             \(85\%\), this student's new score will still be the highest, but will not be largely greater than the new 
@@ -340,7 +353,7 @@
                         </div>
                         <div class="example">
                             Example: Using the method above to generate a normalized set of 10 scores and rounding to decimals, we get 
-                            \(\{ -1.64,\ -1.04,\ -0.67,\ -0.39,\ -0.13,\ 0.13,\ 0.39, \ 0.67, \ 1.04, \ 1.64 \}\). The P-value for this 
+                            \(\{ -1.64 , \ \)\( \) \( -1.04 , \ \)\( \) \( -0.67 , \ \)\( \) \( -0.39 , \ \)\( \) \( -0.13, \ \) \( 0.13, \ \) \( 0.39, \ \) \( 0.67, \ \) \( 1.04, \ \) \( 1.64 \}\). The P-value for this 
                             set is \(1\), indicating it is exactly expected from a normal distribution. 
                         </div>
                         <div class="explanation"> 
@@ -349,9 +362,9 @@
                         <div class="example noBottom">
                             Curving this with a mean and 
                             deviation curve and using \(\mu = 80, \ \sigma = 8 \) our result is 
-                            \( \{ 66.84, \ 71.71, \ 74.6, \ 76.92, \ 78.99, \ 81.01, \ 83.08, \ 85.4, \ 88.29, \ 93.16 \}\). Curving this 
+                            \( \{ 66.84, \ \) \( 71.71 , \ \)\( \) \( 74.6, \ \) \( 76.92, \ 78.99, \ \) \( 81.01, \ \) \( 83.08, \ \) \( 85.4, \ \) \( 88.29, \ \) \( 93.16 \}\). Curving this 
                             with a range curve and using \( \alpha=60, \ \omega = 100 \) we get 
-                            \(\{60, \ 67.39, \ 71.8, \ 75.31, \ 78.47, \ 81.53, \ 84.69, \ 88.2, \ 92.61, \ 100 \} \).
+                            \(\{60, \ \) \( 67.39, \ \) \( 71.8, \ \) \( 75.31, \ \) \( 78.47, \ \) \( 81.53, \ \) \( 84.69, \ \) \( 88.2, \ \) \( 92.61, \ \) \( 100 \} \).
                         </div>
                 
                 </div>
