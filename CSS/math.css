@@ -1,90 +1,451 @@
-:root {
-    --selection-border-radius: 10px;
-}
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="theme-color" content="#000000">
+        <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
+        <link rel="stylesheet" href="../CSS/math.css">
+        <link rel="stylesheet" href="../CSS/main.css">
 
-main {
-    position: relative;
-    z-index: 0;
-}
+
+        
+        <link href="https://fonts.cdnfonts.com/css/roman-serif" rel="stylesheet">
+        <title>Math</title>
+
+        <script src="https://fred-wang.github.io/mathml.css/mspace.js"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+    </head>
+    
+    <body>
+        <header id="header"> 
+            <nav id="fixedElem">
+              <span>
+                  <link rel="preconnect" href="https://fonts.googleapis.com">
+                  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+                  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+                  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+                  <link href="https://fonts.cdnfonts.com/css/roman-serif" rel="stylesheet">
+                  <link rel="stylesheet" href="../CSS/main.css">
+                  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
+              </span>
+              
+              <div id="headerLogo" style="float: left; padding-top: 10px;">
+                  <a href="../"> 
+                      <img id="logo" src="../Images/Curve Logo.png" alt="Curve Genius Logo">  
+                  </a>
+              </div>
+    
+              <div class="dropdown">
+                  <button onclick="dropDownMenu()" class="dropbtn">Menu</button>
+                  <div style="float: right;" id="directory" class="dropdown-content">
+                      <li class="menuItem blackHover"><a href="../">Home</a></li>
+                      <li class="menuItem blackHover"><a href="../Calculator/">Calculator</a></li>
+                      <li class="menuItem blackHover"><a href="../Math/"> Math</a></li>
+                      <li class="menuItem blackHover"><a href="../About/">About Us</a></li>
+                      <li class="last menuItem blackHover"><a href="../Contact/">Contact</a></li>
+                  </div>
+              </div>
+            </nav>
+    
+            <div id="backgroundBlack">
+            </div>
+    
+            <div class="tileBackground" id="backgroundLeft"></div>
+            <div class="tileBackground" id="backgroundRight"></div>
+          </header>
+
+        <main class="roman">
+            <div id="titleBox">
+                <h2 id="pageTitle">Math</h2>
+                <div id="sectionsBar">
+                <h4 class="sectionName">Formulas</h4><span class="whiteCircle"></span><h4 class="sectionName">Explanations</h4><span class="whiteCircle"></span><h4 class="sectionName">Examples</h4>
+                </div>
+            </div>
+            <div id="colorStrip"></div>
+
+            <div id="first" class="topic">
+                <div style="padding-bottom: 1%;">
+                    
+                    <div>
+
+                        <h2 style="display: inline-block">Our Models</h2>
+        
+                        <div style=" float: right; display: flex;" class="switchBar">
+                            <button class="selected" id="showAll" style="border-radius: var(--selection-border-radius) 0px 0px var(--selection-border-radius);">Show All</button>
+                            <button class="unselected" id="hideExamples" style="border-radius: 0px 0px;">Hide Examples</button>
+                            <button class="unselected" id="hideMath" style="border-radius: 0px var(--selection-border-radius) var(--selection-border-radius) 0px;">Hide Math</button>
+                        </div>
+                    </div>
+
+                    <p>We pride ourselves on using statistical algorithms that are both fair and simple to understand. 
+                        It's important to us that everyone using our service can understand how they operate, regardless of mathematical background. 
+                        We offer explanations of our methods both for those who love math, and those who are willing to give it another shot! 
+                        If you have any questions, or believe that our methods can be improved, don't hesitate to <a href="../Contact/">contact us</a>!
+                    </p>
+                </div>
+            </div>
+
+            <div id="mathExplanation">
+
+                <div class="topic" style="margin-top: 0px;">
+                    <h2 class="title">Sets</h2>
+                    <div class="explanation">
+                        A set in mathematics is a collection of elements. 
+
+                    </div>
+                    <div class="math">
+                        We will use \(X\)
+                        to represent a set of numbers, and \(N\) to represent the size of the set. 
+                        \(x_i\) will refer to the \(i\)th element in the set. 
+                        We will also assume the set is ordered from least to greatest.
+                    </div>
+                    <div class="example">
+                        Example: \(X=\{ 20 , \ \)\( 44 , \ \)\( 52  , \ \)\( 76\}, \ N=4\). 
+                        Because the set is ordered, \(x_1 = 20\) is the lowest element of the set and \(x_N = 76\) is the 
+                        highest element of the set. These two values are referred to as extrema (singular form extremum).</div>
+                </div>
+
+                <div class="topic">
+                    <h2 class="title">Traditional Curving</h2>
+                    <div class="explanation">
+                        Traditional curving, the easiest and most commonly employed form of curving works by scaling up each student's 
+                        score so that the highest scorer receives a 100. This method can be much improved upon.
+                    </div>
+                    <div class="math">
+                        Letting \(x_i'\) denote a student's new score, their new score can be calculated via 
+                        $$x_i' = \frac{100}{x_N} x_i$$
+                    </div>
+                    <div class="example">
+                        Example: If \(X=\{ 20, \ \)\( 44, \ \)\( 52 , \ \)\( 76\}, \ X_N = 76\). Then curving this traditionally will result in multiplying each value 
+                        by \(\frac{100}{76}\) yielding roughly \(\{26.31,  \ \)\( 57.89,  \ \)\(  68.42,  \ \)\( 100\}\).
+                    </div>
+                </div>
+
+                <div class="topic">
+                    <h2 class="title">Mean</h2>
+                    <div class="explanation">
+                        The mean represents the average value of a set of numbers.
+                    </div>
+                    <div class="math">
+                        It is denoted by \(\mu\)
+                        and given by the function $$\mu = \frac{1}{ N }\sum_{i=1}^N x_i$$
+                    </div>
+                    <div class="example">
+                        Example: Given the set \( X=\{20 , \ \)\( 44 , \ \)\( 52 , \ \)\( 76\}, \  N=4\), then \( \frac{1}{ N }\sum_{i=1}^N x_i = 
+                        \frac{20 \ + \ 44 \ +\ 52\ +\ 76}{4} = 48\), the mean.
+                    </div>
+                </div>
+
+                <div class="topic">
+                    <h2 class="title">Deviation</h2>
+                    <div class="explanation">
+                        The deviation of sets is a measure of how spread apart the elements are.
+                    </div>
+                    <div class="math">
+                        It is denoted by \(\sigma\) and given by the function $$\sigma = \sqrt{\frac{1}{N}\sum_{i=1}^N (x_i-\mu)^2}$$
+                        The term \((x_i - \mu)^2\) squares the difference between the mean and an element, making sure the value is 
+                        always positive and making elements further from the average (outliers) more important. These values are then 
+                        averaged and finally, square-rooted.
+                    </div>
+                    <div class="example">
+                        Example: For the set \(X=\{80 , \ \)\( 86 , \ \)\( 88 , \ \)\( 94\}, \ \mu=87\) and \(\sigma = 5\) because the elements are all close 
+                        to the mean. For the set \(X=\{20 , \ \)\( 44 , \ \)\( 52 , \ \)\( 76\}, \ \mu=48\) and \(\sigma = 20\) because the elements are generally 
+                        far from the mean.
+                    </div>
+                </div>
+
+                <div class="topic">
+                    <h2 class="title">Z-scores</h2>
+                    <div class="explanation">
+                        While the deviation measures how spread out a set is, a Z-score describes an element's distance from the mean 
+                        interms of the deviation. A dog that weighs 100 lbs above average is much more rare than an elephant that 
+                        weighs 100 lbs above average; we can use Z-scores to show this. Z-scores also allow us to compare elements of 
+                        different distributions, and act as a middleman for adjusting distributions.
+                    </div>
+                    <div class="math">
+                        The z-score of a particular element is denoted \(Z_i\) and given by the formula
+                        $$Z_i = \frac{x_i - \mu}{\sigma}$$
+                    </div>
+                    <div class="example">
+                        Example: The Z-scores of the set \(X = \{80  , \ \)\( 86 , \ \)\( 88 , \ \)\( 94 \}\) are \(\{ -1.4 , \ \)\( -0.2 , \ \)\( 0.2 , \ \)\(  1.4\}\) 
+                        respectively. The Z-scores of the set \(X = \{20 , \ \)\( 44 , \ \)\(  52 , \ \)\(  76 \}\) are equal to \(\{ -1.4 , \ \)\(  -0.2 , \ \)\( 0.2 , \ \)\(  1.4\}\) 
+                        aswell. Although the sets have very different distributions, their Z-scores are the same!
+                    </div>
+                </div>
+
+                <div class="topic">
+                    <h2 class="title">Mean and Deviation Curve</h2>
+                    <div class="explanation">
+                        When the intended new mean \(\mu'\) and intended new deviation  \(\sigma'\)
+                        are supplied by the user, we can proceed directly with the curve function
+                    </div>
+                    <div class="math">
+                        There is no math nor example to demonstrate this. However, it will become apparent when we employ the curve function.
+                    </div>
+                </div>
+                
+                <div class="topic">
+                    <h2 class="title">Curve function</h2>
+                    <div class="explanation">
+                        We apply a mathemetical function to each elements z-score to find its newly assigned score.
+                    </div>
+                    <div class="math">
+                        For each element, we can apply the transformation $$x'_i \ = \ \sigma'  Z_i +\mu' \ = \ 
+                        \sigma' \frac{x_i - \mu}{\sigma} + \mu'$$ <br> Where \(x'_i\) is the new score assigned to \(x_i\) and 
+                        \(\mu'\) and \(\sigma'\) are the new intended mean and deviation respectively.
+                    </div>
+                    <div class="example">
+                        Example, using \(\mu' = 80\) and \(\sigma' = 8\), and applying the curve function to the set 
+                        \(X = \{20 , \ \)\( 44 , \ \)\(  52 , \ \)\( 76 \}\) the new respective scores are \(\{68.8 , \ \)\(  78.4 , \ \)\( 81.6 , \ \)\(  91.2\}\). 
+                        Comparing this to the results of the tradiational curve, the difference is apparent.
+                    </div>
+                </div>
+
+                <div class="topic">
+                    <h2 class="title">Range Curve</h2>
+                    <div class="explanation">
+                        When we constrain a curve to an intended new range, we can either curve the highest and lowest original scores 
+                        to their respective edges of the new range, or we can place the initial average score at the center of the new 
+                        range and the score furthest from the average (in either direction) on its respective edge of the new range. 
+                        Because curving is affine function, we (in most cases) cannot do all three.
+                    </div>
+                    <div class="math">
+                        Let \(\alpha\) denote the new intended minimum score and \(\omega\) denote the new intended maximum score.
+                        <ol id="rangeExplanation">
+                            <li>
+                                <div class="math">
+                                    To fit the extrema of a set to the edges of the new range we define the new intended deviation as
+
+                                    $$\sigma' =  \frac{ \omega - \alpha}{x_N - x_1}$$
+                                    Remember that the set \(X\)is ordered so \(x_N - x_1\) is the range of \(X\).
+                                    Next we set the new intended mean to 
+                                    
+                                    $$\mu' = \alpha - \sigma'Z_1$$
+                                    
+                                    This will make it so that when we apply the curve function \(f(x)\), \(f(x_1)=\alpha\), and \(f(x_N) = \omega\).  
+                                    Note \(Z_1 \leq 0\).
+                                </div>
+                                <div class="example">
+                                    Example: Setting our new intended range as \(\alpha = 60 \) and \( \omega = 100 \), and curving the set 
+                                    \( X= \{20 , \ \)\( 44 , \ \)\( 52 , \ \)\( 76 \} \), we arrive at roughly \( \{60 , \ \)\(  77.14 , \ \)\(  82.86 , \ \)\( 100 \} \).
+                                </div> 
+                            </li>
+                            <li>
+
+                                <div class="math">
+                                    To fit the mean of the set to the center of the new range and the further of the extremum to its respective edge 
+                                    of the range, we let the mean be
+
+                                    $$\mu' = \frac{\alpha +\omega}{2}$$
+                                    Then we set the deviation so that it scales the furthest element to the edge of the range.
+
+                                    $$\sigma' = \frac{\omega-\alpha}{2\max(|Z_1|,|Z_N|) }$$
+
+                                    This will make it so that when we apply the curve function \(f(x)\), \(f(\mu)=\frac{\alpha + \omega}{2}\). If 
+                                    \(|Z_1| > |Z_N|\) then \(f(x_1) = \alpha\). If \(|Z_1| < |Z_N|\) then \(f(x_N) = \omega\).
+                                </div>
+
+                                <div class="example">
+                                    Example: Setting our new intended range as \( \alpha = 60\) and \( \omega = 100\), and curving the set 
+                                    \(X=\{50 , \ \)\( 68 , \ \)\( 79 , \ \)\( 98 , \ \)\( 100\}, \ \mu=79\) we arrive at roughly \(\{60 , \ \)\( 72.41 , \ \)\( 80 , \ \)\( 93.1 , \ \)\( 94.48\}\). 
+                                    Because \(79\) is the mean of the set, it curves to \(80\), the center of the range. Because \(50\) is further from \(79\) 
+                                    than \(100\), \(50\) curves to \(60\), the edge of the new range. \(100\), the closer extremum of the set, is not curved to 
+                                    \(100\), the maximum of the range. A set different from the previous sets was used here to highlight the 
+                                    functionality of the math used.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="math">
+                                    Under the specific condition that \(|Z_1| = |Z_N|\) then we can achieve the desired outcomes of both examples listed above:
+                                     \(f(\mu)=\frac{\alpha + \omega}{2}\), \(f(x_1)=\alpha\), and \(f(x_N) = \omega\), using either method of calculation for 
+                                     \(\sigma'\) and \(\mu'\).
+                                </div>
+                                <div class="example">
+                                    Example: Setting our new intended range as \(\alpha = 60\) and \(\omega = 100\), and curving the set 
+                                    \(X=\{20 , \ \)\( 44 , \ \)\( 48 , \ \)\( 52 , \ \)\( 76\}, \ \mu=48  \), we arrive at roughly \(\{60 , \ \)\(  77.14 , \ \)\(  80 , \ \)\( 82.86 , \ \)\(  100\}\). 
+                                    Here the mean, \(48\) is curved to the center of the new range, \(80\), and the extrema, \(20\), and \(76\) 
+                                    are curved to the edges of the range \(60\) and \(100\).
+                                </div>
+                                
+                            </li>
+                        </ol>
+                    </div>
+                   
+                </div>
+
+                <div class="topic noBottom">
+        
+                        <h2 class="title">Distribution, Curves, and Normality</h2>
+                        <div class="explanation">
+                            Probability distribution functions give the chance of different outcomes happening. The term curve, or bell curve, 
+                            comes from the shape of 
+                            a normal distribution. A normal distribution, seen below, refers to a distribution where numerical outcomes near 
+                            the average are more common 
+                            than outcomes further from the average. These types of distributions are extremely common in statistics and arise 
+                            in test grades, and IQ tests 
+                            as well as height, top speed, and many other natural characteristics.<br>
+                            <br>
+                            Normal distributions, have a more rigorous and motivated definition. For further discussion see 
+                            <a href="https://www.youtube.com/watch?v=zeJD6dqJ5lo" onclick="return confirm('This link will take you to an external site (youtube.com)');">video here</a> (content not owned by Curve Genius).
+                            <br>
+                            <img style="display: block; margin-left: auto; margin-right: auto; width: 50%;" 
+                            src="../Images/Normal Curve.png" alt="Image of Normal Distribution">
+                        </div>
+                        <div class="math">
+                            *Disclaimer:* the commonly excepted equation for a normal distribution is a scaled version of the equation 
+                            above: \(\frac{1}{\sqrt{2 \pi}} e^{\frac{-x^2}{2}}\). <br>
+                            <br>
+                        </div>
+                        <div class="explanation">   
+                            If a distribution of scores does not seem normal (i.e, scores do not seem to be more common near the average), 
+                            one might want to normalize it so that grades like Bs and Cs are more common than As and Ds. During the normalization process, large gaps in scores will be closed. This has pros and cons.
+                        </div> 
+                        <div class="example">
+                            Example: If on a given test, all students score between \(45\%\) and \(60\%\) except one student who scores 
+                            \(85\%\), this student's new score will still be the highest, but will not be largely greater than the new 
+                            score of the second highest scorer (who, in this scenario, originally scored near \(60\%\)).
+                        </div>
+                        <div class="math">
+                            To normalize a distribution, we generate a probability basket for each element and use it to generate a Z-score.
+                            With our set \(X\), we want to divide the probability distribution into \(N\) baskets such that if \(N=10\), 
+                            the 1st will be between the 0th and 10th percentile of the distribution, the 2nd between the 10th and 20th 
+                            percentile, and so on. To equally space each element within the new distribution, we will make it so that 
+                            each element's percentile is centered in its probability basket. This generates the equation 
+
+                            $$P(x <  Z'_i) = \frac{2i-1}{2N}$$
+
+                            where \(x\) is a random score in the distribution and \(Z'_i\) represents the new Z-score of the nth element in 
+                            \(X\). <br>
+                            <br>
+                            From the definitions of a probability distribution function and a normal distribution it follows that
+
+                            $$P(x < q) = \frac{1}{\sqrt{2 \pi}}\int_{- \infty }^q e^{\frac{-t^2}{2}} dt$$
+
+                            where \(x\) and \(q\) are scores in the distribution. Putting this together we get
+
+                            $$ \frac{2i-1}{2N} = \frac{1}{\sqrt{2 \pi}}\int_{- \infty }^{Z'_i} e^{\frac{-x^2}{2}} dx$$
+
+                            Solving for the new Z-score we get
+
+                            $$ Z'_i = \sqrt{2} {\textrm{erf}^{-1}} \left( \frac{2i-1}{N}-1 \right) $$
+
+                            If multiple elements are equal, it follows that they should have the same new Z-score.
+                            In this case, we replace the value \(i\) in the formula above with the average index of elements that 
+                            share the same value.
+                            Because the set is ordered, the indices are consecutive, and the average equals 
+                            \(i + \frac{k-1}{2}\) where \(k\) is the number of times the element's score appears and \(i\) is the index 
+                            of the first element with the given score.
+                            For example, the new Z-score of an element \(x_i\) that repeats \(k\) times and has the lowest possible 
+                            index of \(i\) is 
+
+                            $$ Z'_i = \sqrt{2} {\textrm{erf}^{-1}} \left( \frac{2i + k-2}{N}-1 \right) $$
+
+                            Note, that if an element only appears once (i.e. \(k=1\)), then the formula remains the same as derived 
+                            above.
+                        </div>
+                        <div class="example">
+                            Example: Using the method above to generate a normalized set of 10 scores and rounding to decimals, we get 
+                            \(\{ -1.64 , \ \)\( \) \( -1.04 , \ \)\( \) \( -0.67 , \ \)\( \) \( -0.39 , \ \)\( \) \( -0.13, \ \) \( 0.13, \ \) \( 0.39, \ \) \( 0.67, \ \) \( 1.04, \ \) \( 1.64 \}\). The P-value for this 
+                            set is \(1\), indicating it is exactly expected from a normal distribution. 
+                        </div>
+                        <div class="explanation"> 
+                            After creating the normalized Z-scores for our set, we can use them in our curve function in place of the previous Z-scores. 
+                        </div>
+                        <div class="example noBottom">
+                            Curving this with a mean and 
+                            deviation curve and using \(\mu = 80, \ \sigma = 8 \) our result is 
+                            \( \{ 66.84, \ \) \( 71.71 , \ \)\( \) \( 74.6, \ \) \( 76.92, \ 78.99, \ \) \( 81.01, \ \) \( 83.08, \ \) \( 85.4, \ \) \( 88.29, \ \) \( 93.16 \}\). Curving this 
+                            with a range curve and using \( \alpha=60, \ \omega = 100 \) we get 
+                            \(\{60, \ \) \( 67.39, \ \) \( 71.8, \ \) \( 75.31, \ \) \( 78.47, \ \) \( 81.53, \ \) \( 84.69, \ \) \( 88.2, \ \) \( 92.61, \ \) \( 100 \} \).
+                        </div>
+                
+                </div>
+            </div>
+        </main>
+
+        <script>
+            const showAll = document.getElementById("showAll");
+            const hideExamples = document.getElementById("hideExamples");
+            const hideMath = document.getElementById("hideMath");
+    
+            showAll.addEventListener("click", function() {
+                showAll.classList.add("selected");
+                hideExamples.classList.remove("selected");
+                hideMath.classList.remove("selected");
+                document.querySelectorAll(".example").forEach(element => element.classList.remove("hidden"));
+                document.querySelectorAll(".math").forEach(element => element.classList.remove("hidden"));
+            });
+    
+            hideExamples.addEventListener("click", function() {
+                hideExamples.classList.add("selected");
+                showAll.classList.remove("selected");
+                hideMath.classList.remove("selected");
+                document.querySelectorAll(".example").forEach(element => element.classList.add("hidden"));
+                document.querySelectorAll(".math").forEach(element => element.classList.remove("hidden"));
+            });
+
+            hideMath.addEventListener("click", function() {
+                hideMath.classList.add("selected");
+                showAll.classList.remove("selected");
+                hideExamples.classList.remove("selected");
+                document.querySelectorAll(".example").forEach(element => element.classList.add("hidden"));
+                document.querySelectorAll(".math").forEach(element => element.classList.add("hidden"));
+            });
+        </script>
+
+<link rel="stylesheet" href="../CSS/footer.css">
+<script src="../JS/navbar.js"></script>
+<div id="footerBox">
+
+    <div id="logoBox">
+        <img  src="../Images/Curve Logo.png" alt="curvegneiuslogo">
+        <h4 id="copyrightText">Copyright © 2024 Curve Genius</h4>
+    </div>
+
+    <div class="line wide" style="left: 39%; "></div>
+    <div class="line wide" style="left: 70%; "></div>
+    <div class="line short" style="left: 72%; "></div>
 
 
-main * {
-    font-family: 'RomanSerif', sans-serif;
-    line-height: 1.5;
-}
+    <div class="menuBox wide" style="left: 43%;">
+        <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../Math/">Math</a></li>
+            <li><a href="../Calculator/">Calculator</a></li>
+            <li><a href="../About/">About us</a></li>
+        </ul>
+    </div>
 
-main * h2 {
-    margin-bottom: 0px;
-    font-family: 'RomanSerif', sans-serif;
-}
+    <div class="menuBox wide" style="left: 74%;">
+        <ul>
+            <li>
+                <a href="../Contact/">Contact Us</a>
+            </li>
+            <li>
+                <a href="../Privacy/">Privacy Policy</a>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="menuBox short" style="left: 77%;">
+        <ul>
+            <li><a href="../Home/">Home</a></li>
+            <li><a href="../Math/">Math</a></li>
+            <li><a href="../Calculator/">Calculator</a></li>
+            <li><a href="../About/">About us</a></li>
+            <li><a href="../Contact/">Contact Us</a></li>
+            <li><a href="../Privacy/">Privacy Policy</a></li>
+        </ul>
+    </div>
 
-.topic {
-    margin-top: 40px;
-    margin-bottom: 15px;
-}
-
-#mathExplanation * div {
-    padding-bottom: 30px;
-}
-#rangeExplanation > li {
-    margin-top: 40px !important;
-}
-
-.noBottom {
-    margin-bottom: 0px !important;
-}
-
-@media screen and (max-width: 850px) {
-    .topic {
-        margin-top: 30px !important;
-    }
-
-    main * h2 {
-        font-size: 150%;
-    }
-
-    .switchBar button{
-        font-size: 12px !important;
-        border-width: 2px !important;
-    }
-
-    p, .explanation, .math, .example {
-        font-size: 10px !important;
-    }
-
-    #mathExplanation * div{
-        margin-bottom: 30px !important;
-    }
-
-    :root {
-        --selection-border-radius: 8px;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .topic {
-        margin-top: 20px !important;
-    }
-
-    main * h2 {
-        font-size: 120%;
-    }
-
-    .switchBar button{
-        font-size: 8px !important;
-        border-width: 1.5px !important;
-        padding: 3px 5px !important;
-    }
-
-    p, .explanation, .math, .example {
-        font-size: 9px !important;
-    }
-
-    #mathExplanation * div{
-        margin-bottom: 10px !important;
-    }
-
-    :root {
-        --selection-border-radius: 5px;
-    }
-}
+</div>
+    </body>
+</html>
