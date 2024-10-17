@@ -773,11 +773,6 @@ input.row, input.column{
 
     }
 
-    #addNew > img {
-        width: 200px !important;
-        margin-bottom: 0px;
-    }
-
     #addNew > h4 {
         font-size: 30px !important;
         margin-bottom: 20px;
