@@ -4,6 +4,7 @@ a {
 
 main {
     background: linear-gradient(112deg, rgba(23,0,240,1) 0%, rgba(165,44,165,1) 50%, rgba(255,127,0,1) 100%);
+    padding-top: 70px !important;
 }
 
 #websiteTitle {
@@ -15,6 +16,10 @@ main {
     font-size: 175%;  
     margin-left: 20px; 
     margin-bottom: 20px;
+}
+
+#fixedElem {
+    background: none;
 }
 
 #introElem {
