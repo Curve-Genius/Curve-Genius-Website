@@ -9,7 +9,7 @@
 
 main{
     padding: 0px 40px !important;
-    padding-top: 45px !important; 
+    padding-top: 70px !important; 
 }
 
 main > div:not(#blurBackdrop):not(#panelsList) {
@@ -771,7 +771,7 @@ input.row, input.column{
     #addNew {
         min-height: 250px !important;
 
-    }
+    }g
 
     #addNew > h4 {
         font-size: 30px !important;
