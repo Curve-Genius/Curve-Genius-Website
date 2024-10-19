@@ -1,110 +1,114 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="theme-color" content="#000000">
+    <head>
+        <!--page settings and style sheets-->
+        <meta charset="utf-8">
+        <meta name="theme-color" content="#000000">
         <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-      <link rel="stylesheet" href="../CSS/success.css">
-       <title>Success!</title>
-  </head>
-  <body>
-      
-    <header id="header"> 
-      <nav id="fixedElem">
-        <span>
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-            <link href="https://fonts.cdnfonts.com/css/roman-serif" rel="stylesheet">
-            <link rel="stylesheet" href="../CSS/main.css">
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
-        </span>
-        
-        <div id="headerLogo" style="float: left; padding-top: 10px;">
-            <a href="../"> 
-                <img id="logo" src="../Images/Curve Logo.png" alt="Curve Genius Logo">  
-            </a>
-        </div>
+        <meta name="color-scheme" content="light dark"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../CSS/main.css">
+        <link rel="stylesheet" href="../CSS/success.css">
+        <link rel="icon" href="https://curvegenius.com/Images/Logo%20white.png">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
+        <title>Success!</title>
+    </head>
+    <body>
 
-        <div class="dropdown">
-            <button onclick="dropDownMenu()" class="dropbtn">Menu</button>
-            <div style="float: right;" id="directory" class="dropdown-content">
-                <li class="menuItem blackHover"><a href="../">Home</a></li>
-                <li class="menuItem blackHover"><a href="../Calculator/">Calculator</a></li>
-                <li class="menuItem blackHover"><a href="../Math/"> Math</a></li>
-                <li class="menuItem blackHover"><a href="../About/">About Us</a></li>
-                <li class="last menuItem blackHover"><a href="../Contact/">Contact</a></li>
+        <!--Page margins on zoom out-->
+        <div class="tileBackground" id="backgroundLeft"></div>
+        <div class="tileBackground" id="backgroundRight"></div>
+
+        <!--Nav bar-->
+        <link rel="stylesheet" href="../CSS/navbar.css">
+        <header id="header">
+            <nav id="fixedElem">        
+                <div id="headerLogo" style="float: left; padding-top: 10px;">
+                    <a href="../"> 
+                        <img id="logo" src="../Images/Curve Logo.png" alt="Curve Genius Logo">  
+                    </a>
+                </div>
+                <div class="dropdown">
+                    <button onclick="dropDownMenu()" class="dropbtn">Menu</button>
+                    <div style="float: right;" id="directory" class="dropdown-content">
+                        <li class="menuItem blackHover"><a href="../">Home</a></li>
+                        <li class="menuItem blackHover"><a href="../Calculator/">Calculator</a></li>
+                        <li class="menuItem blackHover"><a href="../Math/"> Math</a></li>
+                        <li class="menuItem blackHover"><a href="../About/">About Us</a></li>
+                        <li class="last menuItem blackHover"><a href="../Contact/">Contact</a></li>
+                    </div>
+                </div>
+            </nav>
+
+            <!--screen black background-->
+            <div id="backgroundBlack"></div>
+        </header>
+      
+        <!--page content-->
+        <main style="padding: 0 0 50px 0 !important;">
+            <div id="container">
+
+            <!--top page gradient-->
+            <div id="gradBackdrop"></div>
+
+
+            <div id="pageTitle">
+                <h1 style="margin-bottom: 10px; padding: 0 !important; font-weight: 400; font-family: 'Plus Jakarta Sans', sans-serif; color: white; font-size: 60px;" >Success</h1>
+                <p>You're feedback has been successfully submitted and recieved. Thank you for helping us  to improve our serivce. We are working to get back to you as quick possible. 
+                Return to <a href="../Contact/">contact form</a>. Return to <a href="../">home page</a>.
             </div>
-        </div>
-      </nav>
+            </div>
+        </main>
 
-      <div id="backgroundBlack">
-      </div>
+        <!--Page footer-->
+        <footer id="footer"> 
+            <link rel="stylesheet" href="../CSS/footer.css">
+            <script src="../JS/navbar.js"></script>
+            <div id="footerBox">
 
-      <div class="tileBackground" id="backgroundLeft"></div>
-      <div class="tileBackground" id="backgroundRight"></div>
-    </header>
-      
-      <main style="padding: 0 0 50px 0 !important;">
-        <div id="container">
-          <div id="gradBackdrop">
-          </div>
+                <!--logo and copyright-->
+                <div id="logoBox">
+                    <img  src="../Images/Curve Logo.png" alt="curvegneiuslogo">
+                    <h4 id="copyrightText">Copyright © 2024 Curve Genius</h4>
+                </div>
 
-          <div id="pageTitle">
-            <h1 style="margin-bottom: 10px; padding: 0 !important; font-weight: 400; font-family: 'Plus Jakarta Sans', sans-serif; color: white; font-size: 60px;" >Success</h1>
-            <p>You're feedback has been successfully submitted and recieved. Thank you for helping us imrove our serivce. We are working to respond to you as soon as possible. 
-              Return to <a href="../Contact/">contact form</a>. Return to <a href="../">home page</a>.
-          </div>
-        </div>
-      </main>
-
-      <link rel="stylesheet" href="../CSS/footer.css">
-<script src="../JS/navbar.js"></script>
-<div id="footerBox">
-
-    <div id="logoBox">
-        <img  src="../Images/Curve Logo.png" alt="curvegneiuslogo">
-        <h4 id="copyrightText">Copyright © 2024 Curve Genius</h4>
-    </div>
-
-    <div class="line wide" style="left: 39%; "></div>
-    <div class="line wide" style="left: 70%; "></div>
-    <div class="line short" style="left: 72%; "></div>
+                <div class="line wide" style="left: 39%; "></div>
+                <div class="line wide" style="left: 70%; "></div>
+                <div class="line short" style="left: 72%; "></div>
 
 
-    <div class="menuBox wide" style="left: 43%;">
-        <ul>
-            <li><a href="../">Home</a></li>
-            <li><a href="../Math/">Math</a></li>
-            <li><a href="../Calculator/">Calculator</a></li>
-            <li><a href="../About/">About us</a></li>
-        </ul>
-    </div>
+                <!--split menu on wide screen-->
+                <div class="menuBox wide" style="left: 43%;">
+                    <ul>
+                        <li><a href="../">Home</a></li>
+                        <li><a href="../Math/">Math</a></li>
+                        <li><a href="../Calculator/">Calculator</a></li>
+                        <li><a href="../About/">About us</a></li>
+                    </ul>
+                </div>
 
-    <div class="menuBox wide" style="left: 74%;">
-        <ul>
-            <li>
-                <a href="../Contact/">Contact Us</a>
-            </li>
-            <li>
-                <a href="../Privacy/">Privacy Policy</a>
-            </li>
-        </ul>
-    </div>
-    
-    <div class="menuBox short" style="left: 77%;">
-        <ul>
-            <li><a href="../Home/">Home</a></li>
-            <li><a href="../Math/">Math</a></li>
-            <li><a href="../Calculator/">Calculator</a></li>
-            <li><a href="../About/">About us</a></li>
-            <li><a href="../Contact/">Contact Us</a></li>
-            <li><a href="../Privacy/">Privacy Policy</a></li>
-        </ul>
-    </div>
-
-</div>
-  </body>
+                <div class="menuBox wide" style="left: 74%;">
+                    <ul>
+                        <li><a href="../Contact/">Contact Us</a></li>
+                        <li><a href="../Privacy/">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <!--single menu on thin screen-->
+                <div class="menuBox short" style="left: 77%;">
+                    <ul>
+                        <li><a href="../Home/">Home</a></li>
+                        <li><a href="../Math/">Math</a></li>
+                        <li><a href="../Calculator/">Calculator</a></li>
+                        <li><a href="../About/">About us</a></li>
+                        <li><a href="../Contact/">Contact Us</a></li>
+                        <li><a href="../Privacy/">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </body>
 </html>
