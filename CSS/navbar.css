@@ -1,1 +1,133 @@
+/*navbar*/
+#fixedElem {
+    padding: 0px;
+    display: block;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    background: black;
+    transition: background 0.4s ease;
+}
+
+/*logo link*/
+#headerLogo {
+    padding-inline-start: 10px;
+    float: left;
+}
+
+#logo {
+    height: 40px;
+}
+
+nav a {
+    color: white;
+}
+
+/*nav background colors*/
+.clearHover:hover {
+    background: black !important;
+}
+
+.blackHover:hover {
+    background: linear-gradient(112deg, rgba(23,0,240,1) 0%, rgba(165,44,165,1) 50%, rgba(255,127,0,1) 100%);
+}
+
+/*page links*/
+#directory {
+    width: 550px;
+}
+
+#directory li {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    transition: background 0.4s ease;
+    margin: auto;
+    white-space: nowrap;
+    padding-left:  13px;
+    padding-right: 13px;
+    margin: 10px auto;
+    border-radius: 20px;
+}
+
+#directory li a {
+    text-decoration: none;
+}
+
+/*expanding menu button*/
+.dropbtn {
+    display: none;
+    position: relative;
+    right: -35px;
+}
+
+
+/*wide screen only*/
+@media screen and (min-width: 850px) {
+    #directory {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+}
+
+/*medium screen*/
+@media screen and (max-width: 850px) {
+
+    /*logo link*/
+    #headerLogo {
+        float: left;
+    }
+
+    #logo {
+        height: 30px;
+    }
+
+    /*drop down styles*/
+    @media screen and (min-width: 0px){
+        .dropbtn {
+            box-shadow: none;
+            cursor: pointer;
+            display: flex;
+            margin: 7px;
+            padding: 5px 10px;
+            font-weight: 500;
+        }
+            
+        .dropdown {
+            position: relative;
+            float: right;
+            padding-inline-end: 40px;
+        }
+            
+        .dropdown-content {
+            display: none;  
+            position: absolute;
+            z-index: 1;
+            
+        }
+            
+        .dropdown-content a {
+            display: block;
+        }
+
+        .show {display: block;}
+
+        #directory li {
+            margin: 0;
+            font-size: 19px;
+            height: 60px;
+            background-color: black;
+            border-radius: 0px;
+            border-top: white 1px solid;
+        }
+
+        #directory li.last{
+            border-radius: 0 0 0 15px;
+        }
+    }
+}
+
+
 
