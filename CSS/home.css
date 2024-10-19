@@ -1,117 +1,114 @@
-a {
-    text-decoration: none;
-}
-
+/* positions page below nav*/
 main {
     background: linear-gradient(112deg, rgba(23,0,240,1) 0%, rgba(165,44,165,1) 50%, rgba(255,127,0,1) 100%);
     padding-top: 70px !important;
 }
 
-#websiteTitle {
-    font-size: 500%; 
-    margin-bottom: 0;
+/*no decoration on links*/
+a {
+    text-decoration: none;
 }
 
-#websiteSubTitle {
-    font-size: 175%;  
-    margin-left: 20px; 
-    margin-bottom: 20px;
-}
-
+/*transparent nav bar*/
 #fixedElem {
     background: none;
 }
 
-#introElem {
-    height: 550px; 
-    position: relative; 
-    background: none
+/*title, mission and link to curving*/
+@media screen and (min-width: 0px) {
+    #introElem {
+        height: 550px; 
+        position: relative; 
+        background: none
+    }
+
+    #introBox {
+        background: none; 
+        border-radius: 20px;
+        position: absolute;
+        padding: 0px 20px; 
+        top: 20%; 
+    }
+
+    #introBox * {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        color: white;
+        font-weight: 400;
+    }
+
+    #infoBox {
+        background-color: white; 
+        position: relative; 
+        height: 600px;
+        padding: 30px !important; 
+        border-radius: 30px;
+        transition: width 1s ease, height 1s ease;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    #websiteTitle {
+        font-size: 500%; 
+        margin-bottom: 0;
+    }
+
+    #websiteSubTitle {
+        font-size: 175%;  
+        margin-left: 20px; 
+        margin-bottom: 20px;
+    }
+
+    #getCurvingButton {
+        background-color: rgba(0, 0, 0, 0.7); 
+        font-size: 135%; 
+        margin-left: 10px; 
+        padding: 3px 15px; 
+        border-radius: 7px;
+        width: fit-content;
+        text-decoration: none;
+    }
 }
 
-#introBox {
-    background: none; 
-    border-radius: 20px;
-    position: absolute;
-    padding: 0px 20px; 
-    top: 20%; 
-}
-
-#introBox * {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    color: white;
-    font-weight: 400;
-}
-
-#getCurvingButton {
-    background-color: rgba(0, 0, 0, 0.7); 
-    font-size: 135%; 
-    margin-left: 10px; 
-    padding: 3px 15px; 
-    border-radius: 7px;
-    width: fit-content;
-    text-decoration: none;
-}
-
-#infoBox {
-    background-color: white; 
-    position: relative; 
-    height: 600px;
-    padding: 30px !important; 
-    border-radius: 30px;
-    transition: width 1s ease, height 1s ease;
-    width: 100%;
-    margin-bottom: 50px;
-}
-
+/* wrapper for text boxes*/
 .linkBox {
     text-decoration: none; 
     color: #202020;
  
 }
 
-.linkBox > article {
-   position: absolute;
-   border-radius: 20px; 
-   height: 45%; 
-   width: calc(50% - 30px);
-   padding-top: 0.7rem;
-   margin: 20px;
-}
-
-.linkBox >article:hover {
-    background: rgba(163, 163, 165, 0.173);
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
-} 
-
-.linkBox > article > h2 {
-    font-size: 200%; 
-    margin-bottom: 1%; 
-    font-family: 'Plus Jakarta Sans', sans-serif; 
-    font-weight: 600;
-}
-
-.linkBox > article > p {
-    text-decoration: none; 
-    color: #202020 !important; 
-    font-weight: 300; 
-    font-size: 95%; 
-    font-family: 'Plus Jakarta Sans', sans-serif;
-}
-
-@media screen and (max-width: 850px) {
-
-    
-
-    .linkBox h2 {
-        font-size: 140% !important;
+/*hyperlink text boxes*/
+@media screen and (min-width: 0px) {
+    .linkBox > article {
+    position: absolute;
+    border-radius: 20px; 
+    height: 45%; 
+    width: calc(50% - 30px);
+    padding-top: 0.7rem;
+    margin: 20px;
     }
 
-    .linkBox p {
-        font-size: 80% !important   ;
+    .linkBox >article:hover {
+        background: rgba(163, 163, 165, 0.173);
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    } 
+
+    .linkBox > article > h2 {
+        font-size: 200%; 
+        margin-bottom: 1%; 
+        font-family: 'Plus Jakarta Sans', sans-serif; 
+        font-weight: 600;
     }
 
+    .linkBox > article > p {
+        text-decoration: none; 
+        color: #202020 !important; 
+        font-weight: 300; 
+        font-size: 95%; 
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
 }
 
+/*shrinks text boxes */
 @media screen and (max-width: 875px) {
 
     .linkBox h2 {
@@ -123,69 +120,92 @@ main {
     }
 }
 
-@media screen and (max-width: 500px) {
-
-    #introElem {
-        height: 100vh;
+/*shrinks text boxes on medium */
+@media screen and (max-width: 850px) {
+    .linkBox h2 {
+        font-size: 140% !important;
     }
 
+    .linkBox p {
+        font-size: 80% !important   ;
+    }
+
+}
+
+/*narrow screen*/
+@media screen and (max-width: 500px) {
+
+    /*position page content*/
+    main {
+        padding: 20px !important; 
+    }
+
+    /* color background */
     #gradBackdrop {
         background: linear-gradient(100deg, rgba(23,0,240,1) 0%, rgba(165,44,165,1) 50%, rgba(255,127,0,1) 100%);
         height: 1800px;
     }
 
-    #websiteTitle {
-        font-size: 650%; 
-        margin-bottom: 0;
-    }
-    
-    #websiteSubTitle {
-        margin-left: 10px; 
-        margin-bottom: 20px;
-        font-size: 200%;     
-    }
+    /*website title, mission, curve link*/
+    @media screen and (min-width: 0px) {
+        #introElem {
+            height: 100vh;
+        }
 
-    #introBox {
-        top: 30%;
-    }
+        #introBox {
+            top: 30%;
+            padding: 20px !important;
+            height: fit-content;
+            padding-bottom: 1px !important;
+            margin-bottom: 10px;
+        }
 
-    main {
-        padding: 20px !important; 
+        #websiteTitle {
+            font-size: 650%; 
+            margin-bottom: 0;
+        }
+        
+        #websiteSubTitle {
+            margin-left: 10px; 
+            margin-bottom: 20px;
+            font-size: 200%;     
+        }
     }
+  
+    /*hyperlink text boxes*/
+    @media screen and (min-width: 0px){
 
-    .linkBox > article {
-        position: static;
-        width: 100%;
-        margin: 0;
-        margin-bottom: 20px;
-    }
-       
-    #infoBox {
-        padding: 20px !important;
-        height: fit-content;
-        padding-bottom: 1px !important;
-        margin-bottom: 10px;
-    }
+        #infoBox {
+            height: auto;
+        }
+        .linkBox > article {
+            position: static;
+            width: 100%;
+            margin: 0;
+            margin-bottom: 20px;
+        }
+        
+        .linkBox h2 {
+            font-size: 170% !important;
+        }
 
-    .linkBox h2 {
-        font-size: 170% !important;
-    }
-
-    .linkBox p {
-        font-size: 90% !important   ;
+        .linkBox p {
+            font-size: 90% !important   ;
+        }
     }
 }
 
+/*narrower screen, smallers title and mission*/
 @media screen and (max-width: 410px) {
     #websiteTitle {
         font-size: 550%; 
     }
 
-    #gradBackdrop {
-        height: 1900;
-    }
-    
     #websiteSubTitle {
         font-size: 175%;     
+    }
+
+    #gradBackdrop {
+        height: 1900;
     }
 }
