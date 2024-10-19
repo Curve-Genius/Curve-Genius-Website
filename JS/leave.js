@@ -1,14 +1,21 @@
+//saves calculator data to local storage when the tab is closed
 window.addEventListener('beforeunload', () => {
     saveData();
 });
 
+//saves calculator data to local storage every 30s
 setInterval(function() {
     saveData();
-}, 30000);
+}, (dataSaveInterval*1000));
 
+//loads all saved data when the page is loaded
 window.addEventListener('load', () => {
+
+    //parses the saved data to an array
     const loadedCurves = JSON.parse(localStorage.getItem('saveCurves'));
     if(loadedCurves.length > 0){
+       
+        //creates a curve from each saved curve with the proper attributes
         loadedCurves.forEach(obj => {
             let tempCurve
             if(obj[0].trim() == autoPanelName) {
@@ -46,17 +53,25 @@ window.addEventListener('load', () => {
             tempCurve.updatePanel();
         })
     } else {
+
+        //if no curves are saved it adds one new curve
         panels.push( new CurvePanel(''));
     }
     
+    //parses saved excel sheets to an array
     const loadedSheets = JSON.parse(localStorage.getItem('saveExcelSheets'));
     loadedSheets.forEach( obj => {
+
+        //adds excel sheet
         new excelSheet(null, obj);
         excelListButton.style.display = 'inline-block';
     })
     
+    //parses saved students to an array
     const loadedStudents = JSON.parse(localStorage.getItem('saveManualStudents') )
     loadedStudents.forEach( obj =>{
+
+        //adds new students to student list with appropriate autoName/autoScore if necesary
         if(obj[0] === autoName){
             addStudent(new Student("", obj[1], -1, "Manual Input"));
         } else if(obj[1] === autoScore) {
@@ -68,29 +83,43 @@ window.addEventListener('load', () => {
 });
 
 
-
+//clears all data from calculator
 function clearAll() {
+
+    //asks user to confirm choice
     var confirmed = confirm("Are you sure you want to clear all of the inputted data");
     if (confirmed){
+
+        //removes all excel files
         for(let i = excelfiles.length -1; i > -1; i--){
             excelfiles[i].removeSelf();
         }
     
+        //removes all score panels
         for(let i = panels.length -1; i > -1; i--){
             panels[i].removeSelf();
         }
     
+        //removes all students
         for(let i = students.length -1; i > -1; i--){
             students[i].removeSelf();
         }
     
+        //clears local storage
         localStorage.clear();
+
+        //adds one new panel
         panels.push( new CurvePanel(''));
     }     
 }
 
+//saves all calculator data to local storage
 function saveData() {
+
+    //saves all spreadsheet data
     localStorage.setItem('saveExcelSheets', JSON.stringify(saveFiles));
+
+    //array to store manually inputted students
     const manualStudents = [];
     students.forEach( obj => {
         if(obj.spreadsheetNum === -1){
@@ -98,6 +127,8 @@ function saveData() {
         }
     })
     localStorage.setItem('saveManualStudents', JSON.stringify(manualStudents));
+    
+    //array to store panels and settings stores as array
     const parallelCurveArray = [];
     panels.forEach( obj => {
         let smallCurve = [];
