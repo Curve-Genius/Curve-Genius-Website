@@ -1,7 +1,9 @@
+/*radius of switchbar*/
 :root {
     --selection-border-radius: 10px;
 }
 
+/* positions page below nav*/
 main {
     padding:  0 !important;
     padding-top: 0px !important;
@@ -9,75 +11,87 @@ main {
     z-index: 0;
 }
 
+/*page side margins*/
 main > *:not(#titleBox, #colorStrip) {
     margin-left: 50px;
     margin-right: 50px;
 }
 
-#first {
-    margin-top: 60px;
+/*top section*/
+@media screen and (min-width: 0px){
+    #first {
+        margin-top: 60px;
+    }
+
+    #titleBox {
+        padding-top: 75px;
+        background: rgb(0, 0, 0);
+        width: 100%;
+        max-width: 1750px;
+        padding-bottom: 15px;
+    }
+
+
+    #pageTitle, .sectionName {
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        text-align: center;
+        color: white;
+        font-weight: 200;
+    }
+
+    #pageTitle{
+        font-size: 60px;
+        margin-bottom: 10px;
+    }
+
+    .sectionName {
+        width: 250px;
+        font-size: 20px;
+        align-self: center;
+        margin-bottom: 0;
+    }
+
+    .whiteCircle {
+        height: 7px;
+        width: 7px;
+        background: white;
+        border-radius: 5px;
+        align-self: center;
+        margin: 0px 40px;
+    }
+
+    #sectionsBar {
+        display: flex;
+        justify-content: center;
+    }
+
+    #colorStrip {
+        width: 100%;
+        max-width: 1750px;
+        background: linear-gradient(112deg, rgba(23,0,240) 0%, rgba(165,44,165) 50%, rgba(255,127,0) 100%);
+        height: 10px;
+    }
 }
 
-#titleBox {
-    padding-top: 75px;
-    background: rgb(0, 0, 0);
-    width: 100%;
-    max-width: 1750px;
-    padding-bottom: 15px;
-}
-
-
-#pageTitle, .sectionName {
+/*switch bar styles*/
+.switchBar {
     font-family: 'Plus Jakarta Sans', sans-serif !important;
-    text-align: center;
-    color: white;
-    font-weight: 200;
 }
 
-#pageTitle{
-    font-size: 60px;
-    margin-bottom: 10px;
-}
-
-.sectionName {
-    width: 250px;
-    font-size: 20px;
-    align-self: center;
-    margin-bottom: 0;
-}
-
-.whiteCircle {
-    height: 7px;
-    width: 7px;
-    background: white;
-    border-radius: 5px;
-    align-self: center;
-    margin: 0px 40px;
-}
-
-#sectionsBar {
-    display: flex;
-    justify-content: center;
-}
-
-#colorStrip {
-    width: 100%;
-    max-width: 1750px;
-    background: linear-gradient(112deg, rgba(23,0,240) 0%, rgba(165,44,165) 50%, rgba(255,127,0) 100%);
-    height: 10px;
-}
-
+/*page fonted in math font*/
 main * {
     font-family: 'RomanSerif', sans-serif;
     line-height: 1.5;
 }
 
+/*section headers */
 main * h2 {
     margin-bottom: 0px;
     font-family: 'RomanSerif', sans-serif;
     color: rgba(0, 0, 0, 0.90);
 }
 
+/*math blurb styles*/
 .topic {
     margin-top: 20px;
     margin-bottom: 15px;
@@ -93,89 +107,116 @@ main * h2 {
     padding-bottom: 20px;
 }
 
+/*range options styles*/
 #rangeExplanation > li {
     margin-top: 40px !important;
 }
 
+/*box without bottom margin*/
 .noBottom {
     margin-bottom: 0px !important;
 }
 
-.switchBar {
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
-}
-
+/*medium+ screen size*/
 @media screen and (max-width: 900px)  {
 
+    
+    /*page side margins*/   
     main > *:not(#titleBox, #colorStrip) {
         margin-left: 43px;
         margin-right: 43px;
     }
     
-    #first {
-        margin-top: 80px;
-    }
+    /*top section*/
+    @media screen and (min-width: 0px){
+        #first {
+            margin-top: 80px;
+        }
 
-    #pageTitle{
-        font-size: 50px;
-    }
-       
-    .sectionName {
-        width: 200px;
-        font-size: 17px;
-    }
+        #pageTitle{
+            font-size: 50px;
+        }
+        
+        .sectionName {
+            width: 200px;
+            font-size: 17px;
+        }
 
-    .whiteCircle {
-        height: 5px;
-        width: 5px;
-        margin: 0px 20px;
-    }
-    
-    #colorStrip {
-        height: 7px;
+        .whiteCircle {
+            height: 5px;
+            width: 5px;
+            margin: 0px 20px;
+        }
+        
+        #colorStrip {
+            height: 7px;
+        }
     }
 }
 
-
+/*narrow screen*/
 @media screen and (max-width: 500px) {
     
+    /*radius of switchbar*/
+    :root {
+        --selection-border-radius: 5px;
+    }
+    
+    /*page side margins*/
+        main > *:not(#titleBox, #colorStrip) {
+            margin-left: 35px;
+            margin-right: 35px;
+        }
 
+        /*top section*/
+        @media screen and (min-width: 0px){
+        #first {
+            margin-top: 40px !important;
+        }
 
-    #first {
-        margin-top: 40px !important;
+        #titleBox {
+            padding-top: 65px;
+            padding-bottom: 8px;
+        }
+
+        #pageTitle{
+            font-size: 30px;
+        }
+        
+        .sectionName {
+            width: 100px;
+            font-size: 12px;
+        }
+
+        .whiteCircle {
+            height: 4px;
+            width: 4px;
+            margin: 0px 12px;
+        }
     }
 
-    main > *:not(#titleBox, #colorStrip) {
-        margin-left: 35px;
-        margin-right: 35px;
+    /*headers and text resizing*/
+    @media screen and (min-width: 0px){
+        main * h2 {
+            font-size: 28px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        p, .explanation, .math, .example {
+            font-size: 14px !important;
+        }
+
+        #mathExplanation * div{
+            padding-bottom: 10px;
+        }
+
+        .topic {
+            margin-top: 0px;
+        }
     }
 
-    #titleBox {
-        padding-top: 65px;
-        padding-bottom: 8px;
-    }
-
-    #pageTitle{
-        font-size: 30px;
-    }
-       
-    .sectionName {
-        width: 100px;
-        font-size: 12px;
-    }
-
-    .whiteCircle {
-        height: 4px;
-        width: 4px;
-        margin: 0px 12px;
-    }
-
-    main * h2 {
-        font-size: 28px;
-        margin-bottom: 5px;
-        font-weight: 600;
-    }
-
+    /*switch bar shrinkage*/
     .switchBar button{
         position: relative;
         top: 4px;
@@ -183,36 +224,24 @@ main * h2 {
         border-width: 1.5px !important;
         padding: 3px 3px !important;
     }
-
-    p, .explanation, .math, .example {
-        font-size: 14px !important;
-    }
-
-    #mathExplanation * div{
-        padding-bottom: 10px;
-    }
-
-    :root {
-        --selection-border-radius: 5px;
-    }
-
-    .topic {
-        margin-top: 0px;
-    }
 }
 
+/*narrower screen*/
 @media screen and (max-width: 400px) {
 
-    main * h2 {
-        font-size: 24px;
-        margin-bottom: 5px;
-    }
-
+    /*page margins*/
     main > *:not(#titleBox, #colorStrip) {
         margin-left: 27px;
         margin-right: 27px;
     }
 
+    /*header size*/
+    main * h2 {
+        font-size: 24px;
+        margin-bottom: 5px;
+    }
+
+    /*switch bar text size*/
     .switchBar button{
         font-size: 8px !important;
     }
