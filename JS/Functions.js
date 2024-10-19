@@ -1,5 +1,5 @@
 //debug functions
-function logAllStudents(){ 
+function logAllStudents(){
     if(debugOn){
 
         //group stats
@@ -25,6 +25,7 @@ function logAllStudents(){
             console.log("");
         });
 
+        //specified characteristics of each curve panel
         panels.forEach(obj => {
             console.log("name: " + obj.name);
             console.log("nameIndex: " + obj.nameIndex);
@@ -50,13 +51,15 @@ function updateZscores(){
         });
         deviation = 0;
     } else {
+
+        //applies Zscore formula
         students.forEach( obj =>{
             obj.zScore = (obj.score - mean) / deviation;
         });
     }
 }
 
-//updates curves for all panels
+//updates displays, settings and outputs for each panel
 function updateAll(){
     panels.forEach( obj => {
         obj.updatePanel();
@@ -65,7 +68,6 @@ function updateAll(){
 
 //updates the normally distributed Zscores for all elements 
 function updateAllNormedZScores() {
-    
     if(existsNormal > 0) {
         students.forEach( obj => {
             obj.normZScore = adjInvErf( (2 * obj.order + 1)/count - 1);
@@ -119,7 +121,7 @@ const studentCountDisplay = document.getElementById("studentCountDisplay");
 const averageDisplay = document.getElementById("averageDisplay");
 const deviationDisplay = document.getElementById("deviationDisplay")
 
-
+//updates on the screen the student statistics
 function updateDisplayStats(){
     studentCountDisplay.textContent = count;
     if(count > 0){
