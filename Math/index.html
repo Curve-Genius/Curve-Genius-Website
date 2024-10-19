@@ -1,68 +1,58 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
     <head>
-        <meta charset="UTF-8">
+        <!--page settings and style sheets-->
+        <meta charset="utf-8">
         <meta name="theme-color" content="#000000">
         <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+        <meta name="color-scheme" content="light dark"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
-        <link rel="stylesheet" href="../CSS/math.css">
         <link rel="stylesheet" href="../CSS/main.css">
-
-
-        
-        <link href="https://fonts.cdnfonts.com/css/roman-serif" rel="stylesheet">
-        <title>Math</title>
-
+        <link rel="stylesheet" href="../CSS/math.css">
         <script src="https://fred-wang.github.io/mathml.css/mspace.js"></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+        <link href="https://fonts.cdnfonts.com/css/roman-serif" rel="stylesheet">
+        <link rel="icon" href="https://curvegenius.com/Images/Logo%20white.png">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
+        <title>Math</title>
     </head>
-    
     <body>
-        <header id="header"> 
-            <nav id="fixedElem">
-              <span>
-                  <link rel="preconnect" href="https://fonts.googleapis.com">
-                  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-                  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-                  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-                  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-                  <link href="https://fonts.cdnfonts.com/css/roman-serif" rel="stylesheet">
-                  <link rel="stylesheet" href="../CSS/main.css">
-                  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
-              </span>
-              
-              <div id="headerLogo" style="float: left; padding-top: 10px;">
-                  <a href="../"> 
-                      <img id="logo" src="../Images/Curve Logo.png" alt="Curve Genius Logo">  
-                  </a>
-              </div>
-    
-              <div class="dropdown">
-                  <button onclick="dropDownMenu()" class="dropbtn">Menu</button>
-                  <div style="float: right;" id="directory" class="dropdown-content">
-                      <li class="menuItem blackHover"><a href="../">Home</a></li>
-                      <li class="menuItem blackHover"><a href="../Calculator/">Calculator</a></li>
-                      <li class="menuItem blackHover"><a href="../Math/"> Math</a></li>
-                      <li class="menuItem blackHover"><a href="../About/">About Us</a></li>
-                      <li class="last menuItem blackHover"><a href="../Contact/">Contact</a></li>
-                  </div>
-              </div>
-            </nav>
-    
-            <div id="backgroundBlack">
-            </div>
-    
-            <div class="tileBackground" id="backgroundLeft"></div>
-            <div class="tileBackground" id="backgroundRight"></div>
-          </header>
 
+        <!--Page margins on zoom out-->
+        <div class="tileBackground" id="backgroundLeft"></div>
+        <div class="tileBackground" id="backgroundRight"></div>
+
+        <!--Nav bar-->
+        <header id="header">
+            <nav id="fixedElem">        
+                <div id="headerLogo" style="float: left; padding-top: 10px;">
+                    <a href="../"> 
+                        <img id="logo" src="../Images/Curve Logo.png" alt="Curve Genius Logo">  
+                    </a>
+                </div>
+                <div class="dropdown">
+                    <button onclick="dropDownMenu()" class="dropbtn">Menu</button>
+                    <div style="float: right;" id="directory" class="dropdown-content">
+                        <li class="menuItem blackHover"><a href="../">Home</a></li>
+                        <li class="menuItem blackHover"><a href="../Calculator/">Calculator</a></li>
+                        <li class="menuItem blackHover"><a href="../Math/"> Math</a></li>
+                        <li class="menuItem blackHover"><a href="../About/">About Us</a></li>
+                        <li class="last menuItem blackHover"><a href="../Contact/">Contact</a></li>
+                    </div>
+                </div>
+            </nav>
+
+            <!--screen black background-->
+            <div id="backgroundBlack"></div>
+        </header>
+
+        <!--page content-->
         <main class="roman">
+
+            <!--Page title with sections-->
             <div id="titleBox">
                 <h2 id="pageTitle">Math</h2>
                 <div id="sectionsBar">
@@ -71,6 +61,7 @@
             </div>
             <div id="colorStrip"></div>
 
+            <!--top section/introduction-->
             <div id="first" class="topic">
                 <div style="padding-bottom: 1%;">
                     
@@ -85,6 +76,7 @@
                         </div>
                     </div>
 
+                    <!--math mission statement-->
                     <p>We pride ourselves on using statistical algorithms that are both fair and simple to understand. 
                         It's important to us that everyone using our service can understand how they operate, regardless of mathematical background. 
                         We offer explanations of our methods both for those who love math, and those who are willing to give it another shot! 
@@ -93,26 +85,30 @@
                 </div>
             </div>
 
+            <!--math explanations-->
             <div id="mathExplanation">
-
                 <div class="topic" style="margin-top: 0px;">
-                    <h2 class="title">Sets</h2>
-                    <div class="explanation">
-                        A set in mathematics is a collection of elements. 
 
+                    <!--multisets/datasets-->
+                    <h2 class="title">Multisets</h2>
+                    <div class="explanation">
+                        A multiset in mathematics is a collection of elements where elements can appear multiple times. 
+                        We will use the word dataset interchangeably to refer to a multiset of test scores. 
                     </div>
                     <div class="math">
                         We will use \(X\)
-                        to represent a set of numbers, and \(N\) to represent the size of the set. 
-                        \(x_i\) will refer to the \(i\)th element in the set. 
-                        We will also assume the set is ordered from least to greatest.
+                        to represent a multiset of numbers, and \(N\) to represent the size of the multiset. 
+                        \(x_i\) will refer to the \(i\)th element in the multiset. 
+                        We will also assume the multiset is ordered from least to greatest. 
+                        If two or more elements are the same value, they will have different indices, all less than the indices of elements greater than then, and all greater than indices less than them. 
                     </div>
                     <div class="example">
                         Example: \(X=\{ 20 , \ \)\( 44 , \ \)\( 52  , \ \)\( 76\}, \ N=4\). 
-                        Because the set is ordered, \(x_1 = 20\) is the lowest element of the set and \(x_N = 76\) is the 
-                        highest element of the set. These two values are referred to as extrema (singular form extremum).</div>
+                        Because the multiset is ordered, \(x_1 = 20\) is the lowest element of the multiset and \(x_N = 76\) is the 
+                        highest element of the multiset. These two values are referred to as extrema (singular form extremum).</div>
                 </div>
 
+                <!--traditional curving-->
                 <div class="topic">
                     <h2 class="title">Traditional Curving</h2>
                     <div class="explanation">
@@ -129,25 +125,27 @@
                     </div>
                 </div>
 
+                <!--mean-->
                 <div class="topic">
                     <h2 class="title">Mean</h2>
                     <div class="explanation">
-                        The mean represents the average value of a set of numbers.
+                        The mean represents the average value of a dataset.
                     </div>
                     <div class="math">
                         It is denoted by \(\mu\)
                         and given by the function $$\mu = \frac{1}{ N }\sum_{i=1}^N x_i$$
                     </div>
                     <div class="example">
-                        Example: Given the set \( X=\{20 , \ \)\( 44 , \ \)\( 52 , \ \)\( 76\}, \  N=4\), then \( \frac{1}{ N }\sum_{i=1}^N x_i = 
+                        Example: Given the dataset \( X=\{20 , \ \)\( 44 , \ \)\( 52 , \ \)\( 76\}, \  N=4\), then \( \frac{1}{ N }\sum_{i=1}^N x_i = 
                         \frac{20 \ + \ 44 \ +\ 52\ +\ 76}{4} = 48\), the mean.
                     </div>
                 </div>
 
+                <!--deviation-->
                 <div class="topic">
                     <h2 class="title">Deviation</h2>
                     <div class="explanation">
-                        The deviation of sets is a measure of how spread apart the elements are.
+                        The deviation of a dataset is a measure of how spread apart the elements are.
                     </div>
                     <div class="math">
                         It is denoted by \(\sigma\) and given by the function $$\sigma = \sqrt{\frac{1}{N}\sum_{i=1}^N (x_i-\mu)^2}$$
@@ -156,16 +154,17 @@
                         averaged and finally, square-rooted.
                     </div>
                     <div class="example">
-                        Example: For the set \(X=\{80 , \ \)\( 86 , \ \)\( 88 , \ \)\( 94\}, \ \mu=87\) and \(\sigma = 5\) because the elements are all close 
-                        to the mean. For the set \(X=\{20 , \ \)\( 44 , \ \)\( 52 , \ \)\( 76\}, \ \mu=48\) and \(\sigma = 20\) because the elements are generally 
+                        Example: For the dataset \(X=\{80 , \ \)\( 86 , \ \)\( 88 , \ \)\( 94\}, \ \mu=87\) and \(\sigma = 5\) because the elements are all close 
+                        to the mean. For the dataset \(X=\{20 , \ \)\( 44 , \ \)\( 52 , \ \)\( 76\}, \ \mu=48\) and \(\sigma = 20\) because the elements are generally 
                         far from the mean.
                     </div>
                 </div>
 
+                <!--z-scores-->
                 <div class="topic">
                     <h2 class="title">Z-scores</h2>
                     <div class="explanation">
-                        While the deviation measures how spread out a set is, a Z-score describes an element's distance from the mean 
+                        While the deviation measures how spread out a dataset is, a Z-score describes an element's distance from the mean 
                         interms of the deviation. A dog that weighs 100 lbs above average is much more rare than an elephant that 
                         weighs 100 lbs above average; we can use Z-scores to show this. Z-scores also allow us to compare elements of 
                         different distributions, and act as a middleman for adjusting distributions.
@@ -175,12 +174,13 @@
                         $$Z_i = \frac{x_i - \mu}{\sigma}$$
                     </div>
                     <div class="example">
-                        Example: The Z-scores of the set \(X = \{80  , \ \)\( 86 , \ \)\( 88 , \ \)\( 94 \}\) are \(\{ -1.4 , \ \)\( -0.2 , \ \)\( 0.2 , \ \)\(  1.4\}\) 
-                        respectively. The Z-scores of the set \(X = \{20 , \ \)\( 44 , \ \)\(  52 , \ \)\(  76 \}\) are equal to \(\{ -1.4 , \ \)\(  -0.2 , \ \)\( 0.2 , \ \)\(  1.4\}\) 
-                        aswell. Although the sets have very different distributions, their Z-scores are the same!
+                        Example: The Z-scores of the dataset \(X = \{80  , \ \)\( 86 , \ \)\( 88 , \ \)\( 94 \}\) are \(\{ -1.4 , \ \)\( -0.2 , \ \)\( 0.2 , \ \)\(  1.4\}\) 
+                        respectively. The Z-scores of the dataset \(X = \{20 , \ \)\( 44 , \ \)\(  52 , \ \)\(  76 \}\) are equal to \(\{ -1.4 , \ \)\(  -0.2 , \ \)\( 0.2 , \ \)\(  1.4\}\) 
+                        aswell. Although the datasets have very different distributions, their Z-scores are the same!
                     </div>
                 </div>
 
+                <!--curving with mean and deviation-->
                 <div class="topic">
                     <h2 class="title">Mean and Deviation Curve</h2>
                     <div class="explanation">
@@ -192,6 +192,7 @@
                     </div>
                 </div>
                 
+                <!--curve functions-->
                 <div class="topic">
                     <h2 class="title">Curve function</h2>
                     <div class="explanation">
@@ -203,30 +204,36 @@
                         \(\mu'\) and \(\sigma'\) are the new intended mean and deviation respectively.
                     </div>
                     <div class="example">
-                        Example, using \(\mu' = 80\) and \(\sigma' = 8\), and applying the curve function to the set 
+                        Example, using \(\mu' = 80\) and \(\sigma' = 8\), and applying the curve function to the dataset 
                         \(X = \{20 , \ \)\( 44 , \ \)\(  52 , \ \)\( 76 \}\) the new respective scores are \(\{68.8 , \ \)\(  78.4 , \ \)\( 81.6 , \ \)\(  91.2\}\). 
                         Comparing this to the results of the tradiational curve, the difference is apparent.
                     </div>
                 </div>
 
+                <!--range curve-->
                 <div class="topic">
                     <h2 class="title">Range Curve</h2>
                     <div class="explanation">
                         When we constrain a curve to an intended new range, we can either curve the highest and lowest original scores 
                         to their respective edges of the new range, or we can place the initial average score at the center of the new 
                         range and the score furthest from the average (in either direction) on its respective edge of the new range. 
-                        Because curving is affine function, we (in most cases) cannot do all three.
+                        Because our curving is type of function known as an affine function, we (in most cases) can only fix our curve 
+                        function at two values, and cannot use both methods simultaneously. Notably, both methods work concurrently if we 
+                        normalize the scores (see further discussion below), but this does not necessarily mean normalizing is the best option.
                     </div>
+
+                    <!--three curve types-->
                     <div class="math">
                         Let \(\alpha\) denote the new intended minimum score and \(\omega\) denote the new intended maximum score.
                         <ol id="rangeExplanation">
+                             <!--fit edges-->
                             <li>
                                 <div class="math">
-                                    To fit the extrema of a set to the edges of the new range we define the new intended deviation as
+                                    To fit the extrema of a dataset to the edges of the new range we define the new intended deviation as
 
                                     $$\sigma' =  \frac{ \omega - \alpha}{x_N - x_1}$$
-                                    Remember that the set \(X\)is ordered so \(x_N - x_1\) is the range of \(X\).
-                                    Next we set the new intended mean to 
+                                    Remember that the dataset \(X\)is ordered so \(x_N - x_1\) is the range of \(X\).
+                                    Next we dataset the new intended mean to 
                                     
                                     $$\mu' = \alpha - \sigma'Z_1$$
                                     
@@ -238,10 +245,11 @@
                                     \( X= \{20 , \ \)\( 44 , \ \)\( 52 , \ \)\( 76 \} \), we arrive at roughly \( \{60 , \ \)\(  77.14 , \ \)\(  82.86 , \ \)\( 100 \} \).
                                 </div> 
                             </li>
-                            <li>
 
+                            <!--center range-->
+                            <li>
                                 <div class="math">
-                                    To fit the mean of the set to the center of the new range and the further of the extremum to its respective edge 
+                                    To fit the mean of the dataset to the center of the new range and the further of the extremum to its respective edge 
                                     of the range, we let the mean be
 
                                     $$\mu' = \frac{\alpha +\omega}{2}$$
@@ -254,43 +262,47 @@
                                 </div>
 
                                 <div class="example">
-                                    Example: Setting our new intended range as \( \alpha = 60\) and \( \omega = 100\), and curving the set 
+                                    Example: Setting our new intended range as \( \alpha = 60\) and \( \omega = 100\), and curving the dataset 
                                     \(X=\{50 , \ \)\( 68 , \ \)\( 79 , \ \)\( 98 , \ \)\( 100\}, \ \mu=79\) we arrive at roughly \(\{60 , \ \)\( 72.41 , \ \)\( 80 , \ \)\( 93.1 , \ \)\( 94.48\}\). 
-                                    Because \(79\) is the mean of the set, it curves to \(80\), the center of the range. Because \(50\) is further from \(79\) 
-                                    than \(100\), \(50\) curves to \(60\), the edge of the new range. \(100\), the closer extremum of the set, is not curved to 
-                                    \(100\), the maximum of the range. A set different from the previous sets was used here to highlight the 
+                                    Because \(79\) is the mean of the dataset, it curves to \(80\), the center of the range. Because \(50\) is further from \(79\) 
+                                    than \(100\), \(50\) curves to \(60\), the edge of the new range. \(100\), the closer extremum of the dataset, is not curved to 
+                                    \(100\), the maximum of the range. A dataset different from the previous datasets was used here to highlight the 
                                     functionality of the math used.
                                 </div>
                             </li>
+
+                            <!--center and fit edges (when possible)-->
                             <li>
                                 <div class="math">
-                                    Under the specific condition that \(|Z_1| = |Z_N|\) then we can achieve the desired outcomes of both examples listed above:
+                                    Under the specific condition that \(|Z_1| = |Z_N|\), we can achieve the desired outcomes of both examples listed above:
                                      \(f(\mu)=\frac{\alpha + \omega}{2}\), \(f(x_1)=\alpha\), and \(f(x_N) = \omega\), using either method of calculation for 
-                                     \(\sigma'\) and \(\mu'\).
+                                     \(\sigma'\) and \(\mu'\). When we normalize scores, it will always be true that \(|Z_1| = |Z_N|\), so we will default to 
+                                     this method of curving should we choose a range curve.
                                 </div>
                                 <div class="example">
-                                    Example: Setting our new intended range as \(\alpha = 60\) and \(\omega = 100\), and curving the set 
+                                    Example: Setting our new intended range as \(\alpha = 60\) and \(\omega = 100\), and curving the dataset 
                                     \(X=\{20 , \ \)\( 44 , \ \)\( 48 , \ \)\( 52 , \ \)\( 76\}, \ \mu=48  \), we arrive at roughly \(\{60 , \ \)\(  77.14 , \ \)\(  80 , \ \)\( 82.86 , \ \)\(  100\}\). 
                                     Here the mean, \(48\) is curved to the center of the new range, \(80\), and the extrema, \(20\), and \(76\) 
                                     are curved to the edges of the range \(60\) and \(100\).
                                 </div>
-                                
                             </li>
                         </ol>
                     </div>
                    
                 </div>
 
+                <!--distributions and normalizing-->
                 <div class="topic noBottom">
-        
                         <h2 class="title">Distribution, Curves, and Normality</h2>
+                        
+                        <!--normal distribution explanation and image-->
                         <div class="explanation">
                             Probability distribution functions give the chance of different outcomes happening. The term curve, or bell curve, 
                             comes from the shape of 
                             a normal distribution. A normal distribution, seen below, refers to a distribution where numerical outcomes near 
                             the average are more common 
                             than outcomes further from the average. These types of distributions are extremely common in statistics and arise 
-                            in test grades, and IQ tests 
+                            in test grades, and IQ tests, 
                             as well as height, top speed, and many other natural characteristics.<br>
                             <br>
                             Normal distributions, have a more rigorous and motivated definition. For further discussion see 
@@ -304,18 +316,24 @@
                             above: \(\frac{1}{\sqrt{2 \pi}} e^{\frac{-x^2}{2}}\). <br>
                             <br>
                         </div>
+
+                        <!-- pros and cons of normalizing results-->
                         <div class="explanation">   
                             If a distribution of scores does not seem normal (i.e, scores do not seem to be more common near the average), 
-                            one might want to normalize it so that grades like Bs and Cs are more common than As and Ds. During the normalization process, large gaps in scores will be closed. This has pros and cons.
+                            one might want to normalize it so that grades like Bs and Cs are more common than As and Ds. During the 
+                            normalization process, large gaps in scores will be closed, and outliers (exceedingly high or low scores will 
+                            be brought toward the new mean after curving). This has pros and cons.
                         </div> 
                         <div class="example">
-                            Example: If on a given test, all students score between \(45\%\) and \(60\%\) except one student who scores 
-                            \(85\%\), this student's new score will still be the highest, but will not be largely greater than the new 
+                            Example: If on a given test, all students score between \(45\%\) and \(60 \% \ \) except one student who scores 
+                            \(85\%\), this student's new score will still be the highest, but will not be much greater than the new 
                             score of the second highest scorer (who, in this scenario, originally scored near \(60\%\)).
                         </div>
+
+                        <!--math and motivation for normalization process-->
                         <div class="math">
                             To normalize a distribution, we generate a probability basket for each element and use it to generate a Z-score.
-                            With our set \(X\), we want to divide the probability distribution into \(N\) baskets such that if \(N=10\), 
+                            With our dataset \(X\), we want to divide the probability distribution into \(N\) baskets such that if \(N=10\), 
                             the 1st will be between the 0th and 10th percentile of the distribution, the 2nd between the 10th and 20th 
                             percentile, and so on. To equally space each element within the new distribution, we will make it so that 
                             each element's percentile is centered in its probability basket. This generates the equation 
@@ -340,7 +358,7 @@
                             If multiple elements are equal, it follows that they should have the same new Z-score.
                             In this case, we replace the value \(i\) in the formula above with the average index of elements that 
                             share the same value.
-                            Because the set is ordered, the indices are consecutive, and the average equals 
+                            Because the dataset is ordered, the indices are consecutive, and the average equals 
                             \(i + \frac{k-1}{2}\) where \(k\) is the number of times the element's score appears and \(i\) is the index 
                             of the first element with the given score.
                             For example, the new Z-score of an element \(x_i\) that repeats \(k\) times and has the lowest possible 
@@ -352,12 +370,12 @@
                             above.
                         </div>
                         <div class="example">
-                            Example: Using the method above to generate a normalized set of 10 scores and rounding to decimals, we get 
+                            Example: Using the method above to generate a normalized dataset of 10 scores and rounding to decimals, we get 
                             \(\{ -1.64 , \ \)\( \) \( -1.04 , \ \)\( \) \( -0.67 , \ \)\( \) \( -0.39 , \ \)\( \) \( -0.13, \ \) \( 0.13, \ \) \( 0.39, \ \) \( 0.67, \ \) \( 1.04, \ \) \( 1.64 \}\). The P-value for this 
-                            set is \(1\), indicating it is exactly expected from a normal distribution. 
+                            dataset is \(1\), indicating it is exactly expected from a normal distribution. 
                         </div>
                         <div class="explanation"> 
-                            After creating the normalized Z-scores for our set, we can use them in our curve function in place of the previous Z-scores. 
+                            After creating the normalized Z-scores for our dataset, we can use them in our curve function in place of the previous Z-scores. 
                         </div>
                         <div class="example noBottom">
                             Curving this with a mean and 
@@ -371,6 +389,7 @@
             </div>
         </main>
 
+        <!--Hide/show explanations functionality-->
         <script>
             const showAll = document.getElementById("showAll");
             const hideExamples = document.getElementById("hideExamples");
@@ -401,51 +420,53 @@
             });
         </script>
 
-<link rel="stylesheet" href="../CSS/footer.css">
-<script src="../JS/navbar.js"></script>
-<div id="footerBox">
-
-    <div id="logoBox">
-        <img  src="../Images/Curve Logo.png" alt="curvegneiuslogo">
-        <h4 id="copyrightText">Copyright © 2024 Curve Genius</h4>
-    </div>
-
-    <div class="line wide" style="left: 39%; "></div>
-    <div class="line wide" style="left: 70%; "></div>
-    <div class="line short" style="left: 72%; "></div>
-
-
-    <div class="menuBox wide" style="left: 43%;">
-        <ul>
-            <li><a href="../">Home</a></li>
-            <li><a href="../Math/">Math</a></li>
-            <li><a href="../Calculator/">Calculator</a></li>
-            <li><a href="../About/">About us</a></li>
-        </ul>
-    </div>
-
-    <div class="menuBox wide" style="left: 74%;">
-        <ul>
-            <li>
-                <a href="../Contact/">Contact Us</a>
-            </li>
-            <li>
-                <a href="../Privacy/">Privacy Policy</a>
-            </li>
-        </ul>
-    </div>
+        <!--Page footer-->
+        <link rel="stylesheet" href="../CSS/navbar.css">
+        <footer id="footer"> 
+            <link rel="stylesheet" href="../CSS/footer.css">
+            <script src="../JS/navbar.js"></script>
+            <div id="footerBox">
     
-    <div class="menuBox short" style="left: 77%;">
-        <ul>
-            <li><a href="../Home/">Home</a></li>
-            <li><a href="../Math/">Math</a></li>
-            <li><a href="../Calculator/">Calculator</a></li>
-            <li><a href="../About/">About us</a></li>
-            <li><a href="../Contact/">Contact Us</a></li>
-            <li><a href="../Privacy/">Privacy Policy</a></li>
-        </ul>
-    </div>
-
-</div>
+                <!--logo and copyright-->
+                <div id="logoBox">
+                    <img  src="../Images/Curve Logo.png" alt="curvegneiuslogo">
+                    <h4 id="copyrightText">Copyright © 2024 Curve Genius</h4>
+                </div>
+    
+                <div class="line wide" style="left: 39%; "></div>
+                <div class="line wide" style="left: 70%; "></div>
+                <div class="line short" style="left: 72%; "></div>
+    
+    
+                <!--split menu on wide screen-->
+                <div class="menuBox wide" style="left: 43%;">
+                    <ul>
+                        <li><a href="../">Home</a></li>
+                        <li><a href="../Math/">Math</a></li>
+                        <li><a href="../Calculator/">Calculator</a></li>
+                        <li><a href="../About/">About us</a></li>
+                    </ul>
+                </div>
+    
+                <div class="menuBox wide" style="left: 74%;">
+                    <ul>
+                        <li><a href="../Contact/">Contact Us</a></li>
+                        <li><a href="../Privacy/">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <!--single menu on thin screen-->
+                <div class="menuBox short" style="left: 77%;">
+                    <ul>
+                        <li><a href="../Home/">Home</a></li>
+                        <li><a href="../Math/">Math</a></li>
+                        <li><a href="../Calculator/">Calculator</a></li>
+                        <li><a href="../About/">About us</a></li>
+                        <li><a href="../Contact/">Contact Us</a></li>
+                        <li><a href="../Privacy/">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>
