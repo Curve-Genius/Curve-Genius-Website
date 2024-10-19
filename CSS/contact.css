@@ -1,9 +1,11 @@
+/* positions page below nav*/
 main {
     margin: 0 auto;
     padding: 0 0 50px 0;
     padding-top: 0px !important; 
 }
 
+/* top color banner*/
 #gradBackdrop { 
     height: 180px;
     width: 100%;
@@ -12,6 +14,7 @@ main {
     z-index: -10;
 }
 
+/*main page content */
 #container {
     position: relative;
     padding: 0; 
@@ -19,6 +22,7 @@ main {
     height: 900px;
 }
 
+/*page title*/
 #pageTitle {
     height: fit-content !important;
     display: block; position: absolute; 
@@ -28,66 +32,75 @@ main {
     right: 0%; 
 }
 
-#contactForm {
-    height: fit-content;
-    padding: 30px;
+/*contact form*/
+@media screen and (min-width: 0px) {
+    #contactForm {
+        height: fit-content;
+        padding: 30px;
+    }
+
+    #contactForm div {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 23px;
+        font-weight: 400;
+        margin-bottom: 12px;
+    }
+
+    #contactForm h3 {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        color: black;
+        font-size: 50px;
+        font-weight: 500;
+    }
+
+
+    #contactForm input, #contactForm textarea {
+        padding: 3px;
+        margin-inline-start: 3px;
+        padding-inline-start: 10px;
+        height: fit-content;
+        border-radius: 13px;
+        margin-bottom: 4px;
+    }
+
+    .binOpt label {
+        background-color: black;
+        color: white;
+        border-radius: 50px;
+        padding: 3px 15px;
+        border: solid;
+        border-width: 2px;
+        border-color: black;
+        box-shadow: 0px 0px 3px rgba(0,0,0,0.5); 
+    }
+
+    /*contact form check boxes*/
+    @media screen and (min-width: 0px) {
+        .binOpt {
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+
+        .binOpt label::before {
+            content: "+ ";
+            position: relative;
+            top:-2px;
+        }
+
+        .binOpt input[type="checkbox"]:checked + label {
+            background-color: white !important;
+            color: black;
+        }
+
+        .binOpt input[type="checkbox"]:checked + label::before {
+            top: 0px;
+            content: "✓ ";
+        }
+    }
 }
 
-#contactForm div {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-size: 23px;
-    font-weight: 400;
-    margin-bottom: 12px;
-}
-
-#contactForm h3 {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    color: black;
-    font-size: 50px;
-    font-weight: 500;
-}
-
-.binOpt {
-    display: inline-block;
-    margin-left: 5px;
-}
-
-#contactForm input, #contactForm textarea {
-    padding: 3px;
-    margin-inline-start: 3px;
-    padding-inline-start: 10px;
-    height: fit-content;
-    border-radius: 13px;
-    margin-bottom: 4px;
-}
-
-.binOpt label {
-    background-color: black;
-    color: white;
-    border-radius: 50px;
-    padding: 3px 15px;
-    border: solid;
-    border-width: 2px;
-    border-color: black;
-    box-shadow: 0px 0px 3px rgba(0,0,0,0.5); 
-}
-
-.binOpt label::before {
-    content: "+ ";
-    position: relative;
-    top:-2px;
-}
-
-.binOpt input[type="checkbox"]:checked + label {
-    background-color: white !important;
-    color: black;
-}
-
-.binOpt input[type="checkbox"]:checked + label::before {
-    top: 0px;
-    content: "✓ ";
-}
-
+/*page title sizing*/
 @media screen and (max-width: 900px) {
     #pageTitle h1{
         font-size: 47px !important;
@@ -98,8 +111,15 @@ main {
     }
 }
 
+/*medium screen width size*/
 @media screen and (max-width: 850px) {
 
+    /*resizes content container*/
+    #container {
+        height: 1100px;
+    }
+
+    /*page title sizing*/
     #pageTitle {
         position: relative !important;
         top: -80px !important;
@@ -112,6 +132,7 @@ main {
         font-size: 70px !important;
     }
 
+    /*contact form*/
     #contactForm {
         left: 0px !important;
         position: relative !important;
@@ -120,17 +141,20 @@ main {
         width: calc(100% - 40px) !important;
     }
 
-    #container {
-        height: 1100px;
-    }
-
     #contactForm {
         border-radius: 30px !important;
     }
 }
 
+/*narrow screen*/
 @media screen and (max-width: 500px) {
  
+    /*page content*/
+    main {
+        padding: 0px !important;
+    }
+
+    /*page title*/
     #pageTitle {
         top: -73px !important;
         padding: 0px 30px;
@@ -140,6 +164,7 @@ main {
         font-size: 60px !important;
     }
 
+    /*contact form*/
     #contactForm h3{
         font-size: 40px !important;
     }
@@ -154,6 +179,7 @@ main {
         font-size: 15px;
     }
 
+    /*contact form check boxes*/
     .binOpt label {
         font-size: 13px;
         padding: 2px 7px;
@@ -165,9 +191,5 @@ main {
     
     .binOpt input[type="checkbox"]:checked + label::before {
         top: 0px;
-    }
-
-    main {
-        padding: 0px !important;
     }
 }
