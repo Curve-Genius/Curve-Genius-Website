@@ -1,317 +1,405 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
     <head>
+        <!--page settings and style sheets-->
         <meta charset="utf-8">
         <meta name="theme-color" content="#000000">
         <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-        <meta name="color-scheme" content="light dark" />
-        <title>Test Curve Calculator</title>
-  </head>
-  <body>
-    <script src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></script>
-    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
-    <div class="tileBackground" id="backgroundLeft"></div>
-    <div class="tileBackground" id="backgroundRight"></div>
-
-    <header id="header">
-        
-
-<nav id="fixedElem">
-    <span>
+        <meta name="color-scheme" content="light dark"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-        <link href="https://fonts.cdnfonts.com/css/roman-serif" rel="stylesheet">
+        <link rel="stylesheet" href="../CSS/calculator.css">
         <link rel="stylesheet" href="../CSS/main.css">
+        <link rel="icon" href="https://curvegenius.com/Images/Logo%20white.png">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
-    </span>
-    
-    <div id="headerLogo" style="float: left; padding-top: 10px;">
-        <a href="../"> 
-            <img id="logo" src="../Images/Curve Logo.png" alt="Curve Genius Logo">  
-        </a>
-    </div>
+        <title>Test Curve Calculator</title>
+    </head>
+    <body>
 
-    <div class="dropdown">
-        <button onclick="dropDownMenu()" class="dropbtn">Menu</button>
-        <div style="float: right;" id="directory" class="dropdown-content">
-            <li class="menuItem blackHover"><a href="../">Home</a></li>
-            <li class="menuItem blackHover"><a href="../Calculator/">Calculator</a></li>
-            <li class="menuItem blackHover"><a href="../Math/"> Math</a></li>
-            <li class="menuItem blackHover"><a href="../About/">About Us</a></li>
-            <li class="last menuItem blackHover"><a href="../Contact/">Contact</a></li>
-        </div>
-    </div>
-</nav>
+        <!--Excel interaction packages-->
+        <script src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></script>
+        <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
 
-<div id="backgroundBlack">
-</div>
+        <!--Page margins on zoom out-->
+        <div class="tileBackground" id="backgroundLeft"></div>
+        <div class="tileBackground" id="backgroundRight"></div>
 
-<div class="tileBackground" id="backgroundLeft"></div>
-<div class="tileBackground" id="backgroundRight"></div>
+        <!--Nav bar-->
+        <link rel="stylesheet" href="../CSS/navbar.css">
+        <header id="header">
+            <nav id="fixedElem">        
+                <div id="headerLogo" style="float: left; padding-top: 10px;">
+                    <a href="../"> 
+                        <img id="logo" src="../Images/Curve Logo.png" alt="Curve Genius Logo">  
+                    </a>
+                </div>
+                <div class="dropdown">
+                    <button onclick="dropDownMenu()" class="dropbtn">Menu</button>
+                    <div style="float: right;" id="directory" class="dropdown-content">
+                        <li class="menuItem blackHover"><a href="../">Home</a></li>
+                        <li class="menuItem blackHover"><a href="../Calculator/">Calculator</a></li>
+                        <li class="menuItem blackHover"><a href="../Math/"> Math</a></li>
+                        <li class="menuItem blackHover"><a href="../About/">About Us</a></li>
+                        <li class="last menuItem blackHover"><a href="../Contact/">Contact</a></li>
+                    </div>
+                </div>
+            </nav>
 
-
-    </header>
-    <link rel="stylesheet" href="../CSS/calculator.css">
-
+            <!--screen black background-->
+            <div id="backgroundBlack"></div>
+        </header>
    
 
-    
 
+        <main>
 
-    <main>
-        <div id="blurBackdrop">
-       
-            <article id="fileBlock">
-                <div>
-                    <div id="excelInputBar">
-                        <input id="inputFile" type="file" accept=".xlsx"> 
-                        <button class="close" id="closeFileImportBlock" type="button" onclick=" fileBlock.style.display = 'none'; blurBackdrop.style.display = 'none';  ">
-                            <img  style="height: 24px" src="../Images/x.png" alt="close">
+            <!--pop up screens-->
+            <div id="blurBackdrop">
+
+                <!--Excel import screen-->
+                <article id="fileBlock">
+                    <div>
+
+                        <!--file input-->
+                        <div id="excelInputBar">
+                            <input id="inputFile" type="file" accept=".xlsx"> 
+                            <button class="close" id="closeFileImportBlock" type="button" onclick=" fileBlock.style.display = 'none'; blurBackdrop.style.display = 'none';  ">
+                                <img  style="height: 24px" src="../Images/x.png" alt="close">
+                            </button>
+                        </div>
+
+                        <!--top left name input and top score-->
+                        <div class="grid cornerInputRow">
+                            <div class="cornerInput">
+                                <div class="cornerLabel">Name Top Left </div>
+                                <input class="fileInput column name start" type="text"> 
+                                <input class="fileInput row start" type="number" min="1" step="1">
+                            </div>
+                            <div class="cornerInput">
+                                <div class="cornerLabel">Score Top</div>
+                                <input class="fileInput column score" type="text"> 
+                                <input class="fileInput row start" type="number" min="1" step="1">
+                            </div>
+                        </div>
+
+                        <!--bottom right name input bottom score-->
+                        <div class="grid cornerInputRow">
+                            <div class="cornerInput">
+                                <div class="cornerLabel">Name Bottom Right</div> 
+                                <input class="fileInput column name end" type="text"> 
+                                <input class="fileInput row end" type="number" min="1" step="1">
+                            </div>
+                            <div class="cornerInput">
+                                <div class="cornerLabel">Score Bottom </div>
+                                <input class="fileInput column score" type="text"> 
+                                <input class="fileInput row end" type="number" min="1" step="1">
+                            </div>
+                        </div>
+
+                        <!--process file button and error message-->
+                        <div id="fileProcessBar">
+                            <button id="processExcelSheet" type="button" onclick=" process();">Process </button>
+                            <div id="errorMessage">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            
+                <!--Imported data removal screen-->
+                <article id="excelImportList">
+
+                    <!--element header-->
+                    <div id="removeSheetHeader">
+                        <div id="fileCaption">File</div>
+                        <button class="close" id="closeRemoveSheetBox" type="button" onclick="excelList.style.display = 'none';blurBackdrop.style.display = 'none';">
+                            <img id="removeSheetCloseX" src="../Images/x.png" alt="close">
                         </button>
                     </div>
-                    <div class="grid cornerInputRow">
-                        <div class="cornerInput">
-                            <div class="cornerLabel">Name Top Left </div>
-                            <input class="fileInput column name start" type="text"> 
-                            <input class="fileInput row start" type="number" min="1" step="1">
-                        </div>
-                        <div class="cornerInput">
-                            <div class="cornerLabel">Score Top</div>
-                            <input class="fileInput column score" type="text"> 
-                            <input class="fileInput row start" type="number" min="1" step="1">
-                        </div>
-                    </div>
-                    <div class="grid cornerInputRow">
-                        <div class="cornerInput">
-                            <div class="cornerLabel">Name Bottom Right</div> 
-                            <input class="fileInput column name end" type="text"> 
-                            <input class="fileInput row end" type="number" min="1" step="1">
-                        </div>
-                        <div class="cornerInput">
-                            <div class="cornerLabel">Score Bottom </div>
-                            <input class="fileInput column score" type="text"> 
-                            <input class="fileInput row end" type="number" min="1" step="1">
-                        </div>
-                    </div>
-                    <div id="fileProcessBar">
-                        <button id="processExcelSheet" type="button" onclick=" process();">Process </button>
-                        <div id="errorMessage">
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article id="excelImportList">
-                  
-                <div id="removeSheetHeader">
-                    <div id="fileCaption">File</div>
-                    <button class="close" id="closeRemoveSheetBox" type="button" onclick="excelList.style.display = 'none';blurBackdrop.style.display = 'none';">
-                        <img src="../Images/x.png" alt="close">
-                    </button>
-                </div>
+
+                    <!--list of files-->
                     <ul style="margin: 48px 0px;" id="filesToRemove">
                     </ul>
+
+                    <!--remove button-->
                     <div style="position: absolute; bottom: 0px; width: 100%; display: flex; align-items: center; padding: 5px 5px 5px 10px; height: 47px; border-top: 3px solid #c1c5c6; background: var(--pico-primary-hover); border-radius: 0 0 var(--pico-border-radius) var(--pico-border-radius);">
                         <button class="close" style="display: flex; height: 100%; margin-bottom: 0; justify-content: center; align-items: center; padding: 1%;" type="button" onclick="removeSheets();">
                             Remove
                         </button>
                     </div>
-            </article>
-        
-            <article id="exportBlock" style=" z-index: 2; width: 60%; display: none; position: fixed; top: 50%;left: 50%; transform: translate(-50%, -50%);">
-                <input style="margin-bottom: 0px; height: 50px; padding: 1%; width: 65%;" id="exportFileName" placeholder="File Export Name" type="text">
-                <button style="height: 50px; padding: 1%; width: 20%; margin-inline-start: 2%;" onclick="exportExcel()">Export</button>
-                <button class="close" style="display: flex; width: 8%; height: 50px; margin-bottom: 0; justify-content: center; align-items: center; padding: 1%; float: right;" type="button" onclick="exportBlock.style.display = 'none';blurBackdrop.style.display = 'none';">
-                    <img id="closeExportButton" style="height: 24px" src="../Images/x.png" alt="close">
-                </button>
-            </article>
-        </div>
-
-        <div>
-            <div id="titleBlock" >
-                <h2 id="pageTitle">Calculator</h2>
-
-                <div style="float: right; right: 0%; display: flex;" class="switchBar">
-                    <button class="selected" id="showExplanations" style="border-radius: var(--selection-border-radius) 0px 0px var(--selection-border-radius);">Show Explanations</button>
-                    <button class="unselected" id="hideExplanations" style="border-radius: 0px var(--selection-border-radius) var(--selection-border-radius) 0px;">Hide Explanations</button>
-                </div>
-            </div>
-            
-
-            <p class="explanation">This calculator is designed to aid in the curving of test or assignment scores in a statistically sound way. 
-                To best use our calculator, it may help to visit the <a href="../Math/">math page</a>. Help us out by sharing our website with you friends and colleagues! If you experience any issues, have questions, or would like to see an additional feature be implemented, reach out to us <a href="../Contact/">here</a>.</p>
-            <details class="explanation">
-                <summary role="button">How do I set curve settings?</summary>
-                    <ul>
-                        <li class="notItem">For a video explaning how the selection panels work, click <a href="https://youtu.be/l2PYoi7l8sI" onclick="return confirm('This link will take you to an external site (youtube.com)');">here</a>.</li>
-                        <li class="notItem">For text explanation:</li>
-                        <li>Each curve panel can be named. When a curve is created or its name is removed, 
-                            it will be named <input readonly class="viewInput" value="Curve" style="padding: var(--display-input-padding) !important; background-size: var(--display-background-size) !important; height: var(--display-height) !important; width: calc(var(--display-width) * 3.2 ) !important;" aria-invalid=true type="text"> with a red indicator. 
-                            Curves with the same name wil be indexed numerically.
-                        </li>
-                        <li>The normalize option will redistribute the scores normally.</li>
-                        <li>The next selection asks you to choose either a new mean and deviation to apply, or an output range. You will also be prompted to provide numerical values for these.</li>
-                        <li>If you're specifying a mean and deviation, you may also restrict the range out of outputs.</li>
-                        <li>If you've specified a range, you can choose to center the range, or to fit the range to your input data. If your data is normalized, you won't have to choose between these two.</li>
-                        <li>To remove a panel select the <button class="close" style="height: calc(0.9*var(--display-height) + 2px); vertical-align:bottom; padding: 2px 3px;"><img  style="display: flex; vertical-align: text-top !important; height: calc(0.9* var(--display-height ) - 2px);" src="../Images/x.png" alt="close"></button> button next to its name</li>
-                        <li>All inputs are automatically filled when a selection panel is created. These are simply reconmendations.</li>
-                        <li>You may create as many selection panels as you'd like. Experiment with different settings to find which works best for you.</li>
-                    </ul>
-            </details>
-        </div>
-        
-        <div id="panelsList">
-
-            <article id="modelPanel" class= "panel hidden">
-
-                <fieldset class="panelBar nameLine">
-                    <input style="padding-left: 7px !important; background-position: center right 0.25rem !important;" class="nameInput" type="text">
-                    <button class="closeButton close">X</button>
-                </fieldset>
-
-                <fieldset class="panelBar">
-                    <input type="checkbox" role="switch" class="normalizeButton"> 
-                    <div>Normalize</div>
-                </fieldset>
-
-                <fieldset class="panelBar" >
-                    <label style="display: inline-block" class="curveTypeLine">
-                            <button class="useMeanAndDeviationButton secondary">Mean and Deviation</button>
-                            <button class="useRangeButton secondary">Range</button>
-                    </label>
-                </fieldset>
-
-                <fieldset class="panelBar statsLine">
-                    <div>Mean:</div>
-                    <input  type="number" class="meanInputElem" step="0.01" >
-                    <div>Deviation:</div>
-                    <input  type="number" class="deviationInputElem" step="0.01" >
-                </fieldset>
-
-                <fieldset class="panelBar limitRangeLine">
-                    <input type="checkbox" role="switch" class="limitRangeButton"> 
-                    <div>Restrict Range</div>
-                </fieldset>
-
-                <fieldset class="panelBar rangeLine">
-                    <div>Min:</div>
-                    <input  type="number" class="minInputElem" step="0.01">
-                    <div>Max:</div>
-                    <input  type="number" class="maxInputElem" step="0.01">
-                </fieldset>
-
-                <fieldset class="panelBar centerRangeLine">
-                    <input type="checkbox" role="switch" class="centerRangeButton"> 
-                    <div>Center Range</div>
-                </fieldset>
-                
-                <fieldset class="panelBar">
-                    <input type="checkbox" role="switch" class="letScoresDropButton"> 
-                    <div>Let Scores Drop</div>
-                </fieldset>
-            </article>
-            
-            <button id="addNew"  class="panel" type="submit" onclick="panels.push( new CurvePanel(''));">
-                <h4>Add Curve</h4>
-                <img src="../Images/Logo white.png" style="width: 150px;" alt="curve image"> 
-            </button>
-        
-        </div>
-            
-        <div class="explanation">
-            <details >
-                <summary role="button">How do I manually input students?</summary>
-                    <ul>
-                        <li class="notItem">For a video explaning how the selection panels work, click <a href="https://youtu.be/l2PYoi7l8sI" onclick="return confirm('This link will take you to an external site (youtube.com)');">here</a>.</li>
-                        <li class="notItem">For text explanation:</li>
-                        <li>
-                            To add a student, type either their name or score into an empty box at the bottom of the table below. 
-                            If you specify their name, they will be given the score <input readonly value="80" style="padding: var(--display-input-padding) !important; background-size: var(--display-background-size) !important; height: var(--display-height) !important; width: calc(var(--display-width) * 2.3)  !important;" aria-invalid=true type="number">.
-                            If you specify their score, they will be given the name <input readonly value="Test Taker" style="padding: var(--display-input-padding) !important; background-size: var(--display-background-size) !important; height: var(--display-height) !important; width: calc(var(--display-width) * 4.5 ) !important;" aria-invalid=true type="text">. 
-                        </li>
-                        <li>Removing the name or score of a student will also give them an automatic name or score respectively.</li>
-                        <li>Automatic element will be indicated with <input readonly value="red" style="padding: var(--display-input-padding) !important; background-size: var(--display-background-size) !important; height: var(--display-height) !important; width: calc(var(--display-width) * 2.5) !important;" aria-invalid=true type="text">.</li>
-                        <li>To remove a student, remove their name, and then remove their score</li>
-                    </ul>
-            </details>
-        </div>
-
-        <div class="explanation">
-            <details >
-                <summary role="button">How do I use Excel integration</summary>
-                    <ul>
-                        <li class="notItem">For a video explaning how the selection panels work, click <a href="https://youtu.be/l2PYoi7l8sI" onclick="return confirm('This link will take you to an external site (youtube.com)');">here</a>.</li>
-                        <li class="notItem">For text explanation:</li>
-                        <li>To import data from Excel, select the "Import data with excel" option.</li>
-                        <li>Then select an file of type .xlsx from your computer.</li>
-                        <li>A student's name may be stored in multiple consecutive boxes in the same a row. A student's score may only be stored in one box in the same row.</li>
-                        <li>All students' names and scores must be stored in the same vertical columns respectively</li>
-                        <li>Boxes are specified by column and then row, for example: <input class="notFileInput" style="height: calc(var(--display-height) + 2px)!important; width: calc(var(--display-width) + 3px);" type="text" value="A" disabled><input style="height: calc(var(--display-height) + 2px) !important; width: calc(var(--display-width) + 3px);" class="notFileInput" type="number" value="7" disabled>.</li>
-                        <li>Enter the left most name box of student highest on the Excel sheet followed by the box (in the same row) containing their score.</li>
-                        <li>Then, enter the right most name box the student lowest on the Excel sheet followed by the box containing their score.</li>
-                        <li>Select process to import the students into the score calculator.</li>
-                        <li>To export data, select "Export data with Excel".</li>
-                        <li>Enter you desired Excel file name, and click "Export".</li>
-                        <li>To remove students, open the Undo Import tab, select an Excel sheet and press remove. This will remove all of the students that originated from that sheet.</li>
-                    </ul>
-            </details>
-        </div>
-
-        <div id="studentInputs" style="height: auto;"> 
-            <div id="statsAndExcel">
-                <article id="statsList">
-                    <div>
-                        <div>Students: </div>
-                        <div id="studentCountDisplay">0</div>
-                    </div>
-                    <div class="sepLine"></div>
-                    <div>
-                        <div>Mean: </div>
-                        <div id="averageDisplay">-</div>
-                    </div>
-                    <div class="sepLine"></div>
-                    <div>
-                        <div>Deviation: </div>
-                        <div id="deviationDisplay">-</div>
-                    </div>
                 </article>
+            
+                <!--Export data screen-->
+                <article id="exportBlock">
+                    <input id="exportFileName" placeholder="File Export Name" type="text">
+                    <button id="exportButton"onclick="exportExcel()">Export</button>
+                    <button id="closeExportButton" class="close" type="button" onclick="exportBlock.style.display = 'none';blurBackdrop.style.display = 'none';">
+                        <img id="closeExportButtonX" style="height: 24px" src="../Images/x.png" alt="close">
+                    </button>
+                </article>
+            </div>
 
-                <div id="excelList">
-                    <button onclick="clearAll()">Clear All</button><br>
-                    <button onclick="fileBlock.style.display = 'block'; blurBackdrop.style.display = 'block';">Import data with excel</button><br>
-                    <button onclick="exportBlock.style.display = 'block';blurBackdrop.style.display = 'block';">Export data with excel</button><br>
-                    <button id="excelListButton" onclick="excelList.style.display = 'block';blurBackdrop.style.display = 'block';" style="display: none">Undo Import</button>
+            <!--Main content-->
+            <div>
+
+                <!--Title and explanation selection-->
+                <div id="titleBlock" >
+                    <h2 id="pageTitle">Calculator</h2>
+
+                    <!--toggles display of explanations-->
+                    <div style="float: right; right: 0%; display: flex;" class="switchBar">
+                        <button class="selected" id="showExplanations" style="border-radius: var(--selection-border-radius) 0px 0px var(--selection-border-radius);">Show Explanations</button>
+                        <button class="unselected" id="hideExplanations" style="border-radius: 0px var(--selection-border-radius) var(--selection-border-radius) 0px;">Hide Explanations</button>
+                    </div>
+                </div>
+                
+                <!--Top description-->
+                <p class="explanation">
+                    This calculator is designed to aid in the curving of test or assignment scores in a statistically sound way. 
+                    To best use our calculator, it may help to visit the <a href="../Math/">math page</a>. 
+                    Help us out by sharing our website with you friends and colleagues! 
+                    If you experience any issues, have questions, or would like to see an additional feature be implemented, reach out to us <a href="../Contact/">here</a>.
+                </p>
+
+                <!--Curve settings explanation-->
+                <details class="explanation">
+                    <summary role="button">How do I set curve settings?</summary>
+                        <ul>
+                            <li class="notItem">For a video explaning how the selection panels work, click <a href="https://youtu.be/l2PYoi7l8sI" onclick="return confirm('This link will take you to an external site (youtube.com)');">here</a>.</li>
+                            <li class="notItem">For text explanation:</li>
+                            <li>Each curve panel can be named. When a curve is created or its name is removed, 
+                                it will be named <input readonly class="viewInput" value="Curve" style="padding: var(--display-input-padding) !important; background-size: var(--display-background-size) !important; height: var(--display-height) !important; width: calc(var(--display-width) * 3.2 ) !important;" aria-invalid=true type="text"> with a red indicator. 
+                                Curves with the same name wil be indexed numerically.
+                            </li>
+                            <li>The normalize option will redistribute the scores normally.</li>
+                            <li>The next selection asks you to choose either a new mean and deviation to apply, or an output range. You will also be prompted to provide numerical values for these.</li>
+                            <li>If you're specifying a mean and deviation, you may also restrict the range out of outputs.</li>
+                            <li>If you've specified a range, you can choose to center the range, or to fit the range to your input data. If your data is normalized, you won't have to choose between these two.</li>
+                            <li>To remove a panel select the <button class="close" style="height: calc(0.9*var(--display-height) + 2px); vertical-align:bottom; padding: 2px 3px;"><img  style="display: flex; vertical-align: text-top !important; height: calc(0.9* var(--display-height ) - 2px);" src="../Images/x.png" alt="close"></button> button next to its name</li>
+                            <li>All inputs are automatically filled when a selection panel is created. These are simply reconmendations.</li>
+                            <li>You may create as many selection panels as you'd like. Experiment with different settings to find which works best for you.</li>
+                        </ul>
+                </details>
+            </div>
+        
+            <!--List of selection panels-->
+            <div id="panelsList">
+
+                <!--Hidden model panels for cloning-->
+                <article id="modelPanel" class= "panel hidden">
+
+                    <!--name for curve panel-->
+                    <fieldset class="panelBar nameLine">
+                        <input style="padding-left: 7px !important; background-position: center right 0.25rem !important;" class="nameInput" type="text">
+                        <button class="closeButton close">X</button>
+                    </fieldset>
+
+                    <!--normalize switch-->
+                    <fieldset class="panelBar">
+                        <input type="checkbox" role="switch" class="normalizeButton"> 
+                        <div>Normalize</div>
+                    </fieldset>
+
+                    <!--curve method option-->
+                    <fieldset class="panelBar" >
+                        <label style="display: inline-block" class="curveTypeLine">
+                                <button class="useMeanAndDeviationButton secondary">Mean and Deviation</button>
+                                <button class="useRangeButton secondary">Range</button>
+                        </label>
+                    </fieldset>
+
+                    <!--mean and deviation inputs-->
+                    <fieldset class="panelBar statsLine">
+                        <div>Mean:</div>
+                        <input  type="number" class="meanInputElem" step="0.01" >
+                        <div>Deviation:</div>
+                        <input  type="number" class="deviationInputElem" step="0.01" >
+                    </fieldset>
+
+                    <!--restrict range switch-->
+                    <fieldset class="panelBar limitRangeLine">
+                        <input type="checkbox" role="switch" class="limitRangeButton"> 
+                        <div>Restrict Range</div>
+                    </fieldset>
+
+                    <!--range inputs-->
+                    <fieldset class="panelBar rangeLine">
+                        <div>Min:</div>
+                        <input  type="number" class="minInputElem" step="0.01">
+                        <div>Max:</div>
+                        <input  type="number" class="maxInputElem" step="0.01">
+                    </fieldset>
+
+                    <!--center range switch-->
+                    <fieldset class="panelBar centerRangeLine">
+                        <input type="checkbox" role="switch" class="centerRangeButton"> 
+                        <div>Center Range</div>
+                    </fieldset>
+                    
+                    <!--let scores drop switch-->
+                    <fieldset class="panelBar">
+                        <input type="checkbox" role="switch" class="letScoresDropButton"> 
+                        <div>Let Scores Drop</div>
+                    </fieldset>
+                </article>
+                
+                <!--Add new curving panel-->
+                <button id="addNew"  class="panel" type="submit" onclick="panels.push( new CurvePanel(''));">
+                    <h4>Add Curve</h4>
+                    <img src="../Images/Logo white.png" style="width: 150px;" alt="curve image"> 
+                </button>
+            
+            </div>
+
+            <!--Student inputs explanation-->    
+            <div class="explanation">
+                <details >
+                    <summary role="button">How do I manually input students?</summary>
+                        <ul>
+                            <li class="notItem">For a video explaning how the selection panels work, click <a href="https://youtu.be/l2PYoi7l8sI" onclick="return confirm('This link will take you to an external site (youtube.com)');">here</a>.</li>
+                            <li class="notItem">For text explanation:</li>
+                            <li>
+                                To add a student, type either their name or score into an empty box at the bottom of the table below. 
+                                If you specify their name, they will be given the score <input readonly value="80" style="padding: var(--display-input-padding) !important; background-size: var(--display-background-size) !important; height: var(--display-height) !important; width: calc(var(--display-width) * 2.3)  !important;" aria-invalid=true type="number">.
+                                If you specify their score, they will be given the name <input readonly value="Test Taker" style="padding: var(--display-input-padding) !important; background-size: var(--display-background-size) !important; height: var(--display-height) !important; width: calc(var(--display-width) * 4.5 ) !important;" aria-invalid=true type="text">. 
+                            </li>
+                            <li>Removing the name or score of a student will also give them an automatic name or score respectively.</li>
+                            <li>Automatic element will be indicated with <input readonly value="red" style="padding: var(--display-input-padding) !important; background-size: var(--display-background-size) !important; height: var(--display-height) !important; width: calc(var(--display-width) * 2.5) !important;" aria-invalid=true type="text">.</li>
+                            <li>To remove a student, remove their name, and then remove their score</li>
+                        </ul>
+                </details>
+            </div>
+
+            <!--Excel imports and exports explanation-->
+            <div class="explanation">
+                <details >
+                    <summary role="button">How do I use Excel integration</summary>
+                        <ul>
+                            <li class="notItem">For a video explaning how the selection panels work, click <a href="https://youtu.be/l2PYoi7l8sI" onclick="return confirm('This link will take you to an external site (youtube.com)');">here</a>.</li>
+                            <li class="notItem">For text explanation:</li>
+                            <li>To import data from Excel, select the "Import data with excel" option.</li>
+                            <li>Then select an file of type .xlsx from your computer.</li>
+                            <li>A student's name may be stored in multiple consecutive boxes in the same a row. A student's score may only be stored in one box in the same row.</li>
+                            <li>All students' names and scores must be stored in the same vertical columns respectively</li>
+                            <li>Boxes are specified by column and then row, for example: <input class="notFileInput" style="height: calc(var(--display-height) + 2px)!important; width: calc(var(--display-width) + 3px);" type="text" value="A" disabled><input style="height: calc(var(--display-height) + 2px) !important; width: calc(var(--display-width) + 3px);" class="notFileInput" type="number" value="7" disabled>.</li>
+                            <li>Enter the left most name box of student highest on the Excel sheet followed by the box (in the same row) containing their score.</li>
+                            <li>Then, enter the right most name box the student lowest on the Excel sheet followed by the box containing their score.</li>
+                            <li>Select process to import the students into the score calculator.</li>
+                            <li>To export data, select "Export data with Excel".</li>
+                            <li>Enter you desired Excel file name, and click "Export".</li>
+                            <li>To remove students, open the Undo Import tab, select an Excel sheet and press remove. This will remove all of the students that originated from that sheet.</li>
+                        </ul>
+                </details>
+            </div>
+
+            <!--Score stats, calculator buttons, student inputs, score outputs-->
+            <div id="studentInputs" style="height: auto;"> 
+                
+                <!--Student stats and excel button options-->
+                <div id="statsAndExcel">
+                    
+                    <!--Student stats-->
+                    <article id="statsList">
+                        <div>
+                            <div>Students: </div>
+                            <div id="studentCountDisplay">0</div>
+                        </div>
+                        <div class="sepLine"></div>
+                        <div>
+                            <div>Mean: </div>
+                            <div id="averageDisplay">-</div>
+                        </div>
+                        <div class="sepLine"></div>
+                        <div>
+                            <div>Deviation: </div>
+                            <div id="deviationDisplay">-</div>
+                        </div>
+                    </article>
+
+                    <!--Excel button options-->
+                    <div id="excelList">
+                        <button onclick="clearAll()">Clear All</button><br>
+                        <button onclick="fileBlock.style.display = 'block'; blurBackdrop.style.display = 'block';">Import data with excel</button><br>
+                        <button onclick="exportBlock.style.display = 'block';blurBackdrop.style.display = 'block';">Export data with excel</button><br>
+                        <button id="excelListButton" onclick="excelList.style.display = 'block';blurBackdrop.style.display = 'block';" style="display: none">Undo Import</button>
+                    </div>
+                </div>
+
+                <!--Student inputs and score outputs-->
+                <div id="infoBlock">
+                    <table >
+
+                        <!--table columns names-->
+                        <thead>
+                            <tr id="scoresLabels">
+                                <th>Name</th>
+                                <th>Score</th>
+                            </tr>
+                        </thead>
+        
+                        <!--list of students-->
+                        <tbody id="studentTable">
+                        </tbody>
+        
+                        <!--rows to add students manually-->
+                        <tbody id="addStudents">
+                        </tbody>
+                    </table>
                 </div>
             </div>
+        </main>
 
-            <div id="infoBlock">
-                <table >
-                    <thead>
-                        <tr id="scoresLabels">
-                            <th>Name</th>
-                            <th>Score</th>
-                        </tr>
-                    </thead>
-    
-                    <tbody id="studentTable">
-                    </tbody>
-    
-                    <tbody id="addStudents">
-                    </tbody>
-                </table>
+  
+    <!--Page footer-->
+    <footer id="footer"> 
+        <link rel="stylesheet" href="../CSS/footer.css">
+        <script src="../JS/navbar.js"></script>
+        <div id="footerBox">
+
+            <!--logo and copyright-->
+            <div id="logoBox">
+                <img  src="../Images/Curve Logo.png" alt="curvegneiuslogo">
+                <h4 id="copyrightText">Copyright © 2024 Curve Genius</h4>
+            </div>
+
+            <div class="line wide" style="left: 39%; "></div>
+            <div class="line wide" style="left: 70%; "></div>
+            <div class="line short" style="left: 72%; "></div>
+
+
+            <!--split menu on wide screen-->
+            <div class="menuBox wide" style="left: 43%;">
+                <ul>
+                    <li><a href="../">Home</a></li>
+                    <li><a href="../Math/">Math</a></li>
+                    <li><a href="../Calculator/">Calculator</a></li>
+                    <li><a href="../About/">About us</a></li>
+                </ul>
+            </div>
+
+            <div class="menuBox wide" style="left: 74%;">
+                <ul>
+                    <li><a href="../Contact/">Contact Us</a></li>
+                    <li><a href="../Privacy/">Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <!--single menu on thin screen-->
+            <div class="menuBox short" style="left: 77%;">
+                <ul>
+                    <li><a href="../Home/">Home</a></li>
+                    <li><a href="../Math/">Math</a></li>
+                    <li><a href="../Calculator/">Calculator</a></li>
+                    <li><a href="../About/">About us</a></li>
+                    <li><a href="../Contact/">Contact Us</a></li>
+                    <li><a href="../Privacy/">Privacy Policy</a></li>
+                </ul>
             </div>
         </div>
+    </footer>
 
-        
-
-        
-
-        
-
-    </main>
+    <!--Hide/show explanations functionality-->
     <script>
         const showExplanations = document.getElementById("showExplanations");
         const hideExplanations = document.getElementById("hideExplanations");
@@ -331,6 +419,8 @@
             panelsList.style.marginBottom = "0px";
         });
     </script>
+
+    <!--Calculator functionality JS-->
     <script src="../JS/Settings.js"></script>
     <script src="../JS/Functions.js"></script>
     <script src="../JS/Named.js"></script>
@@ -342,54 +432,6 @@
     <script src="../JS/excelsheet.js"></script>
     <script src="../JS/exportExcel.js"></script>
     <script src="../JS/leave.js"></script>
-
-    <footer id="footer"> 
-        <link rel="stylesheet" href="../CSS/footer.css">
-        <script src="../JS/navbar.js"></script>
-        <div id="footerBox">
-
-            <div id="logoBox">
-                <img  src="../Images/Curve Logo.png" alt="curvegneiuslogo">
-                <h4 id="copyrightText">Copyright © 2024 Curve Genius</h4>
-            </div>
-
-            <div class="line wide" style="left: 39%; "></div>
-            <div class="line wide" style="left: 70%; "></div>
-            <div class="line short" style="left: 72%; "></div>
-
-
-            <div class="menuBox wide" style="left: 43%;">
-                <ul>
-                    <li><a href="../">Home</a></li>
-                    <li><a href="../Math/">Math</a></li>
-                    <li><a href="../Calculator/">Calculator</a></li>
-                    <li><a href="../About/">About us</a></li>
-                </ul>
-            </div>
-
-            <div class="menuBox wide" style="left: 74%;">
-                <ul>
-                    <li>
-                        <a href="../Contact/">Contact Us</a>
-                    </li>
-                    <li>
-                        <a href="../Privacy/">Privacy Policy</a>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="menuBox short" style="left: 77%;">
-                <ul>
-                    <li><a href="../Home/">Home</a></li>
-                    <li><a href="../Math/">Math</a></li>
-                    <li><a href="../Calculator/">Calculator</a></li>
-                    <li><a href="../About/">About us</a></li>
-                    <li><a href="../Contact/">Contact Us</a></li>
-                    <li><a href="../Privacy/">Privacy Policy</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
   </body>
 </html>
 
