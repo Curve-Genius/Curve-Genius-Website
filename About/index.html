@@ -12,20 +12,18 @@
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../CSS/main.css">
         <link rel="stylesheet" href="../CSS/about.css">
+        <link rel="icon" href="https://curvegenius.com/Images/Logo%20white.png">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
         <title>About Us!</title>
     </head>
     <body>
-
-        <!--Excel interaction packages-->
-        <script src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></script>
-        <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
 
         <!--Page margins on zoom out-->
         <div class="tileBackground" id="backgroundLeft"></div>
         <div class="tileBackground" id="backgroundRight"></div>
 
         <!--Nav bar-->
+        <link rel="stylesheet" href="../CSS/navbar.css">
         <header id="header">
             <nav id="fixedElem">        
                 <div id="headerLogo" style="float: left; padding-top: 10px;">
@@ -49,7 +47,10 @@
             <div id="backgroundBlack"></div>
         </header>
         
+        <!--Page content-->
         <main>
+
+            <!--Page title with sections-->
             <div id="titleBox">
                 <h2 id="pageTitle">About Us</h2>
                 <div id="sectionsBar">
@@ -58,8 +59,13 @@
             </div>
             <div id="colorStrip"></div>
 
+            <!--about boxes and decorations-->
             <div id="mainContent">
+
+                <!--Our Mission Box-->
                 <div id="boxOne">
+
+                    <!--Box decorations-->
                     <div id="boxOneBottomRectangle">
                         <div id="boxOneBottomRectangleWhiteTriangle"></div>
                     </div>
@@ -69,6 +75,8 @@
                     <div id="boxOneTopRightCircle">
                         <div id="boxOneTopRightCircleWhiteRectangle"></div>
                     </div>
+
+                    <!--Box text content-->
                     <div id="boxOneContent" class="boxContent">
                         <h3>Our Mission</h3>
                         <p>
@@ -80,8 +88,10 @@
                     </div>
                 </div>
 
+                 <!--Our Challange Box-->
                 <div id="boxTwo">
                    
+                    <!--Box decorations-->
                     <div id="boxTwoTopRectangle">
                         <div id="boxTwoTopRectangleWhiteCircle"></div>
                     </div>
@@ -91,6 +101,8 @@
                     <div id="boxTwoRightTriangle">
                         <div id="boxTwoRightTriangleWhiteRectangle"></div>
                     </div>
+
+                    <!--Box text content-->
                     <div id="boxTwoContent" class="boxContent">
                         <h3>Our Challenge</h3>  
                         <p>Our founder, 
@@ -101,7 +113,10 @@
                     </div>
                 </div>
 
+                <!--Our Story Box-->
                 <div id="boxThree">
+
+                    <!--Box decorations-->
                     <div id="boxThreeRightCircle">
                         <div id="boxThreeRightCircleWhiteTriangle"></div>
                     </div>
@@ -111,6 +126,8 @@
                     <div id="boxThreeTopTriangle">
                         <div id="boxThreeTopTriangleWhiteCircle"></div>
                     </div>
+
+                    <!--Box text content-->
                     <div id="boxThreeContent" class="boxContent">
                         <h3>Our Story</h3>
                         <p>Varun sought to understand traditional grading methods and found they lacked in mathematical motivation. He worked with teachers to create a website that could help them address grading issues and promote statistics education.
@@ -118,34 +135,37 @@
                     </div>
                 </div>
 
+                <!--Decorative shapes-->
                 <div id="decorationItems">
-                    <div id="topOrangeTriangle"></div>
-                    <div id="topBlueTriangle"></div>
-                    <div id="centerYellowTriangle"></div>
-                    <div id="bottomMagentaTriangle"></div>
-                    <div id="bottomPinkTriangle"></div>
-                    <div id="rightTriangle"></div>
-                    <div id="topCenterTriangle"></div>
-                    <div id="topPurpleSquare"></div>
-                    <div id="bottomOrangeSquare"></div>
-                    <div id="bottomPurpleSquare"></div>
-                    <div id="leftPurpleSquare"></div>
-                    <div id="leftOrangeSquare"></div> 
-                    <div id="leftMagentaSquare"></div>
-                    <div id="leftPurpleCircle"></div>
-                    <div id="topBlueCircle"></div>
-                    <div id="rightBlueCircle"></div>
-                    <div id="leftOrangeCircle"></div>
-                    <div id="centerCircle"></div>
+                    <div id="topOrangeTriangle">1</div>
+                    <div id="topBlueTriangle">2</div>
+                    <div id="centerYellowTriangle">3</div>
+                    <div id="bottomMagentaTriangle">4</div>
+                    <div id="bottomPinkTriangle">5</div>
+                    <div id="rightTriangle">6</div>
+                    <div id="topCenterTriangle">7</div>
+                    <div id="topPurpleSquare">8</div>
+                    <div id="bottomOrangeSquare">9</div>
+                    <div id="bottomPurpleSquare">10</div>
+                    <div id="leftPurpleSquare">11</div>
+                    <div id="leftOrangeSquare">12</div> 
+                    <div id="leftMagentaSquare">13</div>
+                    <div id="leftPurpleCircle">14</div>
+                    <div id="topBlueCircle">15</div>
+                    <div id="rightBlueCircle">16</div>
+                    <div id="leftOrangeCircle">17</div>
+                    <div id="centerCircle">18</div>
                 </div>
             </div>           
         </main>
 
+        <!--Page footer-->
         <footer id="footer"> 
             <link rel="stylesheet" href="../CSS/footer.css">
             <script src="../JS/navbar.js"></script>
             <div id="footerBox">
     
+                <!--logo and copyright-->
                 <div id="logoBox">
                     <img  src="../Images/Curve Logo.png" alt="curvegneiuslogo">
                     <h4 id="copyrightText">Copyright © 2024 Curve Genius</h4>
@@ -156,6 +176,7 @@
                 <div class="line short" style="left: 72%; "></div>
     
     
+                <!--split menu on wide screen-->
                 <div class="menuBox wide" style="left: 43%;">
                     <ul>
                         <li><a href="../">Home</a></li>
@@ -167,15 +188,12 @@
     
                 <div class="menuBox wide" style="left: 74%;">
                     <ul>
-                        <li>
-                            <a href="../Contact/">Contact Us</a>
-                        </li>
-                        <li>
-                            <a href="../Privacy/">Privacy Policy</a>
-                        </li>
+                        <li><a href="../Contact/">Contact Us</a></li>
+                        <li><a href="../Privacy/">Privacy Policy</a></li>
                     </ul>
                 </div>
                 
+                <!--single menu on thin screen-->
                 <div class="menuBox short" style="left: 77%;">
                     <ul>
                         <li><a href="../Home/">Home</a></li>
