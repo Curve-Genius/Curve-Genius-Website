@@ -1,7 +1,9 @@
+/* positions page below nav*/
 .main {
     margin: 0 auto;
 }
 
+/* top color banner*/
 #gradBackdrop { 
     height: 180px;
     width: 100%;
@@ -10,12 +12,14 @@
     z-index: -10;
 }
 
+/*page content*/
 #container {
     padding: 0; 
     display: block; 
     height: 700px;
 }
 
+/*text*/
 #pageTitle {
     height: fit-content !important;
     display: block; 
@@ -26,22 +30,29 @@
     right: 0%; 
 }
 
+/*top large text*/
 #pageTitle h1{
     font-size: 90px !important;
 }
 
+/*medium screen*/
 @media screen and (max-width: 900px) {
+
+    /*smaller top text*/
     #pageTitle h1{
         font-size: 70px !important;
     }
 
+    /*move text upward*/
     #pageTitle {
         top: -80px !important;
     }
 }
 
+/*narrow screen*/
 @media screen and (max-width: 850px) {
 
+    /*reposition text*/
     #pageTitle {
         position: relative !important;
         top: -80px !important;
@@ -50,6 +61,7 @@
         padding: 0px 50px;
     }
 
+    /*smaller text*/
     #pageTitle h1 {
         font-size: 65px !important;
     }
