@@ -1,9 +1,11 @@
+/* positions page below nav*/
 main {
     padding:0 0 20px 0 !important; 
     position: relative;
     min-height: 700px;
 }
 
+/* top color banner*/
 #gradBackdrop{
     position: absolute; 
     top: 30px; 
@@ -13,12 +15,14 @@ main {
     left: 0;
 }
 
+/*main card*/
 #container {
     border-radius: 20px; 
     width: 55%; 
     z-index: 0;
 }
 
+/*page title*/
 #pageTitle {
     font-size: 50px; 
     font-weight: 500; 
@@ -28,6 +32,7 @@ main {
     color: black;
 }
 
+/*text blurb*/
 #textContent {
     text-align: center; 
     font-weight: 400; 
@@ -36,19 +41,25 @@ main {
     margin-bottom: 0px;
 }
 
+/*medium screen*/
 @media screen and (max-width: 850px) {
+    
+    /*wider card*/
     #container {
         width: 65%!important;
     }
 }
 
+/*narrow screen*/
 @media screen and (max-width: 500px) {
 
+    /*wider card*/
     #container {
         width: 80%!important;
         border-radius: 20px;
     }
 
+    /*scaled down*/
     #gradBackdrop {
         height: 150px;
     }
