@@ -1,3 +1,4 @@
+//references to html elements
 const fileBlock = document.getElementById("fileBlock");
 const excelList = document.getElementById("excelImportList")
 const excelListButton = document.getElementById("excelListButton");
@@ -6,8 +7,12 @@ const inputFile = document.getElementById("inputFile");
 const errorMessage = document.getElementById("errorMessage");
 const processButton = document.getElementById("processExcelSheet");
 const excelRemoveList = document.getElementById("filesToRemove");
+
+//stores all excelfiles data
 const excelfiles = [];
 let numsheets = 1;
+
+//stores values inputted from screen
 const fileValues = {
     columnnamestart: null, 
     rowstart: null, 
@@ -16,13 +21,19 @@ const fileValues = {
     columnscore: null, 
 }
 
+//updates fileValues appropriatly when a fileInput element is updated
 fileInputs.forEach(input => {
-    input.addEventListener('blur', handleEvent); // Replace 'click' with your desired event
+    input.addEventListener('blur', handleEvent); 
 });
 
-
+//?
 //add exit if there is no change
+//?
+
+//updates fileValues appropriatly when a fileInput element is updated
 function handleEvent(event) {
+
+    //reference to updated element and clears any invalid indications or error messages
     const element = event.currentTarget;
     fileInputs.forEach(input => {
         input.removeAttribute('aria-invalid');
@@ -30,37 +41,55 @@ function handleEvent(event) {
         errorMessage.textContent = "";
     });
 
+    //retrieves non-styling classes from input element
     const elemClassList = element.classList.toString().slice(10).replace(/\s/g, '');
-    
+
+   
     if(elemClassList.startsWith("row")){
+
+        //if elements is row update row values
         fileValues[elemClassList] = parseInt(element.value);
+
+        //if final row comes before initial row, swap row values
         if(fileValues['rowend'] < fileValues['rowstart'] && !(fileValues['rowend'] == null || fileValues['rowstart'] == null )){
             const temp = fileValues['rowend'];
             fileValues['rowend'] = fileValues['rowstart'];
             fileValues['rowstart'] = temp;
         }
     } else if(elemClassList.startsWith("column")) {
+
+        //if element is column, update column values
         fileValues[elemClassList] = element.value.replace(/[^a-zA-Z]/g, '').toUpperCase();
         if(elemClassList.includes("name")){
+
+            //if is a name column and name start column or end column are not defined, then both columns become the inputted column
             if(fileValues['columnnamestart'] == null || fileValues['columnnameend'] == null){
                 fileValues['columnnamestart'] = fileValues[elemClassList];
                 fileValues['columnnameend'] = fileValues[elemClassList];
             } else if(greaterThanColumn(fileValues['columnnamestart'],fileValues['columnnameend'])){
+
+                //if the name end column comes before the name start columns, they are switched
                 const temp = fileValues['columnnamestart'];
                 fileValues['columnnamestart'] = fileValues['columnnameend'];
                 fileValues['columnnameend'] = temp;
             }
         }
         if( greaterThanColumn(fileValues['columnnameend'],fileValues['columnscore'])){
+           
+            //if the name end column and the score column are they same, the score column is removed
             if(fileValues['columnnameend'] == fileValues['columnscore']){
                 fileValues['columnscore'] = null;
             } else {
+
+                //if the name end column comes after the score column, they are switched
                 const pmet = fileValues['columnnameend']
                 fileValues['columnnameend'] = fileValues['columnscore']
                 fileValues['columnscore'] = pmet;
             }
         }
     }
+
+    //updates all values on screen
     fileInputs[0].value = fileValues['columnnamestart'];
     fileInputs[1].value = fileValues['rowstart'];
     fileInputs[2].value = fileValues['columnscore'];
@@ -71,26 +100,39 @@ function handleEvent(event) {
     fileInputs[7].value = fileValues['rowend'];
 }
 
+//method to compare order of columns
 function greaterThanColumn(a, b) {
+   
+    //if they are both null or empty return false
     if(b === "" || a === ""){
         return false;
     }
     if(a == null || b == null){
         return false;
     }
+
+    //if a is longer than the b, a comes after, return true
     if(a.length > b.length){
         return true;
     }
+
+    //if b is longer than a, b comes after, return false
     if(b.length > a.length) {
         return false;
     }
+
+    //otherwise, a and b are the same character length, so return the alphanumeric comparison
     return a > b;
 }
 
+//processes inputs to create an instance of excel object and respective students
 function process() {
-    const inputInfo = validInputs();
 
+    //returns whether inputs are valid, error message if needed, and error code
+    const inputInfo = validInputs();
     if(inputInfo[0]){
+
+        //inputs are valid, clear error message and error indications, fileInputs values, and create new excelSheet object
         errorMessage.textContent = "";
         new excelSheet(inputFile.files[0], null);
         fileBlock.style.display = 'none';
@@ -102,8 +144,11 @@ function process() {
         processButton.style.borderColor = 'none';
     } else {
     
+        //inputs were not valid, give red border to process button, and update correct error message
         processButton.style.borderColor = '#c84e48d4';
         errorMessage.textContent = inputInfo[1];
+
+        //give a red border to the proper element depending on the error code
         switch(inputInfo[2]){
             case 1:
             case 3:
@@ -120,7 +165,6 @@ function process() {
                 fileInputs[6].setAttribute('aria-invalid', true)
                 break;
         }
-
     }
 }
 
@@ -154,6 +198,7 @@ function validInputs() {
         return [true, "no error", 5]; // All inputs are valid
 }
 
+//convers the excel column of letter form to number so it can be used in opening excelsheet data for creation of excelSheet object
 function excelColumnToNumber(column) {
     const base = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.length;
     let result = 0;
