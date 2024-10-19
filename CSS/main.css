@@ -1,3 +1,4 @@
+/* website colors*/
 :root {
     --pico-primary-background: #f0f4f9 !important;
     --pico-primary-inverse: black !important;
@@ -6,22 +7,26 @@
     --pico-primary-hover-background: rgb(221,227,234) !important;
 }
 
+/*whole page*/
 body {
     display: block;
     height: 100%;
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
+/*page content*/
 main {
     background: white;
     padding: 70px 40px 0px 40px;
     border-width: 0px;
 }
 
+/*hide*/
 .hidden {
     display: none !important;
 }
 
+/*side margins with logos */
 .tileBackground {
     position: fixed;
     height: 100%;
@@ -40,13 +45,13 @@ main {
     right: 0;
 }
 
-
-
+/*max content width*/
 body > *, nav {
     max-width: 1750px;
     margin: 0 auto;
 }
 
+/*black background behind all elems*/
 #backgroundBlack {
     height: 100%;
     width: 100%;
@@ -56,6 +61,7 @@ body > *, nav {
     z-index: -1;
 }
 
+/*header and foot positioning*/
 header, footer{
     padding: 0 !important;
     border: none;
@@ -63,144 +69,6 @@ header, footer{
 
 #footer {
     border: hidden;
-}
-
-
-
-/*navbar*/
-#logo {
-    height: 40px;
-}
-
-#fixedElem {
-    padding: 0px;
-    display: block;
-    position: fixed;
-    width: 100%;
-    z-index: 1;
-    background: black;
-    transition: background 0.4s ease;
-}
-
-nav a {
-    color: white;
-}
-
-
-
-.clearHover:hover {
-    background: black !important;
-}
-
-.blackHover:hover {
-    background: linear-gradient(112deg, rgba(23,0,240,1) 0%, rgba(165,44,165,1) 50%, rgba(255,127,0,1) 100%);
-}
-
-#directory li a {
-    text-decoration: none;
-}
-
-#directory {
-    width: 550px;
-}
-
-
-
-#headerLogo {
-    padding-inline-start: 10px;
-    float: left;
-}
-#directory li {
-    display: flex;
-    align-items: center;
-    height: 40px;
-    transition: background 0.4s ease;
-    margin: auto;
-    white-space: nowrap;
-    padding-left:  13px;
-    padding-right: 13px;
-    margin: 10px auto;
-    border-radius: 20px;
-}
-
-.dropbtn {
-    display: none;
-    position: relative;
-    right: -35px;
-}
-
-@media screen and (min-width: 850px) {
-    #directory {
-        display: flex;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-    }
-}
-
-@media screen and (max-width: 850px) {
-    /* Item will have black background */
-
-    #headerLogo {
-        float: left;
-    }
-
-    #logo {
-        height: 30px;
-    }
-
-    .dropbtn {
-        box-shadow: none;
-        cursor: pointer;
-        display: flex;
-        margin: 7px;
-        padding: 5px 10px;
-        font-weight: 500;
-    }
-      
-    .dropdown {
-        position: relative;
-        float: right;
-        padding-inline-end: 40px;
-    }
-      
-    .dropdown-content {
-        display: none;  
-        position: absolute;
-        z-index: 1;
-        
-    }
-      
-    .dropdown-content a {
-        display: block;
-    }
-    
-    .show {display: block;}
-
-    #directory li {
-        margin: 0;
-        font-size: 19px;
-        height: 60px;
-        background-color: black;
-        border-radius: 0px;
-        border-top: white 1px solid;
-    }
-
-    #directory li.last{
-        border-radius: 0 0 0 15px;
-    }
-  }
-  
-
-
-
-
-
-
-
-
-ul li {
-    list-style: "-  ";
 }
 
 /*switch bar*/
