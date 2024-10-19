@@ -1,109 +1,121 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-       <title>Privacy Policy</title>
-       <link rel="stylesheet" href="../CSS/privacy.css">
-  </head>
-  <body>
-      
-    <header id="header"> 
-        <nav id="fixedElem">
-          <span>
-              <link rel="preconnect" href="https://fonts.googleapis.com">
-              <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-              <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-              <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-              <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-              <link href="https://fonts.cdnfonts.com/css/roman-serif" rel="stylesheet">
-              <link rel="stylesheet" href="../CSS/main.css">
-              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
-          </span>
-          
-          <div id="headerLogo" style="float: left; padding-top: 10px;">
-              <a href="../"> 
-                  <img id="logo" src="../Images/Curve Logo.png" alt="Curve Genius Logo">  
-              </a>
-          </div>
+    <head>
+        <!--page settings and style sheets-->
+        <meta charset="utf-8">
+        <meta name="theme-color" content="#000000">
+        <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+        <meta name="color-scheme" content="light dark"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../CSS/main.css">
+        <link rel="stylesheet" href="../CSS/privacy.css">
+        <link rel="icon" href="https://curvegenius.com/Images/Logo%20white.png">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
+        <title>Privacy Policy</title>
+    </head>
+    <body>
 
-          <div class="dropdown">
-              <button onclick="dropDownMenu()" class="dropbtn">Menu</button>
-              <div style="float: right;" id="directory" class="dropdown-content">
-                  <li class="menuItem blackHover"><a href="../">Home</a></li>
-                  <li class="menuItem blackHover"><a href="../Calculator/">Calculator</a></li>
-                  <li class="menuItem blackHover"><a href="../Math/"> Math</a></li>
-                  <li class="menuItem blackHover"><a href="../About/">About Us</a></li>
-                  <li class="last menuItem blackHover"><a href="../Contact/">Contact</a></li>
-              </div>
-          </div>
-        </nav>
-
-        <div id="backgroundBlack">
-        </div>
-
+        <!--Page margins on zoom out-->
         <div class="tileBackground" id="backgroundLeft"></div>
         <div class="tileBackground" id="backgroundRight"></div>
-      </header>
+
+        <!--Nav bar-->
+        <link rel="stylesheet" href="../CSS/navbar.css">
+        <header id="header">
+            <nav id="fixedElem">        
+                <div id="headerLogo" style="float: left; padding-top: 10px;">
+                    <a href="../"> 
+                        <img id="logo" src="../Images/Curve Logo.png" alt="Curve Genius Logo">  
+                    </a>
+                </div>
+                <div class="dropdown">
+                    <button onclick="dropDownMenu()" class="dropbtn">Menu</button>
+                    <div style="float: right;" id="directory" class="dropdown-content">
+                        <li class="menuItem blackHover"><a href="../">Home</a></li>
+                        <li class="menuItem blackHover"><a href="../Calculator/">Calculator</a></li>
+                        <li class="menuItem blackHover"><a href="../Math/"> Math</a></li>
+                        <li class="menuItem blackHover"><a href="../About/">About Us</a></li>
+                        <li class="last menuItem blackHover"><a href="../Contact/">Contact</a></li>
+                    </div>
+                </div>
+            </nav>
+
+            <!--screen black background-->
+            <div id="backgroundBlack"></div>
+        </header>
       
-      <main>
+        <!--page content-->
+        <main>
             <div style="width: 100%; padding-top: 95px !important; display: flex; justify-content: center;">
+                
+                <!--top screen gradient -->
                 <div id="gradBackdrop"></div>
+                
+                <!--privacy policy box-->
                 <article id="container">
                     <h1 id="pageTitle">Privacy Policy</h1>
                     <div style="position: relative; left: 50%; transform: translateX(-50%); height: 2px; width: 98%; border-radius: 2px; background-color: black; margin-bottom: 10px;"></div>
-                    <p id="textContent">Curve Genius is commited to user anonymity and the protection of all user data. We do not collect names, scores, curve settings, or any other forms of user inputted data. User inputted data is only stored locally on the user's device, and is never recieved, collected, distributed or sold by Curve Genius. <br> <br> 
-                        Curve Genius is hosted using GitHub pages. To view GitHubs's privacy policy, <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" onclick="return confirm('This link will take you to an external site (docs.github).com)')">click here</a>. Curve Genius uses Formsubmit to operate it's contact form. To view Formsubmit's privacy policy, <a href="https://formsubmit.co/privacy.pdf" onclick="return confirm('This link will take you to an external site (formsubmit.co)')">click here</a>. Curve Genius is not responsible for the processing or further handling of your information on external websites that Curve Genius may take you to.  
+                    <p id="textContent">Curve Genius is commited to user anonymity and the protection of all user data. We do not collect names, scores, curve settings, or any other 
+                        forms of user inputted data. User inputted data is only stored locally on the user's device, and is never recieved, collected, distributed or sold by 
+                        Curve Genius. <br> <br> 
+                        Curve Genius is hosted using GitHub pages. To view GitHubs's privacy policy, 
+                        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" onclick="return confirm('This link will take you to an external site (docs.github).com)')">click here</a>. 
+                        Curve Genius uses Formsubmit to operate it's contact form. To view Formsubmit's privacy policy, <a href="https://formsubmit.co/privacy.pdf" onclick="return confirm('This link will take you to an external site (formsubmit.co)')">click here</a>. 
+                        Curve Genius is not responsible for the processing or further handling of your information on external websites that Curve Genius may take you to.  
                     </p>
                 </article>
             </div>
-      </main>
+        </main>
 
-      <link rel="stylesheet" href="../CSS/footer.css">
-<script src="../JS/navbar.js"></script>
-<div id="footerBox">
+        <!--Page footer-->
+        <footer id="footer"> 
+            <link rel="stylesheet" href="../CSS/footer.css">
+            <script src="../JS/navbar.js"></script>
+            <div id="footerBox">
 
-    <div id="logoBox">
-        <img  src="../Images/Curve Logo.png" alt="curvegneiuslogo">
-        <h4 id="copyrightText">Copyright © 2024 Curve Genius</h4>
-    </div>
+                <!--logo and copyright-->
+                <div id="logoBox">
+                    <img  src="../Images/Curve Logo.png" alt="curvegneiuslogo">
+                    <h4 id="copyrightText">Copyright © 2024 Curve Genius</h4>
+                </div>
 
-    <div class="line wide" style="left: 39%; "></div>
-    <div class="line wide" style="left: 70%; "></div>
-    <div class="line short" style="left: 72%; "></div>
+                <div class="line wide" style="left: 39%; "></div>
+                <div class="line wide" style="left: 70%; "></div>
+                <div class="line short" style="left: 72%; "></div>
 
 
-    <div class="menuBox wide" style="left: 43%;">
-        <ul>
-            <li><a href="../">Home</a></li>
-            <li><a href="../Math/">Math</a></li>
-            <li><a href="../Calculator/">Calculator</a></li>
-            <li><a href="../About/">About us</a></li>
-        </ul>
-    </div>
+                <!--split menu on wide screen-->
+                <div class="menuBox wide" style="left: 43%;">
+                    <ul>
+                        <li><a href="../">Home</a></li>
+                        <li><a href="../Math/">Math</a></li>
+                        <li><a href="../Calculator/">Calculator</a></li>
+                        <li><a href="../About/">About us</a></li>
+                    </ul>
+                </div>
 
-    <div class="menuBox wide" style="left: 74%;">
-        <ul>
-            <li>
-                <a href="../Contact/">Contact Us</a>
-            </li>
-            <li>
-                <a href="../Privacy/">Privacy Policy</a>
-            </li>
-        </ul>
-    </div>
-    
-    <div class="menuBox short" style="left: 77%;">
-        <ul>
-            <li><a href="../Home/">Home</a></li>
-            <li><a href="../Math/">Math</a></li>
-            <li><a href="../Calculator/">Calculator</a></li>
-            <li><a href="../About/">About us</a></li>
-            <li><a href="../Contact/">Contact Us</a></li>
-            <li><a href="../Privacy/">Privacy Policy</a></li>
-        </ul>
-    </div>
-
-</div>
-  </body>
+                <div class="menuBox wide" style="left: 74%;">
+                    <ul>
+                        <li><a href="../Contact/">Contact Us</a></li>
+                        <li><a href="../Privacy/">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <!--single menu on thin screen-->
+                <div class="menuBox short" style="left: 77%;">
+                    <ul>
+                        <li><a href="../Home/">Home</a></li>
+                        <li><a href="../Math/">Math</a></li>
+                        <li><a href="../Calculator/">Calculator</a></li>
+                        <li><a href="../About/">About us</a></li>
+                        <li><a href="../Contact/">Contact Us</a></li>
+                        <li><a href="../Privacy/">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </body>
 </html>
