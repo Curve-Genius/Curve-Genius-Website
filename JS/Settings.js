@@ -35,3 +35,4 @@ let min;
 let max;
 
 const autoSheetExportName = "Student Scores";
+const dataSaveInterval = 30;
