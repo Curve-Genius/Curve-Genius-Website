@@ -62,6 +62,7 @@ function addStudent(newElement) {
             }
         });
         students.splice(insertionIndex, 0, newElement);
+        newElement.index = insertionIndex;
         newElement.order = insertionIndex - insertionOrder;
 
         //updates min, max, normally distributed Zscores, all distributions, and all displays
